@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import './index.module.css'
 import TextBox from '../../components/text-box-intro-page'
 import Skills from '../../components/skills-intro-page'
+import Button from '../../components/button-inro-page'
 
 
 const IntroPage = () => {
@@ -11,6 +12,7 @@ const IntroPage = () => {
         <Div>
             <TextBox />
             <Skills />
+            <Button />
         </Div>
     )
 }

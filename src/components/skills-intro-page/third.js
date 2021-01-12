@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {firstImg} from '../../utils/skills'
+import {thirdImg} from '../../utils/skills'
 
-const First = () => {
+const Third = () => {
     const renderImages = (() => {
-        return firstImg.map((img, index) => {
+        return thirdImg.map((img, index) => {
             return (
                 <Li key={index}>
                     <Img src={img} />
@@ -28,32 +28,35 @@ const Li = styled.li`
     margin-left: 1.1%;
 
     &:first-child {
-        animation-name: first-li-first-ul;
-        animation-duration: 0.5s;
+        animation-name: first-li-third-ul;
+        animation-duration: 6s;
     }
 
     &:nth-child(2) {
-        animation-name: second-li-first-ul;
-        animation-duration: 1s;
+        animation-name: second-li-third-ul;
+        animation-duration: 6.5s;
     }
 
     &:nth-child(3) {
-        animation-name: third-li-first-ul;
-        animation-duration: 1.5s;
+        animation-name: third-li-third-ul;
+        animation-duration: 7s;
     }
 
     &:nth-child(4) {
-        animation-name: fourth-li-first-ul;
-        animation-duration: 2s;
+        animation-name: fourth-li-third-ul;
+        animation-duration: 7.5s;
     }
 
     &:last-child {
-        animation-name: last-li-first-ul;
-        animation-duration: 2.5s;
+        animation-name: last-li-third-ul;
+        animation-duration: 8s;
     }
 
-    @keyframes first-li-first-ul {
+    @keyframes first-li-third-ul {
         0% {
+            right: -200%;
+        }
+        91.6% {
             right: -200%;
         }
         100% {
@@ -61,11 +64,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes second-li-first-ul {
+    @keyframes second-li-third-ul {
         0% {
             right: -200%;
         }
-        50% {
+        92.3% {
             right: -200%;
         }
         100% {
@@ -73,11 +76,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes third-li-first-ul {
+    @keyframes third-li-third-ul {
         0% {
             right: -200%;
         }
-        66% {
+        92.85% {
             right: -200%;
         }
         100% {
@@ -85,11 +88,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes fourth-li-first-ul {
+    @keyframes fourth-li-third-ul {
         0% {
             right: -200%;
         }
-        75% {
+        93.3% {
             right: -200%;
         }
         100% {
@@ -97,11 +100,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes last-li-first-ul {
+    @keyframes last-li-third-ul {
         0% {
             right: -200%;
         }
-        80% {
+        93.75% {
             right: -200%;
         }
         100% {
@@ -121,5 +124,4 @@ const Ul = styled.ul`
     width: 83%;
     margin: auto;
 `
-
-export default First
+export default Third

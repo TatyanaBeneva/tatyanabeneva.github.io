@@ -1,18 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import Layout from './layout-first-second-skill'
+import First from './first'
+import Second from './second'
+import Third from './third'
 
 const Skills = () => {
     return (
-        <Div>
-        <Layout>
-
-        </Layout>
-        </Div>
+        <DivSkills>
+            <Div>
+                <First />
+                <Second />
+                <Third />
+            </Div>
+        </DivSkills>
     )
 }
 
-const Div = styled.div`
+const DivSkills = styled.div`
     position: relative;
     width: 100%;
 
@@ -29,6 +33,10 @@ const Div = styled.div`
         display: inline-block;
         height: auto;
     }
+`
+const Div = styled.div`
+    margin: 0 auto;
+    padding: 0px;
 `
 
 export default Skills

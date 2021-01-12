@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {firstImg} from '../../utils/skills'
+import {secondImg} from '../../utils/skills'
 
-const First = () => {
+const Second = () => {
     const renderImages = (() => {
-        return firstImg.map((img, index) => {
+        return secondImg.map((img, index) => {
             return (
                 <Li key={index}>
                     <Img src={img} />
@@ -16,44 +16,51 @@ const First = () => {
     const images = renderImages();
     
     return (
-        <Ul>
+        <ul>
             {images}
-        </Ul>
+        </ul>
     )
 }
 
-const Li = styled.li`
-    position: relative;
-    width: 18%;
-    margin-left: 1.1%;
+const Li= styled.li`
+    width: 15%;
+    margin-left: 1%;
 
     &:first-child {
-        animation-name: first-li-first-ul;
-        animation-duration: 0.5s;
+        animation-name: first-li-second-ul;
+        animation-duration: 3s;
     }
 
     &:nth-child(2) {
-        animation-name: second-li-first-ul;
-        animation-duration: 1s;
+        animation-name: second-li-second-ul;
+        animation-duration: 3.5s;
     }
 
     &:nth-child(3) {
-        animation-name: third-li-first-ul;
-        animation-duration: 1.5s;
+        animation-name: third-li-second-ul;
+        animation-duration: 4s;
     }
 
     &:nth-child(4) {
-        animation-name: fourth-li-first-ul;
-        animation-duration: 2s;
+        animation-name: fourth-li-second-ul;
+        animation-duration: 4.5s;
+    }
+
+    &:nth-child(5) {
+        animation-name: fifth-li-second-ul;
+        animation-duration: 5s;
     }
 
     &:last-child {
-        animation-name: last-li-first-ul;
-        animation-duration: 2.5s;
+        animation-name: last-li-second-ul;
+        animation-duration: 5.5s;
     }
 
-    @keyframes first-li-first-ul {
+    @keyframes first-li-second-ul {
         0% {
+            right: -200%;
+        }
+        83.3% {
             right: -200%;
         }
         100% {
@@ -61,11 +68,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes second-li-first-ul {
+    @keyframes second-li-second-ul {
         0% {
             right: -200%;
         }
-        50% {
+        85.7% {
             right: -200%;
         }
         100% {
@@ -73,11 +80,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes third-li-first-ul {
+    @keyframes third-li-second-ul {
         0% {
             right: -200%;
         }
-        66% {
+        87.5% {
             right: -200%;
         }
         100% {
@@ -85,11 +92,11 @@ const Li = styled.li`
         }
     }
 
-    @keyframes fourth-li-first-ul {
+    @keyframes fourth-li-second-ul {
         0% {
             right: -200%;
         }
-        75% {
+        88.9% {
             right: -200%;
         }
         100% {
@@ -97,11 +104,23 @@ const Li = styled.li`
         }
     }
 
-    @keyframes last-li-first-ul {
+    @keyframes fifth-li-second-ul {
         0% {
             right: -200%;
         }
-        80% {
+        90% {
+            right: -200%;
+        }
+        100% {
+            right: 0;
+        }
+    }
+
+    @keyframes last-li-second-ul {
+        0% {
+            right: -200%;
+        }
+        90.9% {
             right: -200%;
         }
         100% {
@@ -117,9 +136,4 @@ const Img = styled.img`
     background-color: white;
 `
 
-const Ul = styled.ul`
-    width: 83%;
-    margin: auto;
-`
-
-export default First
+export default Second
