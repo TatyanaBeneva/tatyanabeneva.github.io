@@ -1,16 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import Delayed from '../../utils/delayed-component'
 
-const Button = () => {
+const Button = (props) => {
     return (
         <Div>
-            <ButtonTag>
-                Destroy this page!
-                <Span></Span>
-                <Span></Span>
-                <Span></Span>
-                <Span></Span>
-            </ButtonTag>
+            <Delayed waitBeforeShow={1500}>
+                <ButtonTag>
+                    Destroy this page!
+                    <Span></Span>
+                    <Span></Span>
+                    <Span></Span>
+                    <Span></Span>
+                </ButtonTag>
+            </Delayed>
         </Div>
     )
 }
@@ -39,6 +42,20 @@ const ButtonTag = styled.button`
     overflow: hidden;
     transition: all 0.5s;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    animation-name: showButton;
+    animation-duration: 0.5s;
+
+    @keyframes showButton {
+        0% {
+            right: -200%;
+        }
+        66% {
+            right: -200%;
+        }
+        100% {
+            right: 0;
+        }
+    }
 
     &:hover {
         transition: all 0.5s;

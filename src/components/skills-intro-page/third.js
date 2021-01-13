@@ -29,62 +29,59 @@ const Li = styled.li`
 
     &:first-child {
         animation-name: first-li-third-ul;
-        animation-duration: 6s;
+        animation-duration: 1.5s;
     }
 
     &:nth-child(2) {
         animation-name: second-li-third-ul;
-        animation-duration: 6.5s;
+        animation-duration: 1s;
     }
 
     &:nth-child(3) {
         animation-name: third-li-third-ul;
-        animation-duration: 7s;
+        animation-duration: 0.5s;
     }
 
     &:nth-child(4) {
         animation-name: fourth-li-third-ul;
-        animation-duration: 7.5s;
+        animation-duration: 1s;
     }
 
     &:last-child {
         animation-name: last-li-third-ul;
-        animation-duration: 8s;
+        animation-duration: 1.5s;
     }
 
     @keyframes first-li-third-ul {
         0% {
-            right: -200%;
+            left: -200%;
         }
-        91.6% {
-            right: -200%;
+        66% {
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes second-li-third-ul {
         0% {
-            right: -200%;
+            left: -200%;
         }
-        92.3% {
-            right: -200%;
+        50% {
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes third-li-third-ul {
         0% {
-            right: -200%;
-        }
-        92.85% {
-            right: -200%;
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
@@ -92,7 +89,7 @@ const Li = styled.li`
         0% {
             right: -200%;
         }
-        93.3% {
+        50% {
             right: -200%;
         }
         100% {
@@ -104,7 +101,7 @@ const Li = styled.li`
         0% {
             right: -200%;
         }
-        93.75% {
+        66% {
             right: -200%;
         }
         100% {

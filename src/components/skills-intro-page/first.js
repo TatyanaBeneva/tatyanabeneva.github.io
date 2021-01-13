@@ -29,7 +29,7 @@ const Li = styled.li`
 
     &:first-child {
         animation-name: first-li-first-ul;
-        animation-duration: 0.5s;
+        animation-duration: 1.5s;
     }
 
     &:nth-child(2) {
@@ -39,45 +39,45 @@ const Li = styled.li`
 
     &:nth-child(3) {
         animation-name: third-li-first-ul;
-        animation-duration: 1.5s;
+        animation-duration: 0.5s;
     }
 
     &:nth-child(4) {
         animation-name: fourth-li-first-ul;
-        animation-duration: 2s;
+        animation-duration: 1s;
     }
 
     &:last-child {
         animation-name: last-li-first-ul;
-        animation-duration: 2.5s;
+        animation-duration: 1.5s;
     }
 
     @keyframes first-li-first-ul {
         0% {
-            right: -200%;
+            left: -200%;
+        }
+        66% {
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes second-li-first-ul {
         0% {
-            right: -200%;
+            left: -200%;
         }
         50% {
-            right: -200%;
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes third-li-first-ul {
         0% {
-            right: -200%;
-        }
-        66% {
             right: -200%;
         }
         100% {
@@ -89,7 +89,7 @@ const Li = styled.li`
         0% {
             right: -200%;
         }
-        75% {
+        50% {
             right: -200%;
         }
         100% {
@@ -101,7 +101,7 @@ const Li = styled.li`
         0% {
             right: -200%;
         }
-        80% {
+        66% {
             right: -200%;
         }
         100% {

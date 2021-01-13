@@ -28,75 +28,69 @@ const Li= styled.li`
 
     &:first-child {
         animation-name: first-li-second-ul;
-        animation-duration: 3s;
+        animation-duration: 1.5s;
     }
 
     &:nth-child(2) {
         animation-name: second-li-second-ul;
-        animation-duration: 3.5s;
+        animation-duration: 1s;
     }
 
     &:nth-child(3) {
         animation-name: third-li-second-ul;
-        animation-duration: 4s;
+        animation-duration: 0.5s;
     }
 
     &:nth-child(4) {
         animation-name: fourth-li-second-ul;
-        animation-duration: 4.5s;
+        animation-duration: 0.5s;
     }
 
     &:nth-child(5) {
         animation-name: fifth-li-second-ul;
-        animation-duration: 5s;
+        animation-duration: 1s;
     }
 
     &:last-child {
         animation-name: last-li-second-ul;
-        animation-duration: 5.5s;
+        animation-duration: 1.5s;
     }
 
     @keyframes first-li-second-ul {
         0% {
-            right: -200%;
+            left: -200%;
         }
-        83.3% {
-            right: -200%;
+        66% {
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes second-li-second-ul {
         0% {
-            right: -200%;
+            left: -200%;
         }
-        85.7% {
-            right: -200%;
+        50% {
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes third-li-second-ul {
         0% {
-            right: -200%;
-        }
-        87.5% {
-            right: -200%;
+            left: -200%;
         }
         100% {
-            right: 0;
+            left: 0;
         }
     }
 
     @keyframes fourth-li-second-ul {
         0% {
-            right: -200%;
-        }
-        88.9% {
             right: -200%;
         }
         100% {
@@ -108,7 +102,7 @@ const Li= styled.li`
         0% {
             right: -200%;
         }
-        90% {
+        50% {
             right: -200%;
         }
         100% {
@@ -120,7 +114,7 @@ const Li= styled.li`
         0% {
             right: -200%;
         }
-        90.9% {
+        66% {
             right: -200%;
         }
         100% {

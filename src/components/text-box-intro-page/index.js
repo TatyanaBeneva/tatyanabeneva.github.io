@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import Delayed from '../../utils/delayed-component'
 
 
-const TextBox = () => {
+const TextBox = (props) => {
     return (
         <Div>
-            <Paragraph>
-            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-            </Paragraph>
+            <Delayed waitBeforeShow={2000}>
+                <Paragraph>
+                    To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
+                </Paragraph>
+            </Delayed>
         </Div>
     )
 }
@@ -15,6 +18,7 @@ const TextBox = () => {
 const Div = styled.div`
     margin: 3% auto;
     width: 50%;
+    height: 114px;
 `
 
 const Paragraph = styled.p`
