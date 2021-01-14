@@ -8,6 +8,7 @@ import Button from '../../components/button-inro-page'
 
 
 const IntroPage = () => {
+
     return (
         <Div>
             <TextBox />
@@ -15,6 +16,7 @@ const IntroPage = () => {
             <Button />
         </Div>
     )
+
 }
 
 const Div = styled.div`
@@ -28,5 +30,6 @@ const Div = styled.div`
     padding: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 `
+
 
 export default IntroPage
