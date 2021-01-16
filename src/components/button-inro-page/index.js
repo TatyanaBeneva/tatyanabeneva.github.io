@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Delayed from '../../utils/delayed-component'
+import broken from './broken.png'
 
 class Button extends React.Component {
     constructor(props){
@@ -12,12 +13,11 @@ class Button extends React.Component {
 
     getBroken =async (e) => {
         e.preventDefault()
-        console.log(this.state)
+
         await this.setState({
             isClicked: "block"
         })
 
-        console.log(this.state)
     }
 
     render() {
@@ -29,7 +29,7 @@ class Button extends React.Component {
                     </ButtonTag>
                 </Delayed>
                 <DivAll style={{display: this.state.isClicked}}>
-                    <Img src="https://lh3.googleusercontent.com/proxy/yGXqFgbajgyib5bpqBD9piEr-e8MVpV80hLRUk_bCqeRBRHjv_duzZrHjKWahCr74sdDBsA6bH4WL6VoAj2ku1lnMq1se7XHi9FOteVRgG1z3Hlh2CymIx71DoF70BcUZcI" alt="broken"/>
+                    <Img src={broken} alt="broken"/>
                 </DivAll>
             </Div>
         )
