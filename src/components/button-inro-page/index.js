@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Delayed from '../../utils/delayed-component'
 import broken from './broken.png'
+import {withRouter} from 'react-router-dom'
 
 class Button extends React.Component {
     constructor(props){
@@ -9,6 +10,8 @@ class Button extends React.Component {
         this.state = {
             isClicked: "none"
         }
+
+        this.props = props
     }
 
     getBroken =async (e) => {
@@ -18,6 +21,9 @@ class Button extends React.Component {
             isClicked: "block"
         })
 
+        await setTimeout(() => {
+            this.props.history.push('/about')
+        }, 2000);
     }
 
     render() {
@@ -65,4 +71,4 @@ const ButtonTag = styled.button`
     background-color: transparent;
     border: none;
 `
-export default Button
+export default withRouter(Button)
