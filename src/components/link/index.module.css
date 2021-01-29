@@ -1,0 +1,9 @@
+.nav-links {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 40px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#c11da8, #1e2eb9);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

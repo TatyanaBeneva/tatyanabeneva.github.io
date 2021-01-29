@@ -1,7 +1,6 @@
 import React from 'react'
 import './index.module.css'
 import styled from 'styled-components'
-import './index.module.css'
 import TextBox from '../../components/text-box-intro-page'
 import Skills from '../../components/skills-intro-page'
 import Button from '../../components/button-inro-page'
