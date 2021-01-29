@@ -5,9 +5,9 @@ import Link from '../link'
 const NavBar = () => {
     return (
         <Navigation>
-            <Link href={'/about'} title={'About me'} />
-            <Link href={'/contact'} title={'Contact me'} />
-            <Link href={'/work'} title={'My work'} />
+            <Link href={'/about'} title={'About me'} type={'nav'} />
+            <Link href={'/contact'} title={'Contact me'}  type={'nav'}/>
+            <Link href={'/work'} title={'My work'}  type={'nav'}/>
         </Navigation>
     )
 }
