@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Logo from '../../components/logo'
 import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
-import '../about-page'
 
 const ContactPage = () => {
     return (

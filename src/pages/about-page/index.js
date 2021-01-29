@@ -1,5 +1,4 @@
 import React from 'react'
-import './index.module.css'
 import styled from 'styled-components'
 import NavBar from '../../components/nav-bar'
 import Logo from '../../components/logo'
