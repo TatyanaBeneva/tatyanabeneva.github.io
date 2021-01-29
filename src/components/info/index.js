@@ -54,7 +54,7 @@ const Hello = styled.p`
 `
 
 const Div = styled.div`
-    margin: 100px 100px 30px 170px;
+    margin: 100px 170px 30px 170px;
     font-style: italic;
     /* border: 2px solid black;
     border-radius: 20px;

@@ -14,6 +14,7 @@ const NavBar = () => {
 
 const Navigation = styled.nav`
     float: right;
+    margin-right: 100px;
 `
 
 export default NavBar
