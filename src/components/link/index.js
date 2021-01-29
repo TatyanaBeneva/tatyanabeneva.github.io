@@ -11,3 +11,4 @@ const LinkComponent = ({href, title, type}) => {
 }
 
 export default LinkComponent
+

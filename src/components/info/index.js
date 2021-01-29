@@ -14,6 +14,8 @@ const Info = () => {
                 So my journey into the world of programming began!
             </Description>
             <Description>
+                Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and with that I had 
+                to choose which framework to work with. So i did a little research of my own and chose <Span>React</Span> as a start.
                 Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and 
                 with that I had to choose which framework to work with. So i did 
                 a little research of my own and chose <Span>React</Span> as a start.
@@ -54,6 +56,7 @@ const Hello = styled.p`
 `
 
 const Div = styled.div`
+    align-items: center;
     margin: 100px 100px 30px 170px;
     font-style: italic;
     /* border: 2px solid black;
