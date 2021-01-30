@@ -1,20 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const List = ({ title, description, technologies, image }) => {
+const List = ({ title, description, technologies, image, link }) => {
     return (
         <Li>
-            <Img src={image} />
-            <H3>{title}</H3>
-            <P>{description}</P>
-            <P>{technologies}</P>
+            <A href={link}>
+                <Img src={image} />
+                <H3>{title}</H3>
+                <P>{description}</P>
+                <P>{technologies}</P>
+            </A>
         </Li>
     )
 }
+
+const A = styled.a`
+    color: white;
+    text-decoration: none;
+`
+
 const Img = styled.img`
-    width: 100%;
+    width: 90%;
     height: 200px;
     display: block;
+    margin: 10px auto 0 auto;
 `
 
 const H3 = styled.h3`
@@ -26,7 +35,15 @@ const P = styled.p`
 `
 
 const Li = styled.li`
-    border: 1px black;
+    display: inline-block;
+    background-image: linear-gradient(#138381, #104443);
+    border-radius: 20px;
+    height: 100%;
+
+    &:hover {
+        margin-bottom: 20px;
+        margin-top: -20px;
+    }
 `
 
 export default List

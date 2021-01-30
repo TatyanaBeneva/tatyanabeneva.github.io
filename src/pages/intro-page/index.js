@@ -6,18 +6,29 @@ import Button from '../../components/button-inro-page'
 import './index.module.css'
 
 
-const IntroPage = () => {
+class IntroPage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { isLoading: true }
+    }
+    
+    componentDidMount() {
+        this.setState({isLoading: false})
+    }
 
-    return (
-        <DivImage>
-            <Div>
-                <TextBox />
-                <Skills />
-                <Button />
-            </Div>
-        </DivImage>
-    )
-
+    render() {
+        return (
+            this.state.isLoading ?
+            <div>Loading...</div> :
+            <DivImage>
+                <Div>
+                    <TextBox />
+                    <Skills />
+                    <Button />
+                </Div>
+            </DivImage>
+        )
+    }
 }
 
 const DivImage = styled.div`
