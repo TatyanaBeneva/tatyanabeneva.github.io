@@ -3,12 +3,14 @@ import styled from 'styled-components'
 import Logo from '../../components/logo'
 import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
+import ContactForm from '../../components/contact-form'
 
 const ContactPage = () => {
     return (
         <Div>
             <Logo />
             <NavBar />
+            <ContactForm />
             <Footer />
         </Div>
     )
