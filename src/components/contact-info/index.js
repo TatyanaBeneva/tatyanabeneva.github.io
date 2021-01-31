@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
+import Icon from '../social-media-icons'
 
 const ContactInfo = () => {
     return (
@@ -14,6 +15,9 @@ const ContactInfo = () => {
             <P>
                 But if you prefer another way of talking, you can always use the social media listed below by me.
             </P>
+            <Icon icon={"fab fa-facebook-f"} />
+            <Icon icon={"fab fa-linkedin-in"} />
+            <Icon icon={"far fa-envelope"} />
         </div>
     )
 }
