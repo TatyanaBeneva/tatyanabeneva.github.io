@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Input from '../input'
-import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
+import SubmitButton from '../submit-button'
 
 const ContactForm = () => {
     return (
@@ -24,6 +24,7 @@ const ContactForm = () => {
                 icon={"far fa-comment-alt"}
                 placeholder={"Type your message..."}
             />
+            <SubmitButton title={"Submit form"} />
         </Form>
     )
 }

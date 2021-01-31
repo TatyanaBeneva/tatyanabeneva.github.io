@@ -22,15 +22,17 @@ const Span = styled.span`
     position: absolute;
     padding-top: 20px;
     color: gray;
+    font-size: 20px;
 `
 
 const InputForm = styled.input`
     width: 70%;
     border: none;
     border-bottom: 2px solid black;
-    padding-left: 20px;
+    padding-left: 30px;
     margin-bottom: 30px;
     margin-top: 20px;
+    font-size: 20px;
 
     &:focus {
         outline: none;
@@ -40,6 +42,8 @@ const InputForm = styled.input`
 
 const Label = styled.label`
     font-style: italic;
+    font-size: 20px;
+    color: #3fc1a9;
 `
 
 export default Input
