@@ -30,6 +30,7 @@ const ContactForm = () => {
 }
 
 const Form = styled.form`
+    margin-left: 80px;
     
 `
 

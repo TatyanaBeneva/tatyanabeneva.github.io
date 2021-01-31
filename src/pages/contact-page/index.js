@@ -25,9 +25,7 @@ const ContactPage = () => {
 }
 
 const ContentDiv = styled.div`
-    border: 1px solid black;
     padding: 20px 40px;
-    text-align: center;
 `
 
 const DivGrid = styled.div`
