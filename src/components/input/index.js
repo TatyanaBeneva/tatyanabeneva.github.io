@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 
-const Input = ({ label, id, placeholder, onChange, type, icon }) => {
+const Input = ({ label, placeholder, onChange, type, icon, name }) => {
     return (
         <div>
             <Label htmlFor={id}>
@@ -12,7 +12,7 @@ const Input = ({ label, id, placeholder, onChange, type, icon }) => {
                 <Span>
                     <i className={icon}></i>
                 </Span>
-                <InputForm type={type || 'text'} id={id} placeholder={placeholder} onChange={onChange} />
+                <InputForm type={type || 'text'} name={name} placeholder={placeholder} onChange={onChange} />
             </div>
         </div>
     )
