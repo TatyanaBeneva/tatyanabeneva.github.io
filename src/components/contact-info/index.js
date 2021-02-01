@@ -7,7 +7,10 @@ const ContactInfo = () => {
     return (
         <div>
             <P>
-                Hi! This form is made especially for you to make it easier to contact me.
+                Hi! This form is made especially for you to make it easier to contact me. Just write your 
+                first and second names in the first field so I know who to contact, then write your email 
+                so I can reply to you, and finally submit your message to me. To send the data, 
+                just press the button "Submit form".
             </P>
             <Div>
                 <i className="fas fa-arrow-right"></i>
@@ -15,12 +18,22 @@ const ContactInfo = () => {
             <P>
                 But if you prefer another way of talking, you can always use the social media listed below by me.
             </P>
-            <Icon icon={"fab fa-facebook-f"} />
-            <Icon icon={"fab fa-linkedin-in"} />
-            <Icon icon={"far fa-envelope"} />
+            <Div>
+                <i className="fas fa-arrow-down"></i>
+            </Div>
+            <Ul>
+                <Icon icon={"fab fa-facebook-f"} link={"https://www.facebook.com/tatjana.beneva.1/"} />
+                <Icon icon={"fab fa-linkedin-in"} link={"https://www.linkedin.com/in/tatyana-beneva-8567b01b1"} />
+                <Icon icon={"far fa-envelope"} />
+            </Ul>
         </div>
     )
 }
+
+const Ul = styled.ul`
+    padding: 0;
+    text-align: center;
+`
 
 const Div = styled.div`
     text-align: center;

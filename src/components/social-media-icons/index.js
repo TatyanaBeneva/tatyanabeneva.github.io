@@ -2,26 +2,34 @@ import React from 'react'
 import styled from 'styled-components'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 
-const Icon = ({icon}) => {
+const Icon = ({ icon, link }) => {
     return (
-        <Div>
-            <Span>
-            <i className={icon}></i>
-            </Span>
-        </Div>
+        <Li>
+            <DivIcon>
+                <Link href={link}>
+                    <i className={icon}></i>
+                </Link>
+            </DivIcon>
+        </Li>
     )
 }
-
-const Span = styled.span`
+const Link = styled.a`
+    text-decoration: none;
     color: white;
-    background-color: #5267db;
-    font-size: 25px;
-    padding: 10px 15px;
-    border-radius: 50%;
 `
 
-const Div = styled.div`
-    
+const DivIcon = styled.div`
+    background-color: #5267db;
+    font-size: 25px;
+    border-radius: 50%;
+    width: 40px;
+    text-align: center;
+    padding: 7.5px 0;
+`
+
+const Li = styled.li`
+    display: inline-block;
+    margin: 0 15px;;
 `
 
 export default Icon
