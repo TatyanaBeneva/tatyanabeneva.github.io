@@ -5,7 +5,7 @@ import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 const Input = ({ label, placeholder, onChange, type, icon, name }) => {
     return (
         <div>
-            <Label htmlFor={id}>
+            <Label htmlFor={name}>
                 {label}:
             </Label>
             <div>
