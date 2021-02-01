@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 
-const Icon = ({ icon, link }) => {
+const Icon = ({ icon, link, onClick }) => {
     return (
         <Li>
             <DivIcon>
-                <Link href={link}>
+                <Link href={link} onClick={onClick}>
                     <i className={icon}></i>
                 </Link>
             </DivIcon>
@@ -29,7 +29,11 @@ const DivIcon = styled.div`
 
 const Li = styled.li`
     display: inline-block;
-    margin: 0 15px;;
+    margin: 0 15px;
+
+    &:last-child:hover {
+        cursor: pointer;
+    }
 `
 
 export default Icon

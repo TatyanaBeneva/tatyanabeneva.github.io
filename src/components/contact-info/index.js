@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 import Icon from '../social-media-icons'
 
 const ContactInfo = () => {
+
+    const  [email, setEmail] = useState(false)
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        email ? setEmail(false) : setEmail(true)
+        console.log(email)
+    }
+
     return (
         <div>
             <P>
@@ -24,11 +33,17 @@ const ContactInfo = () => {
             <Ul>
                 <Icon icon={"fab fa-facebook-f"} link={"https://www.facebook.com/tatjana.beneva.1/"} />
                 <Icon icon={"fab fa-linkedin-in"} link={"https://www.linkedin.com/in/tatyana-beneva-8567b01b1"} />
-                <Icon icon={"far fa-envelope"} />
+                <Icon icon={"far fa-envelope"} onClick={handleClick} />
             </Ul>
+            {email ? <DivEmail> tatyana.v.beneva@gmail.com </DivEmail> : null}
         </div>
     )
 }
+
+const DivEmail = styled.div`
+    width: 100%;
+    text-align: center;
+`
 
 const Ul = styled.ul`
     padding: 0;
