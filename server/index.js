@@ -26,7 +26,7 @@ const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   auth: {
     user: 'portfolio.t.v.b@gmail.com',
-    pass: pass['terminal.integrated.env.osx'].EMAIL_PASS,
+    pass: pass['terminal.integrated.env.windows'].EMAIL_PASS,
   },
   secure: true,
 });
