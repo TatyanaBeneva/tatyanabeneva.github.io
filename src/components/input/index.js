@@ -26,7 +26,7 @@ const Span = styled.span`
 `
 
 const InputForm = styled.input`
-    width: 70%;
+    width: 80%;
     border: none;
     border-bottom: 2px solid black;
     padding-left: 30px;
