@@ -1,12 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cors = require('cors')
 const pass = require('./.vscode/settings.json')
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentilas: true
+}
 
 const app = express();
 const route = express.Router();
 const port = process.env.PORT || 5000;
-
+app.use(cors(corsOptions))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', route)
@@ -31,9 +37,13 @@ const transporter = nodemailer.createTransport({
   secure: true,
 });
 
+route.get('/contact', (req,res) => {
+  res.status(200)
+})
+
 route.post('/contact', (req, res) => {
   const {name, email, message} = req.body
-
+  console.log(req.body)
   const mailToMe = {
     from: 'portfolio.t.v.b@gmail.com',  // sender address
     to: 'tatyana.v.beneva@gmail.com',   // list of receivers

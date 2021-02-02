@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import {useHistory} from 'react-router-dom'
+import axios from 'axios'
 import styled from 'styled-components'
 import Input from '../input'
 import SubmitButton from '../submit-button'
@@ -11,35 +13,36 @@ const ContactForm = () => {
     const [errorName, setErrorName] = useState('')
     const [errorEmail, setErrorEmail] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
+    let history = useHistory()
 
     const handelValidation = () => {
         setErrorName('')
         setErrorEmail('')
         setErrorMessage('')
         // Name
-        if(!name){
+        if (!name) {
             setErrorName("Name field cannot be empty!")
             return false
         }
 
-        if(!name.match(/[A-Z][a-z]+ [A-Z][a-z]+/)){
+        if (!name.match(/[A-Z][a-z]+ [A-Z][a-z]+/)) {
             setErrorName("Тhe first and second names must begin with a capital letter and continue with lowercase letters!")
             return false
         }
 
         // Email
-        if(email === ''){
+        if (email === '') {
             setErrorEmail("Email field cannot be empty!")
             return false
         }
 
-        if(!email.match(/[A-Za-z0-9.]+@[a-z]+.[a-z]+.?[a-z]+/)){
+        if (!email.match(/[A-Za-z0-9.]+@[a-z]+.[a-z]+.?[a-z]+/)) {
             setErrorEmail("Email must be valid!")
             return false
         }
 
         // Message
-        if(message === ''){
+        if (message === '') {
             setErrorMessage("Message field cannot be empty!")
             return false
         }
@@ -47,8 +50,23 @@ const ContactForm = () => {
         return true
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        let result = handelValidation();
+        console.log(name, email, message)
+
+        if(!result){
+            return
+        }
+
+        let data ={name: name, email: email, message: message}
+
+        axios.post('http://localhost:5000/contact', data)
+
+    }
+
     return (
-        <Form action="/contact" method="POST">
+        <Form onSubmit={handleSubmit}>
             <Input
                 onChange={e => setName(e.target.value)}
                 label={"What is your name?"}
@@ -56,6 +74,7 @@ const ContactForm = () => {
                 icon={"far fa-user"}
                 placeholder={"Type your first and second name..."}
             />
+            {errorName ? <Notification error={errorName} /> : ""}
             <Input
                 onChange={e => setEmail(e.target.value)}
                 label={"Write your email"}
@@ -63,6 +82,7 @@ const ContactForm = () => {
                 icon={"far fa-envelope"}
                 placeholder={"Type your email..."}
             />
+            {errorEmail ? <Notification error={errorEmail} /> : ""}
             <Input
                 onChange={e => setMessage(e.target.value)}
                 label={"What is your message to me?"}
@@ -70,7 +90,8 @@ const ContactForm = () => {
                 icon={"far fa-comment-alt"}
                 placeholder={"Type your message..."}
             />
-            <SubmitButton title={"Submit form"}/>
+            {errorMessage ? <Notification error={errorMessage} /> : ""}
+            <SubmitButton title={"Submit form"} />
         </Form>
     )
 }
