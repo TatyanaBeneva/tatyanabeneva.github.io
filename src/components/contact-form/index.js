@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Input from '../input'
 import SubmitButton from '../submit-button'
+import Notification from '../notifications'
 
 const ContactForm = () => {
     const [name, setName] = useState('')
@@ -12,6 +13,9 @@ const ContactForm = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const handelValidation = () => {
+        setErrorName('')
+        setErrorEmail('')
+        setErrorMessage('')
         // Name
         if(!name){
             setErrorName("Name field cannot be empty!")
@@ -36,22 +40,15 @@ const ContactForm = () => {
 
         // Message
         if(message === ''){
-            setErrorEmail("Message field cannot be empty!")
+            setErrorMessage("Message field cannot be empty!")
             return false
         }
 
         return true
     }
 
-    const contactSubmit = (e) => {
-        e.preventDefault()
-        if(!handelValidation()){
-            return
-        } 
-    }
-
     return (
-        <Form onSubmit={contactSubmit}>
+        <Form action="/contact" method="POST">
             <Input
                 onChange={e => setName(e.target.value)}
                 label={"What is your name?"}
@@ -73,7 +70,7 @@ const ContactForm = () => {
                 icon={"far fa-comment-alt"}
                 placeholder={"Type your message..."}
             />
-            <SubmitButton title={"Submit form"} />
+            <SubmitButton title={"Submit form"}/>
         </Form>
     )
 }

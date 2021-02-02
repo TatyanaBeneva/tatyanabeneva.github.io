@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const SubmitButton = ({title, onClick}) => {
+const SubmitButton = ({title}) => {
     return (
         <div>
-            <Button type="submit" onClick={onClick}>{title}</Button>
+            <Button type="submit">{title}</Button>
         </div>
     )
 }
