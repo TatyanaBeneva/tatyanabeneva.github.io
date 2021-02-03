@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import {useHistory} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Input from '../input'
@@ -13,7 +12,15 @@ const ContactForm = () => {
     const [errorName, setErrorName] = useState('')
     const [errorEmail, setErrorEmail] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
-    let history = useHistory()
+    const [isSubmited, setIsSubmited] = useState(false)
+
+    useEffect(() => {
+        if(isSubmited){
+            setTimeout(() => {
+                setIsSubmited(false)
+            }, 3000)
+        }
+    })
 
     const handelValidation = () => {
         setErrorName('')
@@ -46,6 +53,11 @@ const ContactForm = () => {
             setErrorMessage("Message field cannot be empty!")
             return false
         }
+        
+        if(message.length <= 10) {
+            setErrorMessage("Message should more the 10 characters!")
+            return false
+        }
 
         return true
     }
@@ -55,14 +67,19 @@ const ContactForm = () => {
         let result = handelValidation();
         console.log(name, email, message)
 
-        if(!result){
+        if (!result) {
             return
         }
 
-        let data ={name: name, email: email, message: message}
+        let data = { name: name, email: email, message: message }
 
-        axios.post('http://localhost:5000/contact', data)
+        axios.post('http://localhost:5000/contact', data).catch(e => console.log(e))
 
+        setName('')
+        setEmail('')
+        setMessage('')
+
+        setIsSubmited(true)
     }
 
     return (
@@ -73,6 +90,8 @@ const ContactForm = () => {
                 name={"name"}
                 icon={"far fa-user"}
                 placeholder={"Type your first and second name..."}
+                value={name}
+                isError={errorName}
             />
             {errorName ? <Notification error={errorName} /> : ""}
             <Input
@@ -81,6 +100,8 @@ const ContactForm = () => {
                 name={"email"}
                 icon={"far fa-envelope"}
                 placeholder={"Type your email..."}
+                value={email}
+                isError={errorEmail}
             />
             {errorEmail ? <Notification error={errorEmail} /> : ""}
             <Input
@@ -89,12 +110,22 @@ const ContactForm = () => {
                 name={"message"}
                 icon={"far fa-comment-alt"}
                 placeholder={"Type your message..."}
+                value={message}
+                isError={errorMessage}
             />
             {errorMessage ? <Notification error={errorMessage} /> : ""}
             <SubmitButton title={"Submit form"} />
+            {isSubmited ? <Div>Thank you for contacting me!</Div> : ""}
         </Form>
     )
 }
+
+const Div = styled.div`
+    margin-top: 20px;
+    color: green;
+    font-size: 20px;
+    font-style: italic;
+`
 
 const Form = styled.form`
     margin-left: 80px;

@@ -43,7 +43,6 @@ route.get('/contact', (req,res) => {
 
 route.post('/contact', (req, res) => {
   const {name, email, message} = req.body
-  console.log(req.body)
   const mailToMe = {
     from: 'portfolio.t.v.b@gmail.com',  // sender address
     to: 'tatyana.v.beneva@gmail.com',   // list of receivers

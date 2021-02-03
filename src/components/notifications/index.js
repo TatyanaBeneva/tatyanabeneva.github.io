@@ -4,16 +4,12 @@ import styled from 'styled-components'
 const Notification = ({error}) => {
     return (
         <Div>
-            <P>{error}</P>
+            <p>{error}</p>
         </Div>
     )
 }
 
 const Div = styled.div`
-
-`
-
-const P = styled.p`
     color: red;
 `
 
