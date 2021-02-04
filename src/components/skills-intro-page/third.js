@@ -24,10 +24,11 @@ const Third = () => {
 
 const Li = styled.li`
     position: relative;
-    width: 18%;
+    width: 15%;
     margin-left: 1.1%;
 
     &:first-child {
+        margin-left: 10%;
         animation-name: first-li-third-ul;
         animation-duration: 1.5s;
     }
@@ -112,7 +113,7 @@ const Li = styled.li`
 
 const Img = styled.img`
     width: 100%;
-    height: 100px;
+    height: 84px;
     border-radius: 50%;
     background-color: white;
 `

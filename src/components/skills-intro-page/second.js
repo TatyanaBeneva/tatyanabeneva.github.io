@@ -23,10 +23,11 @@ const Second = () => {
 }
 
 const Li= styled.li`
-    width: 15%;
+    width: 12.5%;
     margin-left: 1%;
 
     &:first-child {
+        margin-left: 10%;
         animation-name: first-li-second-ul;
         animation-duration: 1.5s;
     }
@@ -125,7 +126,7 @@ const Li= styled.li`
 
 const Img = styled.img`
     width: 100%;
-    height: 100px;
+    height: 84px;
     border-radius: 50%;
     background-color: white;
 `

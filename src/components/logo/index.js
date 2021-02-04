@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from '../link'
 
 const Logo = () => {
     return (
-        <Span>TB</Span>
+        <Link title={<Span>TB</Span>} href={'/'} type={'text'}/>
     )
 }
 
