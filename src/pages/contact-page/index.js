@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from '../../components/logo'
 import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
 import ContactForm from '../../components/contact-form'
@@ -8,8 +7,7 @@ import ContactInfo from '../../components/contact-info'
 
 const ContactPage = () => {
     return (
-        <Div>
-            <Logo />
+        <div>
             <NavBar />
             <DivGrid>
                 <ContentDiv>
@@ -20,7 +18,7 @@ const ContactPage = () => {
                 </ContentDiv>
             </DivGrid>
             <Footer />
-        </Div>
+        </div>
     )
 }
 
@@ -32,10 +30,6 @@ const DivGrid = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
     margin: 80px 100px 30px 100px;
-`
-
-const Div = styled.div`
-    padding: 20px 30px;
 `
 
 export default ContactPage

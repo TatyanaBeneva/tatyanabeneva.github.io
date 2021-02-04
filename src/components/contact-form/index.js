@@ -18,7 +18,7 @@ const ContactForm = () => {
         if(isSubmited){
             setTimeout(() => {
                 setIsSubmited(false)
-            }, 3000)
+            }, 7000)
         }
     })
 
@@ -115,7 +115,8 @@ const ContactForm = () => {
             />
             {errorMessage ? <Notification error={errorMessage} /> : ""}
             <SubmitButton title={"Submit form"} />
-            {isSubmited ? <Div>Thank you for contacting me!</Div> : ""}
+            {isSubmited ? <Div>Thank you for contacting me! You must have received an automatic reply 
+                to the email you entered above.</Div> : ""}
         </Form>
     )
 }

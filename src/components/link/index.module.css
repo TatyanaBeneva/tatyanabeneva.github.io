@@ -3,15 +3,19 @@
     font-size: 30px;
     margin-right: 40px;
     font-weight: bold;
-    background: -webkit-linear-gradient(right, #c11da8, #1e2eb9);
+    background: -webkit-linear-gradient(left, #24ece9, #af45da, #f934ea);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.nav-links:hover {
+    border-bottom: 2px solid white;
 }
 
 .text-links {
     text-decoration: none;
     font-size: 20px;
-    background: -webkit-linear-gradient(right, #c11da8, #1e2eb9);
+    background: -webkit-linear-gradient(left, #24ece9, #af45da, #f934ea);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

@@ -42,10 +42,11 @@ const Ul = styled.ul`
     text-align: center;
     padding: 0 1%;
     color: white;
+    font-style: italic;
 `
 
 const Div = styled.div`
-    margin: 100px 170px 30px 170px;
+    margin: 80px 170px 30px 170px;
 `
 
 export default Projects

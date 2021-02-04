@@ -22,6 +22,11 @@ const Button = styled.button`
     &:focus {
         outline: none;
     }
+
+    &:hover {
+        background-image: linear-gradient(to left, #24ece9, #af45da, #f934ea);
+        cursor: pointer;
+    }
 `
 
 export default SubmitButton

@@ -1,23 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
 import NavBar from '../../components/nav-bar'
-import Logo from '../../components/logo'
 import Info from '../../components/info'
 import Footer from '../../components/footer'
 
 const AboutPage = () => {
     return (
-        <Div>
-            <Logo />
+        <div>
             <NavBar />
             <Info />
             <Footer />
-        </Div>
+        </div>
     )
 }
 
-const Div = styled.div`
-    padding: 20px 30px;
-`
 
 export default AboutPage

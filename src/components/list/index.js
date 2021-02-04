@@ -36,9 +36,10 @@ const P = styled.p`
 
 const Li = styled.li`
     display: inline-block;
-    background-image: linear-gradient(#138381, #104443);
+    background-color:  #34495e;
     border-radius: 20px;
     height: 100%;
+    padding: 5% 0;
 
     &:hover {
         margin-bottom: 20px;
