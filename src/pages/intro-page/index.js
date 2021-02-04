@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import TextBox from '../../components/text-box-intro-page'
 import Skills from '../../components/skills-intro-page'
-import Button from '../../components/button-inro-page'
+import Button from '../../components/button-intro-page'
 import './index.module.css'
 import image from './comp.jpg'
 
