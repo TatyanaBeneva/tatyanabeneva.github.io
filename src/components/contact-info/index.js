@@ -43,6 +43,8 @@ const ContactInfo = () => {
 const DivEmail = styled.div`
     width: 100%;
     text-align: center;
+    font-style: italic;
+    color: #34495e;
 `
 
 const Ul = styled.ul`
@@ -60,6 +62,8 @@ const Div = styled.div`
 
 const P = styled.p`
     font-size: 20px;
+    font-style: italic;
+    color: #34495e;
 `
 
 export default ContactInfo
