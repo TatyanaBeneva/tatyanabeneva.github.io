@@ -4,6 +4,7 @@ import TextBox from '../../components/text-box-intro-page'
 import Skills from '../../components/skills-intro-page'
 import Button from '../../components/button-inro-page'
 import './index.module.css'
+import image from './comp.jpg'
 
 
 class IntroPage extends React.Component {
@@ -20,7 +21,7 @@ class IntroPage extends React.Component {
         return (
             this.state.isLoading ?
             <div>Loading...</div> :
-            <DivImage>
+            <DivImage style={{backgroundImage: `url(${image})`}}>
                 <Div>
                     <TextBox />
                     <Skills />
@@ -40,7 +41,6 @@ const DivImage = styled.div`
     height: 100%;
     width: 100%;
     padding: 0;
-    background-image: url("https://s27389.pcdn.co/wp-content/uploads/2017/05/AdobeStock_51875542.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 `
