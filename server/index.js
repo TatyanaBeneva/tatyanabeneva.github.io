@@ -6,7 +6,7 @@ const cors = require('cors')
 const pass = require('./.vscode/settings.json')
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://tatyanabeneva.github.io/portfolio-react',
   credentilas: true
 }
 
