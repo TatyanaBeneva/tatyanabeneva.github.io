@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 // const https = require('https');
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path')
 const nodemailer = require('nodemailer');
 const cors = require('cors')
@@ -11,7 +11,7 @@ const config = require('./config')
 
 const corsOptions = {
   // origin: 'http://localhost:3000',
-  origin: 'https://tatyanabeneva.github.io',
+  origin: 'https://tatyanabeneva.github.io/portfolio-react/',
   credentilas: true
 }
 

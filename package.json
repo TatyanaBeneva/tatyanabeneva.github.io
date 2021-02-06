@@ -4,8 +4,6 @@
   "description": "server from my react app portfolio",
   "main": "index.js",
   "scripts": {
-    "predeploy": "cd client && npm install --only=dev && npm install && npm run build",
-    "deploy": "gh-pages -d client build",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

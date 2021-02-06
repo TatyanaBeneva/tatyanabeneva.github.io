@@ -73,7 +73,7 @@ const ContactForm = () => {
 
         let data = { name: name, email: email, message: message }
 
-        axios.post(`http://localhost:80/contact`, data).catch(e => console.log(e))
+        axios.post(`#/contact`, data).catch(e => console.log(e))
 
         setName('')
         setEmail('')
