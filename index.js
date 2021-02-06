@@ -11,7 +11,7 @@ const config = require('./config')
 
 const corsOptions = {
   // origin: 'http://localhost:3000',
-  origin: 'https://tatyanabeneva.github.io/portfolio-react/',
+  origin: 'https://tatyanabeneva.github.io',
   credentilas: true
 }
 
@@ -23,18 +23,19 @@ const corsOptions = {
 const app = express();
 const route = express.Router();
 
-// const header = {
-//   'Access-Control-Allow-Headers': 'X-Custom-Header'
-// }
+const header = {
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Origin': 'https://tatyanabeneva.github.io'
+}
 
 app.use(express.static(path.join(__dirname, 'client' ,'/public')))
 app.use(cors(corsOptions))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(function(req, res, next) {
-//   res.setHeader(header);
-//   next();
-// });
+app.use(function(req, res, next) {
+  res.setHeader(header);
+  next();
+});
 app.use('/', route)
 
 // console.log that your server is up and running
