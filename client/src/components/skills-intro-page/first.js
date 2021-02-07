@@ -5,17 +5,23 @@ import {firstImg} from '../../utils/skills'
 
 const First = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 1200, maxWidth: 1600 })
-    const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 899 })
-    const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
+    const isLaptopOrTablet = useMediaQuery({ minWidth: 600, maxWidth: 1600 })
+    const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 599 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
 
     const renderImages = (() => {
         return firstImg.map((img, index) => {
             return (
                 <Li key={index}>
-                    <Img src={img} />
+                    {isLaptopOrTablet &&
+                        <Img1200 src={img} />
+                    }
+                    {isTablet &&
+                        <Img481 src={img} />
+                    }
+                    {isPhone &&
+                        <Img480 src={img} />
+                    }
                 </Li>
             )
         })      
@@ -29,6 +35,20 @@ const First = () => {
         </Ul>
     )
 }
+
+const Img481 = styled.img`
+    width: 100%;
+    height: 63px;
+    border-radius: 50%;
+    background-color: white;
+`
+
+const Img480 = styled.img`
+    width: 100%;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+`
 
 const Li = styled.li`
     position: relative;
@@ -119,7 +139,7 @@ const Li = styled.li`
     }
 `
 
-const Img = styled.img`
+const Img1200 = styled.img`
     width: 100%;
     height: 84px;
     border-radius: 50%;
