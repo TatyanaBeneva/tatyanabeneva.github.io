@@ -31,9 +31,12 @@ const Info = () => {
 }
 
 const Span = styled.span`
-    background: -webkit-linear-gradient(#c11da8, #1e2eb9);
+    background: linear-gradient(to right, #c11da8, #1e2eb9);
+    -webkit-background-clip: text;
+   -moz-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 `
 
 const Description = styled.p`
@@ -44,9 +47,13 @@ const Name = styled.p`
     font-size: clamp(40px, 8vw, 80px);
     font-weight: bold;
     margin: 0;
-    background: -webkit-linear-gradient(#22b8b4, #1be5e0);
+    background: linear-gradient(to left, #22b8b4, #1be5e0);
+    -webkit-background-clip: text;
+   -moz-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
 `
 
 const Hello = styled.p`

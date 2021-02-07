@@ -55,9 +55,12 @@ const Ul = styled.ul`
 const Div = styled.div`
     text-align: center;
     font-size: 40px;
-    background: -webkit-linear-gradient(right, #24ece9, #af45da, #f934ea);
+    background: linear-gradient(to right, #24ece9, #af45da, #f934ea);
+    -webkit-background-clip: text;
+   -moz-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 `
 
 const P = styled.p`

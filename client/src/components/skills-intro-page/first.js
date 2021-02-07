@@ -45,7 +45,7 @@ const Img481 = styled.img`
 
 const Img480 = styled.img`
     width: 100%;
-    height: 40px;
+    height: 50px;
     border-radius: 50%;
     background-color: white;
 `
