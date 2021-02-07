@@ -1,8 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useMediaQuery } from 'react-responsive'
 import {firstImg} from '../../utils/skills'
 
 const First = () => {
+
+    const isLaptop = useMediaQuery({ minWidth: 1200, maxWidth: 1600 })
+    const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 899 })
+    const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
+    const isPhone = useMediaQuery({ maxWidth: 480 })
+
     const renderImages = (() => {
         return firstImg.map((img, index) => {
             return (

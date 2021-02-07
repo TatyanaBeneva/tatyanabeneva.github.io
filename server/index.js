@@ -1,8 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
-// const https = require('https');
-// const fs = require('fs');
 const path = require('path')
 const nodemailer = require('nodemailer');
 const cors = require('cors')
@@ -10,47 +8,61 @@ const pass = require('./.vscode/settings.json')
 const config = require('./config')
 
 const corsOptions = {
-  // origin: 'http://localhost:3000',
-  origin: 'https://tatyanabeneva.github.io',
-  credentilas: true
+  origin: 'http://localhost:3000',
+  credentials: true
 }
 
-// const options = {
-//   key: fs.readFileSync('key.pem', 'utf8'),
-//   cert: fs.readFileSync('certificate.pem', 'utf8')
-// };
+// var allowedOrigins = ['http://localhost:3000','https://tatyanabeneva.github.io'];
+
+// const corsOptions = {
+//   origin: function(origin, callback){    // allow requests with no origin 
+//     // (like mobile apps or curl requests)
+//     if(!origin) return callback(null, true);    
+//     if(allowedOrigins.indexOf(origin) === -1){
+//       var msg = 'The CORS policy for this site does not ' +
+//                 'allow access from the specified Origin.';
+//       return callback(new Error(msg), false);
+//     }   
+//     return callback(null, true);
+//   },
+//   credentials: true,
+//   exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar']
+// }
 
 const app = express();
 const route = express.Router();
 
-const header = {
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Origin': 'https://tatyanabeneva.github.io'
-}
-
-app.use(express.static(path.join(__dirname, 'client' ,'/public')))
+app.use(express.static(path.join(__dirname, '../client' ,'/public')))
 app.use(cors(corsOptions))
+// app.use(function (req, res, next) {
+
+//   // Website you wish to allow to connect
+//   res.setHeader('Access-Control-Allow-Origin', 'https://tatyanabeneva.github.io');
+
+//   // Request methods you wish to allow
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+//   // Request headers you wish to allow
+//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+//   // Set to true if you need the website to include cookies in the requests sent
+//   // to the API (e.g. in case you use sessions)
+//   res.setHeader('Access-Control-Allow-Credentials', true);
+
+//   // Pass to next layer of middleware
+//   next();
+// });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(function(req, res, next) {
-  res.setHeader(header);
-  next();
-});
 app.use('/', route)
 
-// console.log that your server is up and running
 http.createServer(app).listen(config.port, () => {
   console.log(`Listening on port ${config.port}`)
 });
-// https.createServer(options, app).listen(config.port, () => {
-//   console.log(`Listening on port ${config.port}`)
-// });
 
-// app.listen(config.port, () => console.log(`Listening on port ${config.port}`));
-
-// create a GET route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client' ,'/public', 'index.html'));
+  console.log('server')
+  res.sendFile(path.join(__dirname, '../client' ,'/public', 'index.html'));
 });
 
 // create reusable transporter object using the default SMTP transport

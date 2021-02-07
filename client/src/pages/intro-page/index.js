@@ -7,29 +7,17 @@ import './index.module.css'
 import image from './comp.jpg'
 
 
-class IntroPage extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { isLoading: true }
-    }
-    
-    componentDidMount() {
-        this.setState({isLoading: false})
-    }
+const  IntroPage = () => {
 
-    render() {
-        return (
-            this.state.isLoading ?
-            <div>Loading...</div> :
-            <DivImage style={{backgroundImage: `url(${image})`}}>
-                <Div>
-                    <TextBox />
-                    <Skills />
-                    <Button />
-                </Div>
-            </DivImage>
-        )
-    }
+    return (
+        <DivImage style={{backgroundImage: `url(${image})`}}>
+            <Div>
+                <TextBox />
+                <Skills />
+                <Button />
+            </Div>
+        </DivImage>
+    )
 }
 
 const DivImage = styled.div`
