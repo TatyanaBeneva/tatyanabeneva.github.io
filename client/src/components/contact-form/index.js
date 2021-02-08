@@ -65,7 +65,6 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let result = handelValidation();
-        console.log(name, email, message)
 
         if (!result) {
             return
