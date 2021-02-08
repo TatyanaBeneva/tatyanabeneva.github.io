@@ -104,12 +104,12 @@ const Name360 = styled.p`
 `
 
 const Div360 = styled.div`
-    margin: 15px;
+    margin: 30px 20px 60px 20px;
     font-style: italic;
 `
 
 const Div480 = styled.div`
-    margin: 30px;
+    margin: 30px 20px 60px 20px;
     font-style: italic;
     padding: 15px 40px;
 `
