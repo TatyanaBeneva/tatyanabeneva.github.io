@@ -52,9 +52,9 @@ const TextBox = (props) => {
             {isPhone &&
                 <Div480>
                     <Delayed waitBeforeShow={2000}>
-                        <Paragraph480>
+                        <Paragraph481>
                             To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph480>
+                        </Paragraph481>
                     </Delayed>
                 </Div480>
             }
@@ -65,15 +65,9 @@ const TextBox = (props) => {
 const Div480 = styled.div`
     margin: 3% auto;
     width: 100%;
-    height: 70px;
+    height: 150px;
 `
-const Paragraph480 = styled.p`
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    font-style: italic;
-    margin: 0;
-`
+
 const Paragraph481 = styled.p`
     text-align: center;
     font-size: 25px;
