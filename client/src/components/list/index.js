@@ -1,18 +1,50 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
 
 const List = ({ title, description, technologies, image, link }) => {
+
+    const isLaptop = useMediaQuery({ minWidth: 900 })
+    const isTablet = useMediaQuery({ maxWidth: 899 })
+
     return (
-        <Li>
-            <A href={link}>
-                <Img src={image} />
-                <H3>{title}</H3>
-                <P>{description}</P>
-                <P>{technologies}</P>
-            </A>
-        </Li>
+        <span>
+            {isLaptop &&
+                <LiLaptop>
+                    <A href={link}>
+                        <Img src={image} />
+                        <H3>{title}</H3>
+                        <P>{description}</P>
+                        <P>{technologies}</P>
+                    </A>
+                </LiLaptop>
+            }
+            {isTablet &&
+                <LiTablet>
+                    <A href={link}>
+                        <Img src={image} />
+                        <H3>{title}</H3>
+                        <P>{description}</P>
+                        <P>{technologies}</P>
+                    </A>
+                </LiTablet>
+            }
+        </span>
     )
 }
+
+const LiTablet = styled.li`
+    display: inline-block;
+    background-color:  #34495e;
+    border-radius: 20px;
+    height: 100%;
+    margin-bottom: 30px;
+
+    &:hover {
+        margin-bottom: 20px;
+        margin-top: -20px;
+    }
+`
 
 const A = styled.a`
     color: white;
@@ -34,7 +66,7 @@ const P = styled.p`
     margin: 15px;
 `
 
-const Li = styled.li`
+const LiLaptop = styled.li`
     display: inline-block;
     background-color:  #34495e;
     border-radius: 20px;
