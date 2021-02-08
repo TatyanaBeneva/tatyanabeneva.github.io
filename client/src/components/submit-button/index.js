@@ -3,21 +3,25 @@ import styled from 'styled-components'
 
 const SubmitButton = ({title}) => {
     return (
-        <div>
+        <Div>
             <Button type="submit">{title}</Button>
-        </div>
+        </Div>
     )
 }
 
+const Div = styled.div`
+    width: 100%;
+`
+
 const Button = styled.button`
-    width: 70%;
+    width: 90%;
     border: none;
     background-image: linear-gradient(to right, #24ece9, #af45da, #f934ea);
     font-size: 20px;
     padding: 10px;
     border-radius: 20px;
     color: white;
-    margin-left: 10%;
+    margin-left: 5%;
 
     &:focus {
         outline: none;

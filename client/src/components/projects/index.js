@@ -157,6 +157,7 @@ const Projects = () => {
 const UlPhone = styled.ul`
     text-align: center;
     color: white;
+    padding: 0;
     font-style: italic;
 `
 
@@ -164,6 +165,7 @@ const UlBigPhone = styled.ul`
     text-align: center;
     color: white;
     font-style: italic;
+    padding: 0;
     margin: 0 15%;
 `
 
@@ -172,6 +174,7 @@ const UlTablet = styled.ul`
     color: white;
     font-style: italic;
     margin: 0 25%;
+    padding: 0;
 `
 
 const UlLaptop = styled.ul`

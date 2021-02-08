@@ -22,7 +22,7 @@ const Input = ({ label, placeholder, onChange, type, icon, name, value, isError 
 }
 
 const InputError = styled.input`
-    width: 80%;
+    width: 90%;
     border: none;
     border-bottom: 2px solid red;
     padding-left: 30px;
@@ -42,7 +42,7 @@ const Span = styled.span`
 `
 
 const InputForm = styled.input`
-    width: 80%;
+    width: 90%;
     border: none;
     border-bottom: 2px solid black;
     padding-left: 30px;

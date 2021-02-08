@@ -83,7 +83,7 @@ const ContactForm = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <Input
                 onChange={e => setName(e.target.value)}
                 label={"What is your name?"}
@@ -117,7 +117,7 @@ const ContactForm = () => {
             <SubmitButton title={"Submit form"} />
             {isSubmited ? <Div>Thank you for contacting me! You must have received an automatic reply 
                 to the email you entered above.</Div> : ""}
-        </Form>
+        </form>
     )
 }
 
@@ -126,11 +126,6 @@ const Div = styled.div`
     color: green;
     font-size: 20px;
     font-style: italic;
-`
-
-const Form = styled.form`
-    margin-left: 80px;
-    
 `
 
 export default ContactForm
