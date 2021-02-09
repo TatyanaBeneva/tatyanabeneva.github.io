@@ -19,3 +19,8 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.logo-links {
+    text-decoration: none;
+    font-size: 30px;
+}

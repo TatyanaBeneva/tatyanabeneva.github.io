@@ -91,7 +91,7 @@ const Info = () => {
 }
 
 const Name360 = styled.p`
-    font-size: clamp(30px, 8vw, 60px);
+    font-size: 30px;
     font-weight: bold;
     margin: 0;
     background: linear-gradient(to left, #22b8b4, #1be5e0);
@@ -128,7 +128,7 @@ const Description = styled.p`
 `
 
 const Name = styled.p`
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: 80px;
     font-weight: bold;
     margin: 0;
     background: linear-gradient(to left, #22b8b4, #1be5e0);

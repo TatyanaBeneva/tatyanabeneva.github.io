@@ -105,12 +105,7 @@ const Li481 = styled.li`
 
 const Span = styled.span`
     font-size: 30px;
-    background: linear-gradient(to left, #24ece9, #af45da, #f934ea);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    color: #24ece9;
 `
 
 const Button = styled.button`

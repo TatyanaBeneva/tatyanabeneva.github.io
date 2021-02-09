@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'

@@ -65,7 +65,7 @@ const TextBox = (props) => {
 const Div480 = styled.div`
     margin: 3% auto;
     width: 100%;
-    height: 200px;
+    height: 180px;
 `
 
 const Paragraph481 = styled.p`

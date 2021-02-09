@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import styled from 'styled-components'
 import Input from '../input'
 import SubmitButton from '../submit-button'
 import Notification from '../notifications'
+require('dotenv').config();
 
 const ContactForm = () => {
     const [name, setName] = useState('')
@@ -13,11 +13,13 @@ const ContactForm = () => {
     const [errorEmail, setErrorEmail] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
     const [isSubmited, setIsSubmited] = useState(false)
+    const [isErrorSubmited, setIsErrorSubmited] = useState(false)
 
     useEffect(() => {
         if(isSubmited){
             setTimeout(() => {
                 setIsSubmited(false)
+                setIsErrorSubmited(false)
             }, 7000)
         }
     })
@@ -71,14 +73,30 @@ const ContactForm = () => {
         }
 
         let data = { name: name, email: email, message: message }
+        const headers = new Headers()
+        headers.append('Content-Type', 'application/json')
+        const options = {
+            method: 'POST',
+            headers: headers,
+            mode: 'cors',
+            cache: 'default',
+            body: JSON.stringify(data)
+        }
 
-        axios.post(`https://portfolioemailserver.glitch.me/contact`, data).catch(e => console.log(e))
+        const request = new Request(`${process.env.API}/contact`, options)
 
-        setName('')
-        setEmail('')
-        setMessage('')
-
-        setIsSubmited(true)
+        fetch(request)
+            .then(res => {
+                setName('')
+                setEmail('')
+                setMessage('')
+        
+                setIsSubmited(true)
+            })
+            .catch(e => {
+                setIsErrorSubmited(true)
+            })
+        
     }
 
     return (
@@ -116,9 +134,17 @@ const ContactForm = () => {
             <SubmitButton title={"Submit form"} />
             {isSubmited ? <Div>Thank you for contacting me! You must have received an automatic reply 
                 to the email you entered above.</Div> : ""}
+            {isErrorSubmited ? <DivError>Тhere are currently server issues, please try again later.
+            </DivError> : ''}
         </form>
     )
 }
+const DivError = styled.div`
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+    font-style: italic;
+`
 
 const Div = styled.div`
     margin-top: 20px;
