@@ -5,7 +5,7 @@ import Link from '../link'
 
 const Info = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1600 })
+    const isLaptop = useMediaQuery({ minWidth: 900 })
     const isTablet = useMediaQuery({ minWidth: 480, maxWidth: 899 })
     const isPhone = useMediaQuery({ maxWidth: 479 })   
 

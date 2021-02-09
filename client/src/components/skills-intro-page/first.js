@@ -5,7 +5,7 @@ import {firstImg} from '../../utils/skills'
 
 const First = () => {
 
-    const isLaptopOrTablet = useMediaQuery({ minWidth: 600, maxWidth: 1600 })
+    const isLaptopOrTablet = useMediaQuery({ minWidth: 600 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 599 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
 

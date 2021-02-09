@@ -7,7 +7,7 @@ import Third from './third'
 
 const Skills = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 1200, maxWidth: 1600 })
+    const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 899 })
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })

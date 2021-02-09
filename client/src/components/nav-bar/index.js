@@ -8,7 +8,7 @@ import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 const NavBar = () => {
     const [isClick, setIsClick] = useState(false)
 
-    const isLaptop = useMediaQuery({ minWidth: 1200, maxWidth: 1600 })
+    const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1199 })
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
