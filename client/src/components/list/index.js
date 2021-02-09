@@ -3,17 +3,27 @@ import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
 
 const List = ({ title, description, technologies, image, link }) => {
-
-    const isLaptop = useMediaQuery({ minWidth: 900 })
+    const isDekstop = useMediaQuery({ minWidth: 1600 })
+    const isLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1599 })
     const isTablet = useMediaQuery({ maxWidth: 899 })
 
     return (
         <span>
+            {isDekstop &&
+                <LiLaptop>
+                    <A href={link}>
+                        <Img src={image} />
+                        <h2>{title}</h2>
+                        <P1600>{description}</P1600>
+                        <P1600>{technologies}</P1600>
+                    </A>
+                </LiLaptop>
+            }
             {isLaptop &&
                 <LiLaptop>
                     <A href={link}>
                         <Img src={image} />
-                        <H3>{title}</H3>
+                        <h3>{title}</h3>
                         <P>{description}</P>
                         <P>{technologies}</P>
                     </A>
@@ -23,7 +33,7 @@ const List = ({ title, description, technologies, image, link }) => {
                 <LiTablet>
                     <A href={link}>
                         <Img src={image} />
-                        <H3>{title}</H3>
+                        <h3>{title}</h3>
                         <P>{description}</P>
                         <P>{technologies}</P>
                     </A>
@@ -58,12 +68,12 @@ const Img = styled.img`
     margin: 10px auto 0 auto;
 `
 
-const H3 = styled.h3`
-    
-`
-
 const P = styled.p`
     margin: 15px;
+`
+const P1600 = styled.p`
+    margin: 15px;
+    font-size: 22px;
 `
 
 const LiLaptop = styled.li`

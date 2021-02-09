@@ -70,6 +70,7 @@ const ContactForm = () => {
         setIsLoading(true)
 
         if (!result) {
+            setIsLoading(false)
             return
         }
 

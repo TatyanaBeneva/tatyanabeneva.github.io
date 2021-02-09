@@ -6,12 +6,27 @@ import ContactInfoPhoneResolution from '../contact-info-phone-resolution'
 
 const ContactInfo = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900 })
+    const isDekstop = useMediaQuery({ minWidth: 1600 })
+    const isLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1599 })
     const isTablet = useMediaQuery({ minWidth: 600, maxWidth: 899 })
     const isPhone = useMediaQuery({ maxWidth: 599 })
 
     return (
         <div>
+            {isDekstop &&
+                <div>
+                    <P1600>
+                        Hi! This form is made especially for you to make it easier to contact me. Just write your
+                        first and second names in the first field so I know who to contact, then write your email
+                        so I can reply to you, and finally submit your message to me. To send the data,
+                        just press the button "Submit form".
+                    </P1600>
+                    <Div>
+                        <i className="fas fa-arrow-right"></i>
+                    </Div>
+                    <ContactInfoPhoneResolution />
+                </div>
+            }
             {isLaptop &&
                 <div>
                     <P>
@@ -69,6 +84,12 @@ const Div = styled.div`
 
 const P = styled.p`
     font-size: 20px;
+    font-style: italic;
+    color: #34495e;
+`
+
+const P1600 = styled.p`
+    font-size: 30px;
     font-style: italic;
     color: #34495e;
 `
