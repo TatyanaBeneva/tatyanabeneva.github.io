@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const SubmitButton = ({title}) => {
+const SubmitButton = ({title, isLoading}) => {
     return (
         <Div>
-            <Button type="submit">{title}</Button>
+            {isLoading ? 
+                <Button type="submit" disabled={true}>Loading...</Button> :
+                <Button type="submit" disabled={false}>{title}</Button>
+            }
         </Div>
     )
 }

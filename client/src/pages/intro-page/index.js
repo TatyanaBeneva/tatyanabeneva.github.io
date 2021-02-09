@@ -2,19 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import TextBox from '../../components/text-box-intro-page'
 import Skills from '../../components/skills-intro-page'
-import Button from '../../components/button-intro-page'
 import './index.module.css'
 import image from './comp.jpg'
+import NavBar from '../../components/nav-bar'
 
 
-const  IntroPage = () => {
+const IntroPage = () => {
 
     return (
-        <DivImage style={{backgroundImage: `url(${image})`}}>
+        <DivImage style={{ backgroundImage: `url(${image})` }}>
             <Div>
+                <NavBar />
                 <TextBox />
                 <Skills />
-                <Button />
             </Div>
         </DivImage>
     )

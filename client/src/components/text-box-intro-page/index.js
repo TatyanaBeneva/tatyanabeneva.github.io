@@ -4,8 +4,8 @@ import { useMediaQuery } from 'react-responsive'
 import Delayed from '../../utils/delayed-component'
 
 const TextBox = (props) => {
-
-    const isLaptop = useMediaQuery({ minWidth: 1200 })
+    const isDekstop = useMediaQuery({ minWidth: 1600})
+    const isLaptop = useMediaQuery({ minWidth: 1200 , maxWidth: 1599})
     const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 899 })
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
@@ -13,6 +13,15 @@ const TextBox = (props) => {
 
     return (
         <div>
+            {isDekstop &&
+                <Div1600>
+                    <Delayed waitBeforeShow={2000}>
+                        <Paragraph1600>
+                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
+                        </Paragraph1600>
+                    </Delayed>
+                </Div1600>
+            }
             {isLaptop &&
                 <Div1200>
                     <Delayed waitBeforeShow={2000}>
@@ -61,7 +70,18 @@ const TextBox = (props) => {
         </div>
     )
 }
-
+const Div1600 = styled.div`
+    margin: 3% auto;
+    width: 50%;
+    height: 150px;
+`
+const Paragraph1600 = styled.p`
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+    font-style: italic;
+    margin: 0;
+`
 const Div480 = styled.div`
     margin: 3% auto;
     width: 100%;

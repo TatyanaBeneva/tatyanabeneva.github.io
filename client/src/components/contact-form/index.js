@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Input from '../input'
 import SubmitButton from '../submit-button'
 import Notification from '../notifications'
-require('dotenv').config();
 
 const ContactForm = () => {
     const [name, setName] = useState('')
@@ -14,9 +13,10 @@ const ContactForm = () => {
     const [errorMessage, setErrorMessage] = useState('')
     const [isSubmited, setIsSubmited] = useState(false)
     const [isErrorSubmited, setIsErrorSubmited] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        if(isSubmited){
+        if(isSubmited || isErrorSubmited){
             setTimeout(() => {
                 setIsSubmited(false)
                 setIsErrorSubmited(false)
@@ -67,6 +67,7 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let result = handelValidation();
+        setIsLoading(true)
 
         if (!result) {
             return
@@ -83,17 +84,18 @@ const ContactForm = () => {
             body: JSON.stringify(data)
         }
 
-        const request = new Request(`${process.env.API}/contact`, options)
+        const request = new Request(`https://portfolioemailserver.glitch.me/contact`, options)
 
         fetch(request)
             .then(res => {
                 setName('')
                 setEmail('')
                 setMessage('')
-        
+                setIsLoading(false)
                 setIsSubmited(true)
             })
             .catch(e => {
+                setIsLoading(false)
                 setIsErrorSubmited(true)
             })
         
@@ -131,7 +133,7 @@ const ContactForm = () => {
                 isError={errorMessage}
             />
             {errorMessage ? <Notification error={errorMessage} /> : ""}
-            <SubmitButton title={"Submit form"} />
+            <SubmitButton title={"Submit form"} isLoading={isLoading} />
             {isSubmited ? <Div>Thank you for contacting me! You must have received an automatic reply 
                 to the email you entered above.</Div> : ""}
             {isErrorSubmited ? <DivError>Тhere are currently server issues, please try again later.

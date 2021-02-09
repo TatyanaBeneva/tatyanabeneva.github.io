@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
-import {firstImg} from '../../utils/skills'
+import { firstImg } from '../../utils/skills'
 
 const First = () => {
-
-    const isLaptopOrTablet = useMediaQuery({ minWidth: 600 })
+    const isDekstop = useMediaQuery({ minWidth: 1600 })
+    const isLaptopOrTablet = useMediaQuery({ minWidth: 600, maxWidth: 1599 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 599 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
 
@@ -13,6 +13,9 @@ const First = () => {
         return firstImg.map((img, index) => {
             return (
                 <Li key={index}>
+                    {isDekstop &&
+                        <Img1600 src={img} />
+                    }
                     {isLaptopOrTablet &&
                         <Img1200 src={img} />
                     }
@@ -24,11 +27,11 @@ const First = () => {
                     }
                 </Li>
             )
-        })      
+        })
     })
 
     const images = renderImages();
-    
+
     return (
         <Ul>
             {images}
@@ -144,6 +147,12 @@ const Img1200 = styled.img`
     height: 84px;
     border-radius: 50%;
     background-color: white;
+`
+const Img1600 = styled.img`
+width: 100%;
+height: 115px;
+border-radius: 50%;
+background-color: white;
 `
 
 const Ul = styled.ul`
