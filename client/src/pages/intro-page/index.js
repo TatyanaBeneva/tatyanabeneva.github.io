@@ -4,7 +4,7 @@ import TextBox from '../../components/text-box-intro-page'
 import Skills from '../../components/skills-intro-page'
 import './index.module.css'
 import image from './comp.jpg'
-import NavBar from '../../components/nav-bar'
+import Buttons from '../../components/intro-page-buttons'
 
 
 const IntroPage = () => {
@@ -12,9 +12,9 @@ const IntroPage = () => {
     return (
         <DivImage style={{ backgroundImage: `url(${image})` }}>
             <Div>
-                <NavBar />
                 <TextBox />
                 <Skills />
+                <Buttons />
             </Div>
         </DivImage>
     )
