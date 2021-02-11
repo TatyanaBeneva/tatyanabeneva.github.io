@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
 import Link from '../link'
 import Logo from '../logo'
+import Icon from '../social-media-icons'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 
 const NavBar = () => {
@@ -26,6 +27,9 @@ const NavBar = () => {
                     <Link href={'/about'} title={'About me'} type={'nav'} />
                     <Link href={'/work'} title={'My work'} type={'nav'} />
                     <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                    <span style={{border: '1px solid lightgray', marginRight: '20px'}}></span>
+                    <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
+                    <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
                 </Navigation1200>
             }
             {isTabletOrLaptop &&
@@ -91,11 +95,6 @@ const Ul = styled.ul`
     padding: 0;
     text-align: center;
 `
-
-const Div481 = styled.div`
-    padding: 0 30px;
-    background-color:  #34495e;
-`
 const Li481 = styled.li`
     display: block;
     margin-bottom: 15px;
@@ -116,10 +115,14 @@ const Button = styled.button`
         cursor: pointer;
     }
 `
+const Div481 = styled.div`
+    padding: 0 30px;
+    background-color:  #34495e;
+`
 
 const Div = styled.div`
-    padding: 20px 30px;
-    background-color:  #34495e;
+    padding: 10px 100px;
+    background-color:  white;
 `
 const Navigation = styled.nav`
     float: right;
@@ -127,7 +130,6 @@ const Navigation = styled.nav`
 
 const Navigation1200 = styled.nav`
     float: right;
-    margin-right: 100px;
 `
 
 export default NavBar

@@ -1,7 +1,7 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
-import Delayed from '../../utils/delayed-component'
 
 const TextBox = (props) => {
     const isDekstop = useMediaQuery({ minWidth: 1600})
@@ -11,111 +11,79 @@ const TextBox = (props) => {
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
 
+    const history = useHistory();
+
+    const toWorkPage = (e) => {
+        e.preventDefault()
+        history.push('/work')
+    }
+
+    const toContactPage = (e) => {
+        e.preventDefault()
+        history.push('/contact')
+    }
+
     return (
-        <div>
-            {isDekstop &&
-                <Div1600>
-                    <Delayed waitBeforeShow={2000}>
-                        <Paragraph1600>
-                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph1600>
-                    </Delayed>
-                </Div1600>
-            }
-            {isLaptop &&
-                <Div1200>
-                    <Delayed waitBeforeShow={2000}>
-                        <Paragraph1200>
-                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph1200>
-                    </Delayed>
-                </Div1200>
-            }
-            {isTabletOrLaptop &&
-                <Div900>
-                    <Delayed waitBeforeShow={2000}>
-                        <Paragraph1200>
-                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph1200>
-                    </Delayed>
-                </Div900>
-            }
-            {isTablet &&
-                <Div768>
-                    <Delayed waitBeforeShow={2000}>
-                        <Paragraph1200>
-                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph1200>
-                    </Delayed>
-                </Div768>
-            }
-            {isBigPhone &&
-                <Div768>
-                    <Delayed waitBeforeShow={2000}>
-                        <Paragraph481>
-                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph481>
-                    </Delayed>
-                </Div768>
-            }
-            {isPhone &&
-                <Div480>
-                    <Delayed waitBeforeShow={2000}>
-                        <Paragraph481>
-                            To create cool things for others to use, you don't just need to know the way, you first need to be able to create them in your imagination!
-                        </Paragraph481>
-                    </Delayed>
-                </Div480>
-            }
-        </div>
+        <Div>
+            <Hello> Hello! </Hello>
+            <Name> I'm Tatyana Beneva, creative web designer.</Name>
+            <Description>
+                My recent experience is building React Single page Applications with Node Js as a back-end.
+            </Description>
+            <Button onClick={toWorkPage}>View my work</Button>
+            <Button onClick={toContactPage}>Let's talk</Button>
+        </Div>
     )
 }
-const Div1600 = styled.div`
-    margin: 3% auto;
-    width: 50%;
-    height: 150px;
-`
-const Paragraph1600 = styled.p`
-    text-align: center;
-    font-size: 2.5em;
+
+const Button = styled.button`
+    border: 2px solid white;
+    font-size: 16px;
+    font-family: Jack, serif;
+    padding: 10px 20px;
+    border-radius: 25px;
     color: white;
-    font-style: italic;
-    margin: 0;
-`
-const Div480 = styled.div`
-    margin: 3% auto;
-    width: 100%;
-    height: 180px;
+    background-color: transparent;
+    margin-right: 15px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: #41f2b6;
+        color: black;
+        cursor: pointer;
+    }
 `
 
-const Paragraph481 = styled.p`
-    text-align: center;
-    font-size: 25px;
+const Description = styled.p`
     color: white;
-    font-style: italic;
-    margin: 0;
+    font-size: 18px;
+    font-family: Jack, serif;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+
+
 `
-const Div768 = styled.div`
-    margin: 3% auto;
-    width: 100%;
-    height: 114px;
-`
-const Div900 = styled.div`
-    margin: 3% auto;
-    width: 80%;
-    height: 114px;
-`
-const Div1200 = styled.div`
-    margin: 3% auto;
-    width: 50%;
-    height: 114px;
-`
-const Paragraph1200 = styled.p`
-    text-align: center;
-    font-size: 2em;
+
+const Name = styled.p`
     color: white;
-    font-style: italic;
+    font-size: 65px;
     margin: 0;
+    font-family: Jack, serif;
+`
+
+const Hello = styled.p`
+    color: #00b6ff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-family: Jack, serif;
+`
+
+const Div = styled.div`
+    margin-top: 100px;
+    margin-left: 100px;
 `
 
 export default TextBox
