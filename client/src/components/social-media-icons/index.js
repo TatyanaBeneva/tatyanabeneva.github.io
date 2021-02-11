@@ -1,39 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 
 const Icon = ({ icon, link, onClick }) => {
     return (
         <Li>
-            <DivIcon>
-                <Link href={link} onClick={onClick}>
-                    <i className={icon}></i>
-                </Link>
-            </DivIcon>
+            <Link href={link} onClick={onClick}>
+                <i className={icon}></i>
+            </Link>
         </Li>
     )
 }
 const Link = styled.a`
     text-decoration: none;
-    color: white;
-`
-
-const DivIcon = styled.div`
-    background-color: #5267db;
-    font-size: 25px;
-    border-radius: 50%;
-    width: 40px;
-    text-align: center;
-    padding: 7.5px 0;
+    color: black;
+    font-size: 20px;
 `
 
 const Li = styled.li`
     display: inline-block;
-    margin: 0 15px;
-
-    &:last-child:hover {
-        cursor: pointer;
-    }
+    margin: 0 10px;
 `
 
 export default Icon
