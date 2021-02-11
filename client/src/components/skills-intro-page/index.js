@@ -13,62 +13,153 @@ const Skills = () => {
 
     return (
         <Div>
-            <DivCircle />
-            <DivCSS>
-                <Skill icon="fab fa-css3-alt" text="CSS 3 Design" />
-            </DivCSS>
-            <DivHTML>
-                <Skill icon="fab fa-html5" text="HTML 5 Architecture" />
-            </DivHTML>
-            <DivJS>
-                <Skill icon="fab fa-js-square" text="JavaScript" />
-            </DivJS>
-            <DivNode>
-                <Skill icon="fab fa-node-js" text="Node JS" />
-            </DivNode>
-            <DivReact>
-                <Skill icon="fab fa-react" text="React JS" />
-            </DivReact>
-            <DivGit>
-                <Skill icon="fab fa-github" text="GitHub" />
-            </DivGit>
+            <DivCircle>
+                <DivCSS>
+                    <Skill icon="fab fa-css3-alt" text="CSS 3" />
+                </DivCSS>
+                <DivHTML>
+                    <Skill icon="fab fa-html5" text="HTML 5" />
+                </DivHTML>
+                <DivJS>
+                    <Skill icon="fab fa-js-square" text="JavaScript" />
+                </DivJS>
+                <DivNode>
+                    <Skill icon="fab fa-node-js" text="Node JS" />
+                </DivNode>
+                <DivReact>
+                    <Skill icon="fab fa-react" text="React JS" />
+                </DivReact>
+                <DivGit>
+                    <Skill icon="fab fa-github" text="GitHub" />
+                </DivGit>
+            </DivCircle>
         </Div>
     )
 }
 
 const DivGit = styled.div`
     position: absolute;
-    bottom: 20%;
-    left: 20%;
+    bottom: 15%;
+    left: -15%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: git;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes git {
+        from {
+            transform: rotate(360deg)
+        }
+        to {
+            transform: rotate(0deg)
+        }
+    }
 `
 const DivReact = styled.div`
     position: absolute;
-    bottom: 10%;
+    bottom: -5%;
     right: 30%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: react;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes react {
+        from {
+            transform: rotate(360deg)
+        }
+        to {
+            transform: rotate(0deg)
+        }
+    }
 `
 
 const DivNode = styled.div`
     position: absolute;
-    top: 45%;
-    left: 10%;
+    top: 20%;
+    left: -15%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: node;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes node {
+        from {
+            transform: rotate(360deg)
+        }
+        to {
+            transform: rotate(0deg)
+        }
+    }
 `
 
 const DivJS = styled.div`
     position: absolute;
-    right: 10%;
-    bottom: 30%;
+    right: -25%;
+    bottom: 20%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: js;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes js {
+        from {
+            transform: rotate(360deg)
+        }
+        to {
+            transform: rotate(0deg)
+        }
+    }
 `
 
 const DivHTML = styled.div`
     position: absolute;
-    right: 10%;
-    top: 35%;
+    right: -10%;
+    top: 15%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: html;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes html {
+        from {
+            transform: rotate(360deg)
+        }
+        to {
+            transform: rotate(0deg)
+        }
+    }
 `
 
 const DivCSS = styled.div`
     position: absolute;
-    top: 15%;
-    left: 25%;
+    top: -5%;
+    left: 30%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: css;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+    @keyframes css {
+        from {
+            transform: rotate(360deg)
+        }
+        to {
+            transform: rotate(0deg)
+        }
+    }
 `
 
 const DivCircle = styled.div`
@@ -83,6 +174,21 @@ const DivCircle = styled.div`
     height: 340px;
     margin: auto;
     border-radius: 50%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: sun;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+    @keyframes sun {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 `
 
 const Div = styled.div`
