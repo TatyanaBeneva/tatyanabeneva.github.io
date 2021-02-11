@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import './index.module.css'
 import NavBar from '../../components/nav-bar'
 import TextBox from '../../components/text-box-intro-page'
-
+import Skills from '../../components/skills-intro-page'
 
 const IntroPage = () => {
 
@@ -12,6 +12,7 @@ const IntroPage = () => {
             <NavBar />
             <Div>
                 <TextBox />
+                <Skills />
             </Div>
         </DivImage>
     )
