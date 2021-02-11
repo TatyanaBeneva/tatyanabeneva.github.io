@@ -10,8 +10,8 @@ const Logo = () => {
 
 const Span = styled.span`
     font-weight: bold;
-    border: 2px solid #05b5dc;
-    color: #05b5dc;
+    border: 2px solid #00b6ff;
+    color: #00b6ff;
 `
 
 export default Logo

@@ -121,7 +121,7 @@ const Div481 = styled.div`
 `
 
 const Div = styled.div`
-    padding: 10px 50px;
+    padding: 10px 100px;
     background-color:  white;
 `
 const Navigation = styled.nav`
