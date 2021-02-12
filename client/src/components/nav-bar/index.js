@@ -20,74 +20,94 @@ const NavBar = () => {
     }
 
     return (
-        <Div>
-            <Logo />
+        <div>
             {isLaptop &&
-                <Navigation1200>
-                    <Link href={'/about'} title={'About me'} type={'nav'} />
-                    <Link href={'/work'} title={'My work'} type={'nav'} />
-                    <Link href={'/contact'} title={'Contact me'} type={'nav'} />
-                    <span style={{border: '1px solid lightgray', marginRight: '20px'}}></span>
-                    <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
-                    <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
-                </Navigation1200>
+                <Div>
+                    <Logo />
+                    <Navigation>
+                        <Link href={'/about'} title={'About me'} type={'nav'} />
+                        <Link href={'/work'} title={'My work'} type={'nav'} />
+                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                        <span style={{ border: '1px solid lightgray', marginRight: '20px' }}></span>
+                        <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
+                        <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
+                    </Navigation>
+                </Div>
             }
             {isTabletOrLaptop &&
-                <Navigation>
-                    <Link href={'/about'} title={'About me'} type={'nav'} />
-                    <Link href={'/work'} title={'My work'} type={'nav'} />
-                    <Link href={'/contact'} title={'Contact me'} type={'nav'} />
-                </Navigation>
+                <Div>
+                    <Logo />
+                    <Navigation>
+                        <Link href={'/about'} title={'About me'} type={'nav'} />
+                        <Link href={'/work'} title={'My work'} type={'nav'} />
+                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                        <span style={{ border: '1px solid lightgray', marginRight: '20px' }}></span>
+                        <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
+                        <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
+                    </Navigation>
+                </Div>
             }
             {isBigPhone &&
-                <span>
-                    <Navigation>
-                        <Button onClick={handleClick}>
-                            <Span><i className="fas fa-align-justify"></i></Span>
-                        </Button>
-                    </Navigation>
-                    {isClick ?
-                        <Div481>
-                            <Ul>
-                                <Li481>
-                                    <Link href={'/about'} title={'About me'} type={'nav'} />
-                                </Li481>
-                                <Li481>
-                                    <Link href={'/work'} title={'My work'} type={'nav'} />
-                                </Li481>
-                                <Li481>
-                                    <Link href={'/contact'} title={'Contact me'} type={'nav'} />
-                                </Li481>
-                            </Ul>
-                        </Div481> : ''
-                    }
-                </span>
+                <Div480>
+                    <Logo />
+                    <span>
+                        <Navigation>
+                            <Button onClick={handleClick}>
+                                <Span>Menu</Span>
+                            </Button>
+                        </Navigation>
+                        {isClick ?
+                            <Div481>
+                                <Ul>
+                                    <Li481>
+                                        <Link href={'/about'} title={'About me'} type={'nav'} />
+                                    </Li481>
+                                    <Li481>
+                                        <Link href={'/work'} title={'My work'} type={'nav'} />
+                                    </Li481>
+                                    <Li481>
+                                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                                    </Li481>
+                                </Ul>
+                                <DivLine />
+                                <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
+                                <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
+                            </Div481> : ''
+                        }
+                    </span>
+                </Div480>
             }
             {isPhone &&
-                <span>
-                    <Navigation>
-                        <Button onClick={handleClick}>
-                            <Span><i className="fas fa-align-justify"></i></Span>
-                        </Button>
-                    </Navigation>
-                    {isClick ?
-                        <Div481>
-                            <ul>
-                                <Li481>
-                                    <Link href={'/about'} title={'About me'} type={'nav'} />
-                                </Li481>
-                                <Li481>
-                                    <Link href={'/work'} title={'My work'} type={'nav'} />
-                                </Li481>
-                                <Li481>
-                                    <Link href={'/contact'} title={'Contact me'} type={'nav'} />
-                                </Li481>
-                            </ul>
-                        </Div481> : ''
-                    }
-                </span>
+                <Div480>
+                    <Logo />
+                    <span>
+                        <Navigation>
+                            <Button onClick={handleClick}>
+                                <Span>Menu</Span>
+                            </Button>
+                        </Navigation>
+                        {isClick ?
+                            <Div481>
+                                <ul>
+                                    <Li481>
+                                        <Link href={'/about'} title={'About me'} type={'nav'} />
+                                    </Li481>
+                                    <Li481>
+                                        <Link href={'/work'} title={'My work'} type={'nav'} />
+                                    </Li481>
+                                    <Li481>
+                                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                                    </Li481>
+                                </ul>
+                                <DivLine />
+                                <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
+                                <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
+                            </Div481> : ''
+                        }
+                    </span>
+                </Div480>
             }
-        </Div>
+        </div>
     )
 }
 
@@ -103,8 +123,8 @@ const Li481 = styled.li`
 `
 
 const Span = styled.span`
-    font-size: 30px;
-    color: #24ece9;
+    font-size: 20px;
+    color: #00b6ff;
 `
 
 const Button = styled.button`
@@ -114,10 +134,24 @@ const Button = styled.button`
     &:hover {
         cursor: pointer;
     }
+
+    &:focus {
+        outline: none;
+    }
+`
+
+const DivLine = styled.div`
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+`
+const Div480 = styled.div`
+    padding: 10px 20px;
+    background-color:  white;
 `
 const Div481 = styled.div`
     padding: 0 30px;
-    background-color:  #34495e;
+    background-color:  white;
+    text-align: center;
 `
 
 const Div = styled.div`
@@ -125,10 +159,6 @@ const Div = styled.div`
     background-color:  white;
 `
 const Navigation = styled.nav`
-    float: right;
-`
-
-const Navigation1200 = styled.nav`
     float: right;
 `
 

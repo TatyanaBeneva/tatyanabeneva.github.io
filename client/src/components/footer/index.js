@@ -29,22 +29,22 @@ const FooterComponent = () => {
 
 const DivPhone = styled.div`
     width: 100%;
-    background-color:  #34495e;
+    background-color:  white;
     position: fixed;
     bottom: 0;
     font-size: 10px;
-    color: white;
+    color: black;
     padding: 10px;
     text-align: center;
 `
 
 const DivLaptop = styled.div`
     width: 100%;
-    background-color:  #34495e;
+    background-color:  white;
     position: fixed;
     bottom: 0;
     font-size: 15px;
-    color: white;
+    color: black;
     padding: 10px;
     text-align: center;
 `
