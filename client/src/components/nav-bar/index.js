@@ -53,7 +53,7 @@ const NavBar = () => {
                     <span>
                         <Navigation>
                             <Button onClick={handleClick}>
-                                <Span>Menu</Span>
+                                <Span>Menu <i className="fas fa-bars"></i></Span>
                             </Button>
                         </Navigation>
                         {isClick ?
@@ -83,7 +83,7 @@ const NavBar = () => {
                     <span>
                         <Navigation>
                             <Button onClick={handleClick}>
-                                <Span>Menu</Span>
+                                <Span>Menu <i className="fas fa-bars"></i></Span>
                             </Button>
                         </Navigation>
                         {isClick ?
