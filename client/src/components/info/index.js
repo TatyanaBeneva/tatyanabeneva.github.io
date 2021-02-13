@@ -2,152 +2,88 @@ import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
 import Link from '../link'
+import monitor from './monitor.png'
+import AboutList from '../about-list'
 
 const Info = () => {
 
     const isLaptop = useMediaQuery({ minWidth: 900 })
     const isTablet = useMediaQuery({ minWidth: 480, maxWidth: 899 })
-    const isPhone = useMediaQuery({ maxWidth: 479 })   
+    const isPhone = useMediaQuery({ maxWidth: 479 })
 
     return (
         <div>
             {isLaptop &&
                 <Div900>
-                    <Hello> Hello, my name is </Hello>
-                    <Name> Tatyana Beneva. </Name>
-                    <Description>
-                        I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                        all my life and soon after I graduated I started learning programming, because I remembered
-                        how much I liked and was inspired by the school hours when we studied just basic html.
-                        So my journey into the world of programming began!
-                    </Description>
-                    <Description>
-                        Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and
-                        with that I had to choose which framework to work with. So i did
-                        a little research of my own and chose <Span>React</Span> as a start.
-                    </Description>
-                    <Description>
-                        My experience doesn't include only this. Everything I learned and started working with it is
-                        described on the page you come from. And I will not stop here!
-                    </Description>
-                    <Description>
-                        At the moment I do not have much experience, but I have a great passion and desire to learn
-                        and grow. So if you like it and want to work together <Link href={'/contact'} title={'contact me'} type={'text'} />!
-                    </Description>
+                    <Img900 src={monitor} />
+                    <DivText900 style={{ color: 'white' }}>
+                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Ul900>
+                            <AboutList 
+                                title={'Before'} 
+                                titleColor={'#00cf4b'} 
+                                description={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do all my life and soon after I graduated I started learning programming, because I remembered how much I liked and was inspired by the school hours when we studied just basic html. So my journey into the world of programming began!"}
+                                desColor={'#0088ff'}
+                            />
+                            <AboutList 
+                                title={'After'} 
+                                titleColor={'#0088ff'} 
+                                description={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I had to choose which framework to work with. So i did a little research of my own and chose React as a start."}
+                                desColor={'#ff0040'}
+                            />
+                            <AboutList 
+                                title={'Now'} 
+                                titleColor={'#ff0040'}
+                                description={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. At the moment I do not have much experience, but I have a great passion and desire to learn and grow."}
+                                desColor={'#985cc4'}
+                            />
+                        </Ul900>
+                    </DivText900>
                 </Div900>
-            }
-            {isTablet &&
-                <Div480>
-                    <Hello> Hello, my name is </Hello>
-                    <Name> Tatyana Beneva. </Name>
-                    <Description>
-                        I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                        all my life and soon after I graduated I started learning programming, because I remembered
-                        how much I liked and was inspired by the school hours when we studied just basic html.
-                        So my journey into the world of programming began!
-                    </Description>
-                    <Description>
-                        Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and
-                        with that I had to choose which framework to work with. So i did
-                        a little research of my own and chose <Span>React</Span> as a start.
-                    </Description>
-                    <Description>
-                        My experience doesn't include only this. Everything I learned and started working with it is
-                        described on the page you come from. And I will not stop here!
-                    </Description>
-                    <Description>
-                        At the moment I do not have much experience, but I have a great passion and desire to learn
-                        and grow. So if you like it and want to work together <Link href={'/contact'} title={'contact me'} type={'text'} />!
-                    </Description>
-                </Div480>
-            }
-            {isPhone &&
-                <Div360>
-                    <Hello> Hello, my name is </Hello>
-                    <Name360> Tatyana Beneva. </Name360>
-                    <Description>
-                        I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                        all my life and soon after I graduated I started learning programming, because I remembered
-                        how much I liked and was inspired by the school hours when we studied just basic html.
-                        So my journey into the world of programming began!
-                    </Description>
-                    <Description>
-                        Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and
-                        with that I had to choose which framework to work with. So i did
-                        a little research of my own and chose <Span>React</Span> as a start.
-                    </Description>
-                    <Description>
-                        My experience doesn't include only this. Everything I learned and started working with it is
-                        described on the page you come from. And I will not stop here!
-                    </Description>
-                    <Description>
-                        At the moment I do not have much experience, but I have a great passion and desire to learn
-                        and grow. So if you like it and want to work together <Link href={'/contact'} title={'contact me'} type={'text'} />!
-                    </Description>
-                </Div360>
             }
         </div>
     )
 }
 
-const Name360 = styled.p`
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0;
-    background: linear-gradient(to left, #22b8b4, #1be5e0);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-
+const Ul900 = styled.div`
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 2%;
+    padding: 0;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 100%;
 `
 
-const Div360 = styled.div`
-    margin: 30px 20px 60px 20px;
-    font-style: italic;
+const DivText900 = styled.div`
+    position: absolute;
+    margin: 25px;
+    width: 55%;
+    text-align: center;
 `
 
-const Div480 = styled.div`
-    margin: 30px 20px 60px 20px;
-    font-style: italic;
-    padding: 15px 40px;
+const Img900 = styled.img`
+    position: absolute;
+    width: 60%;
+    height: 80%;
 `
-
-const Span = styled.span`
-    background: linear-gradient(to right, #c11da8, #1e2eb9);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-`
-
-const Description = styled.p`
-    font-size: 20px;
-`
-
-const Name = styled.p`
-    font-size: 80px;
-    font-weight: bold;
-    margin: 0;
-    background: linear-gradient(to left, #22b8b4, #1be5e0);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-
-`
-
 const Hello = styled.p`
     font-size: 20px;
+    color: #ffac28;
+    white-space: nowrap;
+    margin: 15px auto;
+    overflow: hidden;
+    animation: typing 8s steps(60, end);
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
 `
 
 const Div900 = styled.div`
-    margin: 80px 150px 30px 150px;
     font-style: italic;
-    padding: 15px 40px;
+    margin-top: 2%;
 `
 
 export default Info
