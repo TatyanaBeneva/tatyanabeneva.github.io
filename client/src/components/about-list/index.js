@@ -14,7 +14,7 @@ const AboutList = ({title, titleColor, description, desColor}) => {
 
 const Li = styled.div`
     width: 100%;
-    height: 100%;
+    height: 304px;
     border-radius: 10px;
     background-color: lightgray;
 `

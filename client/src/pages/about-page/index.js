@@ -14,15 +14,18 @@ const AboutPage = () => {
     return (
         <div>
             {isLaptop &&
-                <DivBackgound900>
-                    <DivImage900>
-                        <Flower src={flower} />
-                    </DivImage900>
-                    <Info />
-                    <DivImage900>
-                        <Flower src={flower2} />
-                    </DivImage900>
-                </DivBackgound900>
+                <div>
+                    <DivBackgound900>
+                        <DivImage900>
+                            <Flower src={flower} />
+                        </DivImage900>
+                        <Info />
+                        <DivImage900>
+                            <Flower src={flower2} />
+                        </DivImage900>
+                    </DivBackgound900>
+                    <Footer />
+                </div>
             }
         </div>
     )

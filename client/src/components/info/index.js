@@ -63,7 +63,7 @@ const Info = () => {
 
 const DivButtons = styled.div`
     position: absolute;
-    bottom: 5%;
+    bottom: 8%;
     left: 37%;
 `
 
