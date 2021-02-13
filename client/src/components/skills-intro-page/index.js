@@ -13,26 +13,122 @@ const Skills = () => {
 
     return (
         <Div>
-            <DivCircle>
-                <DivCSS>
-                    <Skill icon="fab fa-css3-alt" text="CSS 3" />
-                </DivCSS>
-                <DivHTML>
-                    <Skill icon="fab fa-html5" text="HTML 5" />
-                </DivHTML>
-                <DivJS>
-                    <Skill icon="fab fa-js-square" text="JavaScript" />
-                </DivJS>
-                <DivNode>
-                    <Skill icon="fab fa-node-js" text="Node JS" />
-                </DivNode>
-                <DivReact>
-                    <Skill icon="fab fa-react" text="React JS" />
-                </DivReact>
-                <DivGit>
-                    <Skill icon="fab fa-github" text="GitHub" />
-                </DivGit>
-            </DivCircle>
+            {isLaptop &&
+                <DivCircle1200>
+                    <DivCSS>
+                        <Skill icon="fab fa-css3-alt" text="CSS 3" />
+                    </DivCSS>
+                    <DivHTML>
+                        <Skill icon="fab fa-html5" text="HTML 5" />
+                    </DivHTML>
+                    <DivJS>
+                        <Skill icon="fab fa-js-square" text="JavaScript" />
+                    </DivJS>
+                    <DivNode>
+                        <Skill icon="fab fa-node-js" text="Node JS" />
+                    </DivNode>
+                    <DivReact>
+                        <Skill icon="fab fa-react" text="React JS" />
+                    </DivReact>
+                    <DivGit>
+                        <Skill icon="fab fa-github" text="GitHub" />
+                    </DivGit>
+                </DivCircle1200>
+            }
+            {isTabletOrLaptop &&
+                <DivCircle900>
+                    <DivCSS>
+                        <Skill icon="fab fa-css3-alt" text="CSS 3" />
+                    </DivCSS>
+                    <DivHTML>
+                        <Skill icon="fab fa-html5" text="HTML 5" />
+                    </DivHTML>
+                    <DivJS>
+                        <Skill icon="fab fa-js-square" text="JavaScript" />
+                    </DivJS>
+                    <DivNode>
+                        <Skill icon="fab fa-node-js" text="Node JS" />
+                    </DivNode>
+                    <DivReact>
+                        <Skill icon="fab fa-react" text="React JS" />
+                    </DivReact>
+                    <DivGit>
+                        <Skill icon="fab fa-github" text="GitHub" />
+                    </DivGit>
+                </DivCircle900>
+            }
+            {isTablet &&
+                <Div768>
+                    <DivCircle1200>
+                        <DivCSS>
+                            <Skill icon="fab fa-css3-alt" text="CSS 3" />
+                        </DivCSS>
+                        <DivHTML>
+                            <Skill icon="fab fa-html5" text="HTML 5" />
+                        </DivHTML>
+                        <DivJS>
+                            <Skill icon="fab fa-js-square" text="JavaScript" />
+                        </DivJS>
+                        <DivNode>
+                            <Skill icon="fab fa-node-js" text="Node JS" />
+                        </DivNode>
+                        <DivReact>
+                            <Skill icon="fab fa-react" text="React JS" />
+                        </DivReact>
+                        <DivGit>
+                            <Skill icon="fab fa-github" text="GitHub" />
+                        </DivGit>
+                    </DivCircle1200>
+                </Div768>
+            }
+            {isBigPhone &&
+                <Div481>
+                    <DivCircle481>
+                        <DivCSS>
+                            <Skill icon="fab fa-css3-alt" text="CSS 3" />
+                        </DivCSS>
+                        <DivHTML>
+                            <Skill icon="fab fa-html5" text="HTML 5" />
+                        </DivHTML>
+                        <DivJS>
+                            <Skill icon="fab fa-js-square" text="JavaScript" />
+                        </DivJS>
+                        <DivNode>
+                            <Skill icon="fab fa-node-js" text="Node JS" />
+                        </DivNode>
+                        <DivReact>
+                            <Skill icon="fab fa-react" text="React JS" />
+                        </DivReact>
+                        <DivGit>
+                            <Skill icon="fab fa-github" text="GitHub" />
+                        </DivGit>
+                    </DivCircle481>
+                </Div481>
+            }
+            {isPhone &&
+                <Div481>
+                    <DivCircle481>
+                        <DivCSS>
+                            <Skill icon="fab fa-css3-alt" text="CSS 3" />
+                        </DivCSS>
+                        <DivHTML>
+                            <Skill icon="fab fa-html5" text="HTML 5" />
+                        </DivHTML>
+                        <DivJS>
+                            <Skill icon="fab fa-js-square" text="JavaScript" />
+                        </DivJS>
+                        <DivNode>
+                            <Skill icon="fab fa-node-js" text="Node JS" />
+                        </DivNode>
+                        <DivReact>
+                            <Skill icon="fab fa-react" text="React JS" />
+                        </DivReact>
+                        <DivGit>
+                            <Skill icon="fab fa-github" text="GitHub" />
+                        </DivGit>
+                    </DivCircle481>
+                </Div481>
+            }
         </Div>
     )
 }
@@ -101,7 +197,7 @@ const DivNode = styled.div`
 
 const DivJS = styled.div`
     position: absolute;
-    right: -25%;
+    right: -15%;
     bottom: 20%;
     transform: rotate(0deg);
 	transition: transform 0.7s linear;
@@ -161,8 +257,63 @@ const DivCSS = styled.div`
         }
     }
 `
+const DivCircle481 = styled.div`
+    position:  absolute;
+    top: 40;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    background-color: #00b6ff;
+    width: 270px;
+    height: 270px;
+    margin: auto;
+    border-radius: 50%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: sun;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 
-const DivCircle = styled.div`
+    @keyframes sun {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+`
+const DivCircle900 = styled.div`
+    position:  absolute;
+    top: 40;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    background-color: #00b6ff;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-radius: 50%;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear;
+    animation-name: sun;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+    @keyframes sun {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+`
+const DivCircle1200 = styled.div`
     position:  absolute;
     top: 0;
     left: 0;
@@ -190,7 +341,12 @@ const DivCircle = styled.div`
         }
     }
 `
-
+const Div481 = styled.div`
+    margin-top: 350px;
+`
+const Div768 = styled.div`
+    margin-top: 250px;
+`
 const Div = styled.div`
     position: relative;
     width: 100%;
