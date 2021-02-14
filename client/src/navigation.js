@@ -7,6 +7,7 @@ import IntroPage from './pages/intro-page'
 import AboutPage from './pages/about-page'
 import ContactPage from './pages/contact-page'
 import MyWorkPage from './pages/my-work-page'
+import AllInfo from './components/all-about-info'
 
 const Navigation = () => {
 

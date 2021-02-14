@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 import NavBar from '../../components/nav-bar'
 import Info from '../../components/info'
+import AllInfo from '../../components/all-about-info'
 import Footer from '../../components/footer'
 import flower from './flower.png'
 import flower2 from './flower2.png'
@@ -14,21 +15,20 @@ const AboutPage = () => {
     return (
         <div>
             {isLaptop &&
-                <div>
-                    <DivBackground900>
-                        <NavBar />
-                        <DivGrid900>
-                            <DivImage900>
-                                <Flower src={flower} />
-                            </DivImage900>
-                            <Info />
-                            <DivImage900>
-                                <Flower src={flower2} />
-                            </DivImage900>
-                        </DivGrid900>
-                        <Footer />
-                    </DivBackground900>
-                </div>
+                <DivBackground900>
+                    <NavBar />
+                    <DivGrid900>
+                        <DivImage900>
+                            <Flower src={flower} />
+                        </DivImage900>
+                        <Info />
+                        <DivImage900>
+                            <Flower src={flower2} />
+                        </DivImage900>
+                    </DivGrid900>
+                    <AllInfo />
+                    <Footer />
+                </DivBackground900>
             }
         </div>
     )
@@ -50,7 +50,7 @@ const DivBackground900 = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100%;
+    height: 1600px;
     width: 100%;
     padding: 0;
     background-color: black;
@@ -59,5 +59,6 @@ const DivBackground900 = styled.div`
 const DivGrid900 = styled.div`
     display: grid;
     grid-template-columns: 20% 60% 20%;
+    height: 650px;
 `
 export default AboutPage

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import monitor from './monitor.png'
 import AboutList from '../about-list'
 
+
 const Info = () => {
 
     const isLaptop = useMediaQuery({ minWidth: 900 })
@@ -21,20 +22,20 @@ const Info = () => {
                             <AboutList
                                 title={'Before'}
                                 titleColor={'#00cf4b'}
-                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted..."}
-                                description={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do all my life and soon after I graduated I started learning programming, because I remembered how much I liked and was inspired by the school hours when we studied just basic html. So my journey into the world of programming began!"}
+                                scroll="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do..."}
                             />
                             <AboutList
                                 title={'After'}
                                 titleColor={'#0088ff'}
-                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I..."}
-                                description={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I had to choose which framework to work with. So i did a little research of my own and chose React as a start."}
+                                scroll="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
                                 titleColor={'#ff0040'}
+                                scroll="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
-                                description={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. At the moment I do not have much experience, but I have a great passion and desire to learn and grow."}
                             />
                         </Ul900>
                     </DivText900>
@@ -63,7 +64,7 @@ const DivText900 = styled.div`
 const Img900 = styled.img`
     position: absolute;
     width: 60%;
-    height: 80%;
+    height: 523px;
 `
 const Hello = styled.p`
     font-size: 20px;
