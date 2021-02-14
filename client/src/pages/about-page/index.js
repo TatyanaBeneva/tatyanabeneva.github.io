@@ -15,16 +15,19 @@ const AboutPage = () => {
         <div>
             {isLaptop &&
                 <div>
-                    <DivBackgound900>
-                        <DivImage900>
-                            <Flower src={flower} />
-                        </DivImage900>
-                        <Info />
-                        <DivImage900>
-                            <Flower src={flower2} />
-                        </DivImage900>
-                    </DivBackgound900>
-                    <Footer />
+                    <DivBackground900>
+                        <NavBar />
+                        <DivGrid900>
+                            <DivImage900>
+                                <Flower src={flower} />
+                            </DivImage900>
+                            <Info />
+                            <DivImage900>
+                                <Flower src={flower2} />
+                            </DivImage900>
+                        </DivGrid900>
+                        <Footer />
+                    </DivBackground900>
                 </div>
             }
         </div>
@@ -34,16 +37,14 @@ const AboutPage = () => {
 const Flower = styled.img`
     margin-top: 30%;
     width: 100%;
-    height: 60%;
+    height: 300px;
 `
 
 const DivImage900 = styled.div`
     width: 100%;
 `
 
-const DivBackgound900 = styled.div`
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
+const DivBackground900 = styled.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -53,5 +54,10 @@ const DivBackgound900 = styled.div`
     width: 100%;
     padding: 0;
     background-color: black;
+`
+
+const DivGrid900 = styled.div`
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
 `
 export default AboutPage

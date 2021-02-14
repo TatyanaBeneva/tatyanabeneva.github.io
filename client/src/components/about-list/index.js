@@ -1,16 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const AboutList = ({title, titleColor, description, desColor}) => {
+const AboutList = ({title, titleColor, description, beggining}) => {
     return(
         <Li style={{border: `5px solid ${titleColor}`}}>
-            <h2 style={{color: titleColor, margin: '10px'}}>
+            <h1 style={{color: titleColor, margin: '10px'}}>
                 {title}
-            </h2>
-            <p style={{color: desColor, margin: '15px'}}>{description}</p>
+            </h1>
+            <P>{beggining}</P>
         </Li>
     )
 }
+
+const P = styled.p`
+    margin: 15px;
+    color: black;
+    font-size: 1.25em;
+`
 
 const Li = styled.div`
     width: 100%;
