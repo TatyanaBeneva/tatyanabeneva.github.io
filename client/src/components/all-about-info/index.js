@@ -1,7 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom'
 
 const AllInfo = () => {
+
+    const history = useHistory();
+
+    const toWorkPage = (e) => {
+        e.preventDefault()
+        history.push('/work')
+    }
+
+    const toContactPage = (e) => {
+        e.preventDefault()
+        history.push('/contact')
+    }
+
     return (
         <Div>
             <ul style={{ padding: 0 }}>
@@ -51,9 +65,34 @@ const AllInfo = () => {
                     </P>
                 </Li>
             </ul>
+            <div style={{textAlign: 'center'}}>
+                <Button900 onClick={toWorkPage}>View my work</Button900>
+                <Button900 onClick={toContactPage}>Let's talk!</Button900>
+            </div>
         </Div>
     )
 }
+
+const Button900 = styled.button`
+    border: 2px solid white;
+    font-size: 1em;
+    font-family: Jack, serif;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    background-color: transparent;
+    margin-right: 15px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: #41f2b6;
+        color: black;
+        cursor: pointer;
+    }
+`
 
 const P = styled.p`
     font-size: 1.4vw;
