@@ -10,7 +10,9 @@ import flower2 from './flower2.png'
 
 const AboutPage = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900 })
+    const isLaptop = useMediaQuery({ minWidth: 768 })
+    const isTablet = useMediaQuery({ minWidth: 481,maxWidth: 767 })
+    const isPhone = useMediaQuery({maxWidth: 480})
 
     return (
         <div>
@@ -30,9 +32,39 @@ const AboutPage = () => {
                     <Footer />
                 </DivBackground900>
             }
+            {isTablet &&
+                <DivBackground900>
+                    <NavBar />
+                    <DivMonitor>
+                        <Info />
+                    </DivMonitor>
+                    <AllInfo />
+                    <Footer />
+                </DivBackground900>
+            }
+            {isPhone &&
+                <DivBackgroundPhone>
+                    <NavBar />
+                    <DivMonitorPhone>
+                        <Info />
+                    </DivMonitorPhone>
+                    <AllInfo />
+                    <Footer />
+                </DivBackgroundPhone>
+            }
         </div>
     )
 }
+
+const DivMonitorPhone = styled.div`
+    width: 100%;
+    height: 350px;
+`
+
+const DivMonitor = styled.div`
+    width: 100%;
+    height: 450px;
+`
 
 const Flower = styled.img`
     margin-top: 30%;
@@ -43,8 +75,7 @@ const Flower = styled.img`
 const DivImage900 = styled.div`
     width: 100%;
 `
-
-const DivBackground900 = styled.div`
+const DivBackgroundPhone = styled.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -56,9 +87,21 @@ const DivBackground900 = styled.div`
     background-color: black;
 `
 
+const DivBackground900 = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 2100px;
+    width: 100%;
+    padding: 0;
+    background-color: black;
+`
+
 const DivGrid900 = styled.div`
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    height: 650px;
+    height: 600px;
 `
 export default AboutPage
