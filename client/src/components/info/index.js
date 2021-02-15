@@ -7,8 +7,8 @@ import AboutList from '../about-list'
 
 const Info = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900 })
-    const isTablet = useMediaQuery({ minWidth: 480, maxWidth: 899 })
+    const isLaptop = useMediaQuery({ minWidth: 768 })
+    const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
     const isPhone = useMediaQuery({ maxWidth: 479 })
 
     return (
@@ -23,7 +23,7 @@ const Info = () => {
                                 title={'Before'}
                                 titleColor={'#00cf4b'}
                                 scroll="before"
-                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do..."}
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
@@ -41,9 +41,46 @@ const Info = () => {
                     </DivText900>
                 </Div900>
             }
+            {isTablet &&
+                <Div900>
+                    <ImgTablet src={monitor} />
+                    <DivTextTablet style={{ color: 'white' }}>
+                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <UlTablet>
+                            <AboutList
+                                title={'Before'}
+                                titleColor={'#00cf4b'}
+                                scroll="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                            />
+                            <AboutList
+                                title={'After'}
+                                titleColor={'#0088ff'}
+                                scroll="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                            />
+                            <AboutList
+                                title={'Now'}
+                                titleColor={'#ff0040'}
+                                scroll="now"
+                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                            />
+                        </UlTablet>
+                    </DivTextTablet>
+                </Div900>
+            }
         </div>
     )
 }
+
+const UlTablet = styled.div`
+    display: grid;
+    grid-template-columns: 29% 29% 29%;
+    column-gap: 3%;
+    padding: 0;
+    margin: 3% 5%;
+    width: 100%;
+`
 
 const Ul900 = styled.div`
     display: grid;
@@ -53,14 +90,25 @@ const Ul900 = styled.div`
     margin: 30px 2%;
     width: 100%;
 `
+const DivTextTablet = styled.div`
+    position: absolute;
+    margin: 25px;
+    width: 85%;
+    text-align: center;
+`
 
 const DivText900 = styled.div`
     position: absolute;
     margin: 25px;
-    width: 57%;
+    width: 55%;
     text-align: center;
 `
-
+const ImgTablet = styled.img`
+    position: absolute;
+    width: 90%;
+    height: 400px;
+    margin-left: 5%;
+`
 const Img900 = styled.img`
     position: absolute;
     width: 60%;

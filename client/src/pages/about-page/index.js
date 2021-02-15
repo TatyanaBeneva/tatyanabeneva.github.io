@@ -10,7 +10,8 @@ import flower2 from './flower2.png'
 
 const AboutPage = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900 })
+    const isLaptop = useMediaQuery({ minWidth: 768 })
+    const isTablet = useMediaQuery({ maxWidth: 767 })
 
     return (
         <div>
@@ -30,9 +31,24 @@ const AboutPage = () => {
                     <Footer />
                 </DivBackground900>
             }
+            {isTablet &&
+                <DivBackgroundTablet>
+                    <NavBar />
+                    <DivMonitor>
+                        <Info />
+                    </DivMonitor>
+                    <AllInfo />
+                    <Footer />
+                </DivBackgroundTablet>
+            }
         </div>
     )
 }
+
+const DivMonitor = styled.div`
+    width: 100%;
+    height: 450px;
+`
 
 const Flower = styled.img`
     margin-top: 30%;
@@ -43,6 +59,18 @@ const Flower = styled.img`
 const DivImage900 = styled.div`
     width: 100%;
 `
+const DivBackgroundTablet = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1600px;
+    width: 100%;
+    padding: 0;
+    background-color: black;
+`
+
 
 const DivBackground900 = styled.div`
     position: absolute;
