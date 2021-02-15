@@ -11,7 +11,8 @@ import flower2 from './flower2.png'
 const AboutPage = () => {
 
     const isLaptop = useMediaQuery({ minWidth: 768 })
-    const isTablet = useMediaQuery({ maxWidth: 767 })
+    const isTablet = useMediaQuery({ minWidth: 481,maxWidth: 767 })
+    const isPhone = useMediaQuery({maxWidth: 480})
 
     return (
         <div>
@@ -41,9 +42,24 @@ const AboutPage = () => {
                     <Footer />
                 </DivBackgroundTablet>
             }
+            {isPhone &&
+                <DivBackgroundPhone>
+                    <NavBar />
+                    <DivMonitorPhone>
+                        <Info />
+                    </DivMonitorPhone>
+                    <AllInfo />
+                    <Footer />
+                </DivBackgroundPhone>
+            }
         </div>
     )
 }
+
+const DivMonitorPhone = styled.div`
+    width: 100%;
+    height: 350px;
+`
 
 const DivMonitor = styled.div`
     width: 100%;
@@ -59,13 +75,24 @@ const Flower = styled.img`
 const DivImage900 = styled.div`
     width: 100%;
 `
+const DivBackgroundPhone = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1550px;
+    width: 100%;
+    padding: 0;
+    background-color: black;
+`
 const DivBackgroundTablet = styled.div`
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    height: 1600px;
+    height: 2000px;
     width: 100%;
     padding: 0;
     background-color: black;
@@ -78,7 +105,7 @@ const DivBackground900 = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    height: 1900px;
+    height: 2100px;
     width: 100%;
     padding: 0;
     background-color: black;
