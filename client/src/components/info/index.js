@@ -22,19 +22,19 @@ const Info = () => {
                             <AboutList
                                 title={'Before'}
                                 titleColor={'#00cf4b'}
-                                scroll="before"
+                                href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
                                 titleColor={'#0088ff'}
-                                scroll="after"
+                                href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
                                 titleColor={'#ff0040'}
-                                scroll="now"
+                                href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
                         </Ul900>
@@ -46,26 +46,26 @@ const Info = () => {
                     <ImgTablet src={monitor} />
                     <DivTextTablet style={{ color: 'white' }}>
                         <Hello> Hello! My name is Tatyana Beneva. </Hello>
-                        <UlTablet>
+                        <Ul900>
                             <AboutList
                                 title={'Before'}
                                 titleColor={'#00cf4b'}
-                                scroll="before"
+                                href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
                                 titleColor={'#0088ff'}
-                                scroll="after"
+                                href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
                                 titleColor={'#ff0040'}
-                                scroll="now"
+                                href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
-                        </UlTablet>
+                        </Ul900>
                     </DivTextTablet>
                 </Div900>
             }
@@ -78,19 +78,19 @@ const Info = () => {
                             <AboutList
                                 title={'Before'}
                                 titleColor={'#00cf4b'}
-                                scroll="before"
+                                href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
                                 titleColor={'#0088ff'}
-                                scroll="after"
+                                href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
                                 titleColor={'#ff0040'}
-                                scroll="now"
+                                href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
                         </UlPhone>
@@ -109,46 +109,34 @@ const UlPhone = styled.div`
     width: 100%;
 `
 
-const UlTablet = styled.div`
-    display: grid;
-    grid-template-columns: 29% 29% 29%;
-    column-gap: 3%;
-    padding: 0;
-    margin: 3% 5%;
-    width: 100%;
-`
-
 const Ul900 = styled.div`
     display: grid;
-    grid-template-columns: 29% 29% 29%;
+    grid-template-columns: 31% 31% 31%;
     column-gap: 3%;
     padding: 0;
-    margin: 30px 2%;
     width: 100%;
 `
 const DivTextTablet = styled.div`
-    position: absolute;
-    margin: 25px;
-    width: 85%;
+    width: 80%;
     text-align: center;
+    padding: 5% 10%;
 `
 
 const DivText900 = styled.div`
-    position: absolute;
-    margin: 25px;
-    width: 55%;
+    width: 90%;
     text-align: center;
+    padding: 5%;
 `
 const ImgPhone = styled.img`
     position: absolute;
     width: 90%;
-    height: 300px;
+    height: 330px;
     margin-left: 5%;
 `
 const ImgTablet = styled.img`
     position: absolute;
     width: 90%;
-    height: 400px;
+    height: 450px;
     margin-left: 5%;
 `
 const Img900 = styled.img`

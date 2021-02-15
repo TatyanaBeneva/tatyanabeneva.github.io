@@ -33,14 +33,14 @@ const AboutPage = () => {
                 </DivBackground900>
             }
             {isTablet &&
-                <DivBackgroundTablet>
+                <DivBackground900>
                     <NavBar />
                     <DivMonitor>
                         <Info />
                     </DivMonitor>
                     <AllInfo />
                     <Footer />
-                </DivBackgroundTablet>
+                </DivBackground900>
             }
             {isPhone &&
                 <DivBackgroundPhone>
@@ -81,23 +81,11 @@ const DivBackgroundPhone = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    height: 1550px;
+    height: 1600px;
     width: 100%;
     padding: 0;
     background-color: black;
 `
-const DivBackgroundTablet = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 2000px;
-    width: 100%;
-    padding: 0;
-    background-color: black;
-`
-
 
 const DivBackground900 = styled.div`
     position: absolute;

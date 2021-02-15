@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 import { Link, animateScroll as scroll } from "react-scroll"
 
-const AboutList = ({ title, titleColor, beggining, scroll }) => {
+const AboutList = ({ title, titleColor, beggining, href }) => {
     const isLaptop = useMediaQuery({ minWidth: 768 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
-    const isPhone = useMediaQuery({maxWidth: 480})
+    const isPhone = useMediaQuery({ maxWidth: 480 })
 
     return (
         <span>
@@ -16,16 +16,16 @@ const AboutList = ({ title, titleColor, beggining, scroll }) => {
                         {title}
                     </h1>
                     <PLaptop>{beggining}</PLaptop>
-                    <Button style={{ backgroundColor: titleColor }}>
-                        <Link
-                            activeClass="active"
-                            to={scroll}
-                            spy={true}
-                            smooth={true}
-                        >
+                    <Link
+                        activeClass="active"
+                        to={href}
+                        spy={true}
+                        smooth={true}
+                    >
+                        <Button style={{ backgroundColor: titleColor }}>
                             View more...
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </LiLaptop>
             }
             {isTablet &&
@@ -34,16 +34,16 @@ const AboutList = ({ title, titleColor, beggining, scroll }) => {
                         {title}
                     </h1>
                     <PTablet>{beggining}</PTablet>
-                    <Button style={{ backgroundColor: titleColor}}>
-                        <Link
-                            activeClass="active"
-                            to={scroll}
-                            spy={true}
-                            smooth={true}
-                        >
+                    <Link
+                        activeClass="active"
+                        to={href}
+                        spy={true}
+                        smooth={true}
+                    >
+                        <Button style={{ backgroundColor: titleColor }}>
                             View more...
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </LiTablet>
             }
             {isPhone &&
@@ -52,16 +52,16 @@ const AboutList = ({ title, titleColor, beggining, scroll }) => {
                         {title}
                     </h3>
                     <PPhone>{beggining}</PPhone>
-                    <Button style={{ backgroundColor: titleColor}}>
-                        <Link
-                            activeClass="active"
-                            to={scroll}
-                            spy={true}
-                            smooth={true}
-                        >
+                    <Link
+                        activeClass="active"
+                        to={href}
+                        spy={true}
+                        smooth={true}
+                    >
+                        <Button style={{ backgroundColor: titleColor }}>
                             View more...
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </LiPhone>
             }
         </span>
@@ -69,6 +69,7 @@ const AboutList = ({ title, titleColor, beggining, scroll }) => {
 }
 
 const Button = styled.button`
+    position: relative;
     margin-top: 10%;
     font-size: 1.2vw;
     padding: 10px;
@@ -90,28 +91,31 @@ const Button = styled.button`
 const PPhone = styled.p`
     margin: 5%;
     color: black;
-    font-size: 2.3vw;
+    font-size: 2.2vw;
+    height: 90px;
 `
 const PTablet = styled.p`
     margin: 15px;
     color: black;
     font-size: 2vw;
+    height: 110px;
 `
 
 const PLaptop = styled.p`
     margin: 15px;
     color: black;
     font-size: 1.4vw;
+    height: 145px;
 `
 const LiPhone = styled.div`
     width: 100%;
-    height: 160px;
+    height: 180px;
     border-radius: 10px;
     background-color: lightgray;
 `
 const LiTablet = styled.div`
     width: 100%;
-    height: 230px;
+    height: 250px;
     border-radius: 10px;
     background-color: lightgray;
 `

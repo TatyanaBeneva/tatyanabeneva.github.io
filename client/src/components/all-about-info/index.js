@@ -24,7 +24,7 @@ const AllInfo = () => {
         <div>
             {isLaptop &&
                 <Div>
-                    <ul style={{ padding: 0 }}>
+                    <ul style={{ padding: 0, fontSize: '1.4vw' }}>
                         <Li style={{ border: `5px solid #00cf4b` }} id="before">
                             <h1 style={{ color: '#00cf4b' }}>Before</h1>
                             <P>
@@ -41,24 +41,26 @@ const AllInfo = () => {
                                 had to choose which framework to work with. So i did a little research of my own and
                                 chose React as a start.
                                 Where did I study these technologies? I took the following courses at SoftUni University:
-                            <ul style={{ padding: '2.5%' }}>
-                                    <li>HTML/CSS</li>
-                                    <li>JavaScript Basics</li>
-                                    <li>JavaScript Advanced</li>
-                                    <li>JavaScript Applications</li>
-                                    <li>JavaScript Back-End</li>
-                                    <li>React JS</li>
-                                    <li>C# Fundamentals</li>
-                                </ul>
-                            During this time I was able to read some good books:
-                            <ul style={{ padding: '2.5%' }}>
-                                    <li>HTML 5 & CSS 3. Practical programming</li>
-                                    <li>Basics of programming with JavaScript</li>
-                                    <li>Principles of programming with C#</li>
-                                    <li>You don’t know JS – series books</li>
-                                    <li>Many books on self-improvement</li>
-                                </ul>
                             </P>
+                            <ul style={{ padding: '2.5%' }}>
+                                <li>HTML/CSS</li>
+                                <li>JavaScript Basics</li>
+                                <li>JavaScript Advanced</li>
+                                <li>JavaScript Applications</li>
+                                <li>JavaScript Back-End</li>
+                                <li>React JS</li>
+                                <li>C# Fundamentals</li>
+                            </ul>
+                            <P>
+                                During this time I was able to read some good books:
+                            </P>
+                            <ul style={{ padding: '2.5%' }}>
+                                <li>HTML 5 & CSS 3. Practical programming</li>
+                                <li>Basics of programming with JavaScript</li>
+                                <li>Principles of programming with C#</li>
+                                <li>You don’t know JS – series books</li>
+                                <li>Many books on self-improvement</li>
+                            </ul>
                         </Li>
                         <Li style={{ border: '5px solid #ff0040' }} id="now">
                             <h1 style={{ color: '#ff0040' }}>Now</h1>
@@ -79,7 +81,7 @@ const AllInfo = () => {
             }
             {isTablet &&
                 <DivTablet>
-                    <ul style={{ padding: 0 }}>
+                    <ul style={{ padding: 0, fontSize: '2.5vw' }}>
                         <Li style={{ border: `5px solid #00cf4b` }} id="before">
                             <h1 style={{ color: '#00cf4b' }}>Before</h1>
                             <PTablet>
@@ -96,24 +98,26 @@ const AllInfo = () => {
                                 had to choose which framework to work with. So i did a little research of my own and
                                 chose React as a start.
                                 Where did I study these technologies? I took the following courses at SoftUni University:
-                            <ul style={{ padding: '2.5%' }}>
-                                    <li>HTML/CSS</li>
-                                    <li>JavaScript Basics</li>
-                                    <li>JavaScript Advanced</li>
-                                    <li>JavaScript Applications</li>
-                                    <li>JavaScript Back-End</li>
-                                    <li>React JS</li>
-                                    <li>C# Fundamentals</li>
-                                </ul>
-                            During this time I was able to read some good books:
-                            <ul style={{ padding: '2.5%' }}>
-                                    <li>HTML 5 & CSS 3. Practical programming</li>
-                                    <li>Basics of programming with JavaScript</li>
-                                    <li>Principles of programming with C#</li>
-                                    <li>You don’t know JS – series books</li>
-                                    <li>Many books on self-improvement</li>
-                                </ul>
                             </PTablet>
+                            <ul style={{ padding: '2.5%' }}>
+                                <li>HTML/CSS</li>
+                                <li>JavaScript Basics</li>
+                                <li>JavaScript Advanced</li>
+                                <li>JavaScript Applications</li>
+                                <li>JavaScript Back-End</li>
+                                <li>React JS</li>
+                                <li>C# Fundamentals</li>
+                            </ul>
+                            <PTablet>
+                                During this time I was able to read some good books:
+                            </PTablet>
+                            <ul style={{ padding: '2.5%' }}>
+                                <li>HTML 5 & CSS 3. Practical programming</li>
+                                <li>Basics of programming with JavaScript</li>
+                                <li>Principles of programming with C#</li>
+                                <li>You don’t know JS – series books</li>
+                                <li>Many books on self-improvement</li>
+                            </ul>
                         </Li>
                         <Li style={{ border: '5px solid #ff0040' }} id="now">
                             <h1 style={{ color: '#ff0040' }}>Now</h1>
@@ -134,7 +138,7 @@ const AllInfo = () => {
             }
             {isPhone &&
                 <DivTablet>
-                    <ul style={{ padding: 0 }}>
+                    <ul style={{ padding: 0, fontSize: '2.5vw' }}>
                         <Li style={{ border: `5px solid #00cf4b` }} id="before">
                             <h2 style={{ color: '#00cf4b' }}>Before</h2>
                             <PTablet>
@@ -151,24 +155,26 @@ const AllInfo = () => {
                                 had to choose which framework to work with. So i did a little research of my own and
                                 chose React as a start.
                                 Where did I study these technologies? I took the following courses at SoftUni University:
-                            <ul style={{ padding: '2.5%' }}>
-                                    <li>HTML/CSS</li>
-                                    <li>JavaScript Basics</li>
-                                    <li>JavaScript Advanced</li>
-                                    <li>JavaScript Applications</li>
-                                    <li>JavaScript Back-End</li>
-                                    <li>React JS</li>
-                                    <li>C# Fundamentals</li>
-                                </ul>
-                            During this time I was able to read some good books:
-                            <ul style={{ padding: '2.5%' }}>
-                                    <li>HTML 5 & CSS 3. Practical programming</li>
-                                    <li>Basics of programming with JavaScript</li>
-                                    <li>Principles of programming with C#</li>
-                                    <li>You don’t know JS – series books</li>
-                                    <li>Many books on self-improvement</li>
-                                </ul>
                             </PTablet>
+                            <ul style={{ padding: '2.5%' }}>
+                                <li>HTML/CSS</li>
+                                <li>JavaScript Basics</li>
+                                <li>JavaScript Advanced</li>
+                                <li>JavaScript Applications</li>
+                                <li>JavaScript Back-End</li>
+                                <li>React JS</li>
+                                <li>C# Fundamentals</li>
+                            </ul>
+                            <PTablet>
+                                During this time I was able to read some good books:
+                            </PTablet>
+                            <ul style={{ padding: '2.5%' }}>
+                                <li>HTML 5 & CSS 3. Practical programming</li>
+                                <li>Basics of programming with JavaScript</li>
+                                <li>Principles of programming with C#</li>
+                                <li>You don’t know JS – series books</li>
+                                <li>Many books on self-improvement</li>
+                            </ul>
                         </Li>
                         <Li style={{ border: '5px solid #ff0040' }} id="now">
                             <h2 style={{ color: '#ff0040' }}>Now</h2>
