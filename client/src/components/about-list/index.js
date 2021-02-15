@@ -17,7 +17,7 @@ const AboutList = ({ title, titleColor, beggining, scroll }) => {
                     spy={true}
                     smooth={true}
                 >
-                    Click here to view more                        
+                    View more...                      
                 </Link>
             </Button>
         </Li>
@@ -51,7 +51,7 @@ const P = styled.p`
 
 const Li = styled.div`
     width: 100%;
-    height: 304px;
+    height: 300px;
     border-radius: 10px;
     background-color: lightgray;
 `

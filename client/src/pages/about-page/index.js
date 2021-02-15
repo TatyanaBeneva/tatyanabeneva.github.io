@@ -50,7 +50,7 @@ const DivBackground900 = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    height: 1600px;
+    height: 1900px;
     width: 100%;
     padding: 0;
     background-color: black;
@@ -59,6 +59,6 @@ const DivBackground900 = styled.div`
 const DivGrid900 = styled.div`
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    height: 650px;
+    height: 600px;
 `
 export default AboutPage

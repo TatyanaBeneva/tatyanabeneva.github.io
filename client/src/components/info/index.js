@@ -47,17 +47,17 @@ const Info = () => {
 
 const Ul900 = styled.div`
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 2%;
+    grid-template-columns: 29% 29% 29%;
+    column-gap: 3%;
     padding: 0;
-    margin: 30px 4%;
+    margin: 30px 2%;
     width: 100%;
 `
 
 const DivText900 = styled.div`
     position: absolute;
     margin: 25px;
-    width: 55%;
+    width: 57%;
     text-align: center;
 `
 
@@ -67,7 +67,7 @@ const Img900 = styled.img`
     height: 523px;
 `
 const Hello = styled.p`
-    font-size: 20px;
+    font-size: 1.8vw;
     color: #ffac28;
     white-space: nowrap;
     margin: 15px auto;
