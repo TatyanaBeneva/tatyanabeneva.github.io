@@ -4,10 +4,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import Navigation from './navigation'
+import AnalyticsComponent from './Analytics'
 
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
+      <AnalyticsComponent />
       <Navigation />
     </HashRouter>
   </React.StrictMode>,

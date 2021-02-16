@@ -59,7 +59,7 @@ const IntroPage = () => {
     )
 }
 
-const Div481 =styled.div`
+const Div481 = styled.div`
     margin-top: 30px 20px;
 `
 
