@@ -103,7 +103,7 @@ const ContactForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Input
                 onChange={e => setName(e.target.value)}
                 label={"What is your name?"}
@@ -139,9 +139,17 @@ const ContactForm = () => {
                 to the email you entered above.</Div> : ""}
             {isErrorSubmited ? <DivError>Тhere are currently server issues, please try again later.
             </DivError> : ''}
-        </form>
+        </Form>
     )
 }
+
+const Form = styled.form`
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 8px #9b9b9b;
+`
+
 const DivError = styled.div`
     margin-top: 20px;
     color: red;
