@@ -22,7 +22,7 @@ const DivBackground = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    height: 2000px;
+    height: 2100px;
     width: 100%;
     padding: 0;
     background-color: black;

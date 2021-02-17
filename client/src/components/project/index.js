@@ -1,7 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import Skill from '../skill'
 
-const Porject = ({name, description, href}) => {
+const Porject = ({ name, description, href, image, technologies }) => {
+
+    const renderTechnologies = (() => {
+        return technologies.map((tech, index) => {
+            return (
+                <LiTech key={index}>
+                    {tech}
+                </LiTech>
+            )
+        })
+    })
+
     return (
         <Li>
             <DivInfo>
@@ -10,16 +22,38 @@ const Porject = ({name, description, href}) => {
                 </Details>
                 <Name>{name}</Name>
                 <Description>{description}</Description>
+                <Details>
+                    Used Technologies:
+                </Details>
+                <ul style={{ padding: 0 }}>
+                    {renderTechnologies()}
+                </ul>
                 <a href={href}>
                     <Button>View Live Project</Button>
                 </a>
             </DivInfo>
             <DivImage>
-
+                <Image src={image} />
             </DivImage>
         </Li>
     )
 }
+
+const LiTech = styled.li`
+    display: inline-block;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    width: auto;
+    border-radius: 20px;
+    background-color: white;
+    padding: 2%;
+    border: 2px solid #00b6ff;
+    font-size: 1.5vw;
+`
+
+const Image = styled.img`
+    width: 100%;
+`
 
 const Button = styled.button`
     border: 2px solid white;
@@ -71,7 +105,7 @@ const Li = styled.li`
     display: grid;
     grid-template-columns: 50% 50%;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 `
 
 export default Porject
