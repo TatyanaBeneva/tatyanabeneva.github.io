@@ -13,7 +13,7 @@ const ContactInfo = () => {
             {isLaptop &&
                 <div>
                     <Heading>
-                        Let's work together and I'll make my best!
+                        Let's work together and I'll do my best!
                     </Heading>
                     <SharedIcons />
                 </div>
@@ -21,7 +21,7 @@ const ContactInfo = () => {
             {isTablet &&
                 <div>
                     <HeadingTablet>
-                        Let's work together and I'll make my best!
+                        Let's work together and I'll do my best!
                     </HeadingTablet>
                 </div>
             }
