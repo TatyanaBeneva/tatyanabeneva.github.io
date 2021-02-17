@@ -1,97 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
-import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
-import ContactInfoPhoneResolution from '../contact-info-phone-resolution'
+import SharedIcons from '../share-list-icons'
 
 const ContactInfo = () => {
 
-    const isDekstop = useMediaQuery({ minWidth: 1600 })
-    const isLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1599 })
-    const isTablet = useMediaQuery({ minWidth: 600, maxWidth: 899 })
-    const isPhone = useMediaQuery({ maxWidth: 599 })
+    const isLaptop = useMediaQuery({ minWidth: 768 })
+    const isTablet = useMediaQuery({ maxWidth: 767 })
 
     return (
         <div>
-            {isDekstop &&
-                <div>
-                    <P1600>
-                        Hi! This form is made especially for you to make it easier to contact me. Just write your
-                        first and second names in the first field so I know who to contact, then write your email
-                        so I can reply to you, and finally submit your message to me. To send the data,
-                        just press the button "Submit form".
-                    </P1600>
-                    <Div>
-                        <i className="fas fa-arrow-right"></i>
-                    </Div>
-                    <ContactInfoPhoneResolution />
-                </div>
-            }
             {isLaptop &&
                 <div>
-                    <P>
-                        Hi! This form is made especially for you to make it easier to contact me. Just write your
-                        first and second names in the first field so I know who to contact, then write your email
-                        so I can reply to you, and finally submit your message to me. To send the data,
-                        just press the button "Submit form".
-                    </P>
-                    <Div>
-                        <i className="fas fa-arrow-right"></i>
-                    </Div>
-                    <ContactInfoPhoneResolution />
+                    <Heading>
+                        Let's work together and I'll make my best!
+                    </Heading>
+                    <SharedIcons />
                 </div>
             }
             {isTablet &&
                 <div>
-                    <P>
-                        Hi! This form is made especially for you to make it easier to contact me. Just write your
-                        first and second names in the first field so I know who to contact, then write your email
-                        so I can reply to you, and finally submit your message to me. To send the data,
-                        just press the button "Submit form".
-                    </P>
-                    <Div>
-                        <i className="fas fa-arrow-down"></i>
-                    </Div>
-                </div>
-            }
-            {isPhone &&
-                <div>
-                    <P>
-                        Hi! This form is made especially for you to make it easier to contact me. Just write your
-                        first and second names in the first field so I know who to contact, then write your email
-                        so I can reply to you, and finally submit your message to me. To send the data,
-                        just press the button "Submit form".
-                    </P>
-                    <Div>
-                        <i className="fas fa-arrow-down"></i>
-                    </Div>
+                    <HeadingTablet>
+                        Let's work together and I'll make my best!
+                    </HeadingTablet>
                 </div>
             }
         </div>
     )
 }
 
-const Div = styled.div`
-    text-align: center;
-    font-size: 40px;
-    background: linear-gradient(to right, #24ece9, #af45da, #f934ea);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+const HeadingTablet = styled.p`
+    font-family: Jack, serif;
+    color: white;
+    font-size: 6.3vw;
+    margin: 0 30px 100px 0;
 `
 
-const P = styled.p`
-    font-size: 20px;
-    font-style: italic;
-    color: #34495e;
-`
-
-const P1600 = styled.p`
-    font-size: 30px;
-    font-style: italic;
-    color: #34495e;
+const Heading = styled.p`
+    font-family: Jack, serif;
+    color: white;
+    font-size: 3.5vw;
+    margin: 50px 30px 100px 0;
 `
 
 export default ContactInfo
