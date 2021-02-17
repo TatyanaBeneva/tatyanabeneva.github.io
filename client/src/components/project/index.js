@@ -57,7 +57,7 @@ const Image = styled.img`
 
 const Button = styled.button`
     border: 2px solid white;
-    font-size: 1em;
+    font-size: 1.3vw;
     font-family: Jack, serif;
     padding: 10px 20px;
     border-radius: 25px;
