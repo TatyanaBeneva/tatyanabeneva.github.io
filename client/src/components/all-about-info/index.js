@@ -73,7 +73,7 @@ const AllInfo = () => {
                             </P>
                         </Li>
                     </ul>
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '100px' }}>
                         <Button900 onClick={toWorkPage}>View my work</Button900>
                         <Button900 onClick={toContactPage}>Let's talk!</Button900>
                     </div>
@@ -130,7 +130,7 @@ const AllInfo = () => {
                             </PTablet>
                         </Li>
                     </ul>
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '100px' }}>
                         <Button900 onClick={toWorkPage}>View my work</Button900>
                         <Button900 onClick={toContactPage}>Let's talk!</Button900>
                     </div>
@@ -187,7 +187,7 @@ const AllInfo = () => {
                             </PTablet>
                         </Li>
                     </ul>
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '100px' }}>
                         <Button900 onClick={toWorkPage}>View my work</Button900>
                         <Button900 onClick={toContactPage}>Let's talk!</Button900>
                     </div>

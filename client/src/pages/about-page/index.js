@@ -11,13 +11,13 @@ import flower2 from './flower2.png'
 const AboutPage = () => {
 
     const isLaptop = useMediaQuery({ minWidth: 768 })
-    const isTablet = useMediaQuery({ minWidth: 481,maxWidth: 767 })
-    const isPhone = useMediaQuery({maxWidth: 480})
+    const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
+    const isPhone = useMediaQuery({ maxWidth: 480 })
 
     return (
         <div>
             {isLaptop &&
-                <DivBackground900>
+                <div>
                     <NavBar />
                     <DivGrid900>
                         <DivImage900>
@@ -30,27 +30,27 @@ const AboutPage = () => {
                     </DivGrid900>
                     <AllInfo />
                     <Footer />
-                </DivBackground900>
+                </div>
             }
             {isTablet &&
-                <DivBackground900>
+                <div>
                     <NavBar />
                     <DivMonitor>
                         <Info />
                     </DivMonitor>
                     <AllInfo />
                     <Footer />
-                </DivBackground900>
+                </div>
             }
             {isPhone &&
-                <DivBackgroundPhone>
+                <div>
                     <NavBar />
                     <DivMonitorPhone>
                         <Info />
                     </DivMonitorPhone>
                     <AllInfo />
                     <Footer />
-                </DivBackgroundPhone>
+                </div>
             }
         </div>
     )

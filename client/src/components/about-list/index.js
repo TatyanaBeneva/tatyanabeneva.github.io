@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link} from "react-scroll"
 
 const AboutList = ({ title, titleColor, beggining, href }) => {
     const isLaptop = useMediaQuery({ minWidth: 768 })

@@ -20,7 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', route)
 
 app.get('/', (req, res) => {
-  console.log('server')
 });
 
 // create reusable transporter object using the default SMTP transport
