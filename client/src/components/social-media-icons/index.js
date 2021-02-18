@@ -12,7 +12,7 @@ const Icon = ({ icon, link, onClick, color }) => {
 }
 const Link = styled.a`
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
 `
 

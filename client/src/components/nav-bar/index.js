@@ -146,17 +146,17 @@ const DivLine = styled.div`
 `
 const Div480 = styled.div`
     padding: 10px 20px;
-    background-color:  white;
+    background-color: #373535;
 `
 const Div481 = styled.div`
     padding: 0 30px;
-    background-color:  white;
+    background-color: #373535;
     text-align: center;
 `
 
 const Div = styled.div`
     padding: 10px 100px;
-    background-color:  white;
+    background-color:  #373535;
 `
 const Navigation = styled.nav`
     float: right;
