@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Icon = ({ icon, link, onClick }) => {
+const Icon = ({ icon, link, onClick, color }) => {
     return (
         <Li>
             <Link href={link} onClick={onClick}>
@@ -12,7 +12,7 @@ const Icon = ({ icon, link, onClick }) => {
 }
 const Link = styled.a`
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
 `
 

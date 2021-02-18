@@ -1,153 +1,214 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
-import Link from '../link'
+import monitor from './monitor.png'
+import AboutList from '../about-list'
+
 
 const Info = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900 })
-    const isTablet = useMediaQuery({ minWidth: 480, maxWidth: 899 })
-    const isPhone = useMediaQuery({ maxWidth: 479 })   
+    const isDesktop = useMediaQuery({minWidth: 1400})
+    const isLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1399 })
+    const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
+    const isPhone = useMediaQuery({ maxWidth: 480})
 
     return (
         <div>
+            {isDesktop &&
+                <Div900>
+                    <Img1400 src={monitor} />
+                    <DivText900 style={{ color: 'white' }}>
+                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Ul900>
+                            <AboutList
+                                title={'Before'}
+                                titleColor={'#00cf4b'}
+                                href="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                            />
+                            <AboutList
+                                title={'After'}
+                                titleColor={'#0088ff'}
+                                href="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                            />
+                            <AboutList
+                                title={'Now'}
+                                titleColor={'#ff0040'}
+                                href="now"
+                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                            />
+                        </Ul900>
+                    </DivText900>
+                </Div900>
+            }
             {isLaptop &&
                 <Div900>
-                    <Hello> Hello, my name is </Hello>
-                    <Name> Tatyana Beneva. </Name>
-                    <Description>
-                        I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                        all my life and soon after I graduated I started learning programming, because I remembered
-                        how much I liked and was inspired by the school hours when we studied just basic html.
-                        So my journey into the world of programming began!
-                    </Description>
-                    <Description>
-                        Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and
-                        with that I had to choose which framework to work with. So i did
-                        a little research of my own and chose <Span>React</Span> as a start.
-                    </Description>
-                    <Description>
-                        My experience doesn't include only this. Everything I learned and started working with it is
-                        described on the page you come from. And I will not stop here!
-                    </Description>
-                    <Description>
-                        At the moment I do not have much experience, but I have a great passion and desire to learn
-                        and grow. So if you like it and want to work together <Link href={'/contact'} title={'contact me'} type={'text'} />!
-                    </Description>
+                    <Img900 src={monitor} />
+                    <DivText900 style={{ color: 'white' }}>
+                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Ul900>
+                            <AboutList
+                                title={'Before'}
+                                titleColor={'#00cf4b'}
+                                href="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                            />
+                            <AboutList
+                                title={'After'}
+                                titleColor={'#0088ff'}
+                                href="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                            />
+                            <AboutList
+                                title={'Now'}
+                                titleColor={'#ff0040'}
+                                href="now"
+                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                            />
+                        </Ul900>
+                    </DivText900>
                 </Div900>
             }
             {isTablet &&
-                <Div480>
-                    <Hello> Hello, my name is </Hello>
-                    <Name> Tatyana Beneva. </Name>
-                    <Description>
-                        I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                        all my life and soon after I graduated I started learning programming, because I remembered
-                        how much I liked and was inspired by the school hours when we studied just basic html.
-                        So my journey into the world of programming began!
-                    </Description>
-                    <Description>
-                        Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and
-                        with that I had to choose which framework to work with. So i did
-                        a little research of my own and chose <Span>React</Span> as a start.
-                    </Description>
-                    <Description>
-                        My experience doesn't include only this. Everything I learned and started working with it is
-                        described on the page you come from. And I will not stop here!
-                    </Description>
-                    <Description>
-                        At the moment I do not have much experience, but I have a great passion and desire to learn
-                        and grow. So if you like it and want to work together <Link href={'/contact'} title={'contact me'} type={'text'} />!
-                    </Description>
-                </Div480>
+                <Div900>
+                    <ImgTablet src={monitor} />
+                    <DivTextTablet style={{ color: 'white' }}>
+                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Ul900>
+                            <AboutList
+                                title={'Before'}
+                                titleColor={'#00cf4b'}
+                                href="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                            />
+                            <AboutList
+                                title={'After'}
+                                titleColor={'#0088ff'}
+                                href="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                            />
+                            <AboutList
+                                title={'Now'}
+                                titleColor={'#ff0040'}
+                                href="now"
+                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                            />
+                        </Ul900>
+                    </DivTextTablet>
+                </Div900>
             }
             {isPhone &&
-                <Div360>
-                    <Hello> Hello, my name is </Hello>
-                    <Name360> Tatyana Beneva. </Name360>
-                    <Description>
-                        I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                        all my life and soon after I graduated I started learning programming, because I remembered
-                        how much I liked and was inspired by the school hours when we studied just basic html.
-                        So my journey into the world of programming began!
-                    </Description>
-                    <Description>
-                        Of course I started with <Span>Html</Span> and <Span>CSS</Span>. Then came the turn of <Span>JavaScript</Span> and
-                        with that I had to choose which framework to work with. So i did
-                        a little research of my own and chose <Span>React</Span> as a start.
-                    </Description>
-                    <Description>
-                        My experience doesn't include only this. Everything I learned and started working with it is
-                        described on the page you come from. And I will not stop here!
-                    </Description>
-                    <Description>
-                        At the moment I do not have much experience, but I have a great passion and desire to learn
-                        and grow. So if you like it and want to work together <Link href={'/contact'} title={'contact me'} type={'text'} />!
-                    </Description>
-                </Div360>
+                <Div900>
+                    <ImgPhone src={monitor} />
+                    <DivTextTablet style={{ color: 'white' }}>
+                        <HelloPhone> Hello! My name is Tatyana Beneva. </HelloPhone>
+                        <UlPhone>
+                            <AboutList
+                                title={'Before'}
+                                titleColor={'#00cf4b'}
+                                href="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                            />
+                            <AboutList
+                                title={'After'}
+                                titleColor={'#0088ff'}
+                                href="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                            />
+                            <AboutList
+                                title={'Now'}
+                                titleColor={'#ff0040'}
+                                href="now"
+                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                            />
+                        </UlPhone>
+                    </DivTextTablet>
+                </Div900>
             }
         </div>
     )
 }
-
-const Name360 = styled.p`
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0;
-    background: linear-gradient(to left, #22b8b4, #1be5e0);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-
+const UlPhone = styled.div`
+    display: grid;
+    grid-template-columns: 27% 27% 27%;
+    column-gap: 5%;
+    padding: 0;
+    margin: 3% 4%;
+    width: 100%;
 `
 
-const Div360 = styled.div`
-    margin: 30px 20px 60px 20px;
-    font-style: italic;
+const Ul900 = styled.div`
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2%;
+    padding: 0;
+    width: 100%;
+`
+const DivTextTablet = styled.div`
+    width: 80%;
+    text-align: center;
+    padding: 5% 10%;
 `
 
-const Div480 = styled.div`
-    margin: 30px 20px 60px 20px;
-    font-style: italic;
-    padding: 15px 40px;
+const DivText900 = styled.div`
+    width: 90%;
+    text-align: center;
+    padding: 5%;
 `
-
-const Span = styled.span`
-    background: linear-gradient(to right, #c11da8, #1e2eb9);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+const ImgPhone = styled.img`
+    position: absolute;
+    width: 90%;
+    height: 350px;
+    margin-left: 5%;
 `
-
-const Description = styled.p`
-    font-size: 20px;
+const ImgTablet = styled.img`
+    position: absolute;
+    width: 90%;
+    height: 450px;
+    margin-left: 5%;
 `
-
-const Name = styled.p`
-    font-size: 80px;
-    font-weight: bold;
-    margin: 0;
-    background: linear-gradient(to left, #22b8b4, #1be5e0);
-    -webkit-background-clip: text;
-   -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-
+const Img900 = styled.img`
+    position: absolute;
+    width: 60%;
+    height: 523px;
 `
+const Img1400 = styled.img`
+    position: absolute;
+    width: 60%;
+    height: 700px;
+`
+const HelloPhone = styled.p`
+    font-size: 2.3vw;
+    color: #ffac28;
+    white-space: nowrap;
+    margin: 15px auto;
+    overflow: hidden;
+    animation: typing 8s steps(60, end);
 
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+`
 const Hello = styled.p`
-    font-size: 20px;
+    font-size: 1.8vw;
+    color: #ffac28;
+    white-space: nowrap;
+    margin: 15px auto;
+    overflow: hidden;
+    animation: typing 8s steps(60, end);
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
 `
 
 const Div900 = styled.div`
-    margin: 80px 150px 30px 150px;
     font-style: italic;
-    padding: 15px 40px;
+    margin-top: 2%;
+    font-family: Jack, serif;
 `
 
 export default Info

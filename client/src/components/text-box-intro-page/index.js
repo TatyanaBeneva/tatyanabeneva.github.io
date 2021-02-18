@@ -27,7 +27,7 @@ const TextBox = (props) => {
             {isLaptop &&
                 <Div1200>
                     <Hello1200> Hello! </Hello1200>
-                    <Name1200> I'm Tatyana Beneva, creative web designer.</Name1200>
+                    <Name1200> I'm Tatyana Beneva, creative web developer.</Name1200>
                     <Description1200>
                         My recent experience is building React Single page Applications with Node Js as a back-end.
                     </Description1200>
@@ -38,7 +38,7 @@ const TextBox = (props) => {
             {isTabletOrLaptop &&
                 <Div900>
                     <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web designer.</Name900>
+                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
                     <Description1200>
                         My recent experience is building React Single page Applications with Node Js as a back-end.
                     </Description1200>
@@ -49,7 +49,7 @@ const TextBox = (props) => {
             {isTablet &&
                 <Div900>
                     <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web designer.</Name900>
+                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
                     <Description1200>
                         My recent experience is building React Single page Applications with Node Js as a back-end.
                     </Description1200>
@@ -60,7 +60,7 @@ const TextBox = (props) => {
             {isBigPhone &&
                 <Div900 style={{textAlign: 'center'}}>
                     <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web designer.</Name900>
+                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
                     <Description1200>
                         My recent experience is building React Single page Applications with Node Js as a back-end.
                     </Description1200>
@@ -71,7 +71,7 @@ const TextBox = (props) => {
             {isPhone &&
                 <Div900 style={{textAlign: 'center'}}>
                     <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web designer.</Name900>
+                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
                     <Description1200>
                         My recent experience is building React Single page Applications with Node Js as a back-end.
                     </Description1200>

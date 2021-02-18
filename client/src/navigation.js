@@ -9,7 +9,6 @@ import ContactPage from './pages/contact-page'
 import MyWorkPage from './pages/my-work-page'
 
 const Navigation = () => {
-
   return (
     <Switch>
       <Route path="/" exact component={IntroPage} />

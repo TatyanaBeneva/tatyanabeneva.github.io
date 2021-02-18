@@ -16,50 +16,50 @@ const IntroPage = () => {
     return (
         <div>
             {isLaptop &&
-                <DivImage900 style={{ backgroundColor: 'black' }}>
+                <div>
                     <NavBar />
                     <Div900>
                         <TextBox />
                         <Skills />
                     </Div900>
                     <Footer />
-                </DivImage900>
+                </div>
             }
             {isTablet &&
-                <DivImage768 style={{ backgroundColor: 'black' }}>
+                <div>
                     <NavBar />
                     <Div>
                         <TextBox />
                         <Skills />
                     </Div>
                     <Footer />
-                </DivImage768>
+                </div>
             }
             {isBigPhone &&
-                <DivImage768 style={{ backgroundColor: 'black' }}>
+                <div>
                     <NavBar />
                     <Div481>
                         <TextBox />
                         <Skills />
                     </Div481>
                     <Footer />
-                </DivImage768>
+                </div>
             }
             {isPhone &&
-                <DivImage768 style={{ backgroundColor: 'black' }}>
+                <div>
                     <NavBar />
                     <Div481>
                         <TextBox />
                         <Skills />
                     </Div481>
                     <Footer />
-                </DivImage768>
+                </div>
             }
         </div>
     )
 }
 
-const Div481 =styled.div`
+const Div481 = styled.div`
     margin-top: 30px 20px;
 `
 
@@ -71,27 +71,5 @@ const Div900 = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
 `
-const DivImage768 = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1000px;
-    width: 100%;
-    padding: 0;
-`
-
-const DivImage900 = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-`
-
 
 export default IntroPage

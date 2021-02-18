@@ -5,69 +5,38 @@ import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
 import ContactForm from '../../components/contact-form'
 import ContactInfo from '../../components/contact-info'
-import ContactInfoPhoneResolution from '../../components/contact-info-phone-resolution'
+import SharedIcons from '../../components/share-list-icons'
 
 const ContactPage = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 900 })
-    const isTablet = useMediaQuery({ minWidth: 600, maxWidth: 899 })
-    const isPhone = useMediaQuery({maxWidth: 599})
+    const isLaptop = useMediaQuery({ minWidth: 768 })
+    const isTablet = useMediaQuery({ maxWidth: 767 })
 
     return (
         <div>
             <NavBar />
             {isLaptop &&
                 <DivGridLaptop>
-                    <ContentDiv>
-                        <ContactInfo />
-                    </ContentDiv>
-                    <ContentDiv>
-                        <ContactForm />
-                    </ContentDiv>
+                    <ContactInfo />
+                    <ContactForm />
                 </DivGridLaptop>
             }
             {isTablet &&
                 <DivGridTablet>
-                    <ContentDiv>
-                        <ContactInfo />
-                    </ContentDiv>
-                    <ContentDiv>
-                        <ContactForm />
-                    </ContentDiv>
-                    <ContentDiv>
-                        <ContactInfoPhoneResolution />
-                    </ContentDiv>
+                    <ContactInfo />
+                    <ContactForm />
+                    <SharedIcons />
                 </DivGridTablet>
-            }
-            {isPhone &&
-                <DivGridPhone>
-                    <ContentDiv>
-                        <ContactInfo />
-                    </ContentDiv>
-                    <ContentDiv>
-                        <ContactForm />
-                    </ContentDiv>
-                    <ContentDiv>
-                        <ContactInfoPhoneResolution />
-                    </ContentDiv>
-                </DivGridPhone>
             }
             <Footer />
         </div>
     )
 }
 
-const DivGridPhone = styled.div`
-    margin: 50px 30px 30px 30px;
-`
-
 const DivGridTablet = styled.div`
-    margin: 80px 100px 30px 100px;
+    margin: 80px 20px 30px 20px;
 `
 
-const ContentDiv = styled.div`
-    padding: 20px 40px;
-`
 
 const DivGridLaptop = styled.div`
     display: grid;
