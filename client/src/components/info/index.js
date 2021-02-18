@@ -111,8 +111,8 @@ const UlPhone = styled.div`
 
 const Ul900 = styled.div`
     display: grid;
-    grid-template-columns: 31% 31% 31%;
-    column-gap: 3%;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2%;
     padding: 0;
     width: 100%;
 `
@@ -130,7 +130,7 @@ const DivText900 = styled.div`
 const ImgPhone = styled.img`
     position: absolute;
     width: 90%;
-    height: 330px;
+    height: 350px;
     margin-left: 5%;
 `
 const ImgTablet = styled.img`

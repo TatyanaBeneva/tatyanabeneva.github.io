@@ -5,8 +5,6 @@ import NavBar from '../../components/nav-bar'
 import Info from '../../components/info'
 import AllInfo from '../../components/all-about-info'
 import Footer from '../../components/footer'
-import flower from './flower.png'
-import flower2 from './flower2.png'
 
 const AboutPage = () => {
 
@@ -20,13 +18,9 @@ const AboutPage = () => {
                 <div>
                     <NavBar />
                     <DivGrid900>
-                        <DivImage900>
-                            <Flower src={flower} />
-                        </DivImage900>
+                        <div></div>
                         <Info />
-                        <DivImage900>
-                            <Flower src={flower2} />
-                        </DivImage900>
+                        <div></div>
                     </DivGrid900>
                     <AllInfo />
                     <Footer />

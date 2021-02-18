@@ -11,7 +11,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
     return (
         <span>
             {isLaptop &&
-                <LiLaptop style={{ border: `5px solid ${titleColor}` }}>
+                <LiLaptop>
                     <h1 style={{ color: titleColor, margin: '10px' }}>
                         {title}
                     </h1>
@@ -29,7 +29,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                 </LiLaptop>
             }
             {isTablet &&
-                <LiTablet style={{ border: `5px solid ${titleColor}` }}>
+                <LiTablet>
                     <h1 style={{ color: titleColor, margin: '10px' }}>
                         {title}
                     </h1>
@@ -47,7 +47,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                 </LiTablet>
             }
             {isPhone &&
-                <LiPhone style={{ border: `5px solid ${titleColor}` }}>
+                <LiPhone>
                     <h3 style={{ color: titleColor, margin: '10px' }}>
                         {title}
                     </h3>
@@ -70,7 +70,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
 
 const Button = styled.button`
     position: relative;
-    margin-top: 10%;
+    margin-top: 10px;
     font-size: 1.2vw;
     padding: 10px;
     border-radius: 25px;
@@ -91,7 +91,7 @@ const Button = styled.button`
 const PPhone = styled.p`
     margin: 5%;
     color: black;
-    font-size: 2.2vw;
+    font-size: 2.4vw;
     height: 90px;
 `
 const PTablet = styled.p`
@@ -109,7 +109,7 @@ const PLaptop = styled.p`
 `
 const LiPhone = styled.div`
     width: 100%;
-    height: 180px;
+    height: 200px;
     border-radius: 10px;
     background-color: lightgray;
 `

@@ -146,7 +146,7 @@ const Button = styled.button`
 `
 const DescriptionTablet = styled.p`
     color: white;
-    font-size: 2.5vw;
+    font-size: 3.5vw;
     letter-spacing: 2px;
     margin-bottom: 40px;
 `
@@ -158,7 +158,7 @@ const Description = styled.p`
 `
 const NameTablet = styled.p`
     color: white;
-    font-size: 5vw;
+    font-size: 6.5vw;
     margin: 0 30px 0 0;
 `
 
@@ -169,7 +169,7 @@ const Name = styled.p`
 `
 const DetailsTablet = styled.p`
     color: #00b6ff;
-    font-size: 2.2vw;
+    font-size: 2.7vw;
     letter-spacing: 3px;
 `
 const Details = styled.p`
