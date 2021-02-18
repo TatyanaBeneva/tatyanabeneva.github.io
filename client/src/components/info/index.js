@@ -7,12 +7,41 @@ import AboutList from '../about-list'
 
 const Info = () => {
 
-    const isLaptop = useMediaQuery({ minWidth: 768 })
+    const isDesktop = useMediaQuery({minWidth: 1400})
+    const isLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1399 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
     const isPhone = useMediaQuery({ maxWidth: 480})
 
     return (
         <div>
+            {isDesktop &&
+                <Div900>
+                    <Img1400 src={monitor} />
+                    <DivText900 style={{ color: 'white' }}>
+                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Ul900>
+                            <AboutList
+                                title={'Before'}
+                                titleColor={'#00cf4b'}
+                                href="before"
+                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                            />
+                            <AboutList
+                                title={'After'}
+                                titleColor={'#0088ff'}
+                                href="after"
+                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                            />
+                            <AboutList
+                                title={'Now'}
+                                titleColor={'#ff0040'}
+                                href="now"
+                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                            />
+                        </Ul900>
+                    </DivText900>
+                </Div900>
+            }
             {isLaptop &&
                 <Div900>
                     <Img900 src={monitor} />
@@ -111,8 +140,8 @@ const UlPhone = styled.div`
 
 const Ul900 = styled.div`
     display: grid;
-    grid-template-columns: 31% 31% 31%;
-    column-gap: 3%;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2%;
     padding: 0;
     width: 100%;
 `
@@ -130,7 +159,7 @@ const DivText900 = styled.div`
 const ImgPhone = styled.img`
     position: absolute;
     width: 90%;
-    height: 330px;
+    height: 350px;
     margin-left: 5%;
 `
 const ImgTablet = styled.img`
@@ -143,6 +172,11 @@ const Img900 = styled.img`
     position: absolute;
     width: 60%;
     height: 523px;
+`
+const Img1400 = styled.img`
+    position: absolute;
+    width: 60%;
+    height: 700px;
 `
 const HelloPhone = styled.p`
     font-size: 2.3vw;

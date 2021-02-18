@@ -89,7 +89,7 @@ const LiTablet = styled.li`
     margin: 0 10px;
     color: white;
     font-family: Jack, serif;
-    font-size: 3vw;
+    font-size: 4vw;
 `
 
 const Li = styled.li`

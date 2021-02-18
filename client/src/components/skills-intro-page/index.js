@@ -315,7 +315,7 @@ const DivCircle900 = styled.div`
 `
 const DivCircle1200 = styled.div`
     position:  absolute;
-    top: 0;
+    top: 100px;
     left: 0;
     bottom: 0;
     right: 0;

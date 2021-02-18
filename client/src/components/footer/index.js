@@ -29,7 +29,7 @@ const FooterComponent = () => {
 
 const DivPhone = styled.div`
     width: 100%;
-    background-color:  black;
+    background-color: #373535;
     position: fixed;
     bottom: 0;
     font-size: 10px;
@@ -40,7 +40,7 @@ const DivPhone = styled.div`
 
 const DivLaptop = styled.div`
     width: 100%;
-    background-color:  black;
+    background-color: #373535;
     position: fixed;
     bottom: 0;
     font-size: 15px;
