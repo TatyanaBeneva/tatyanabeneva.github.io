@@ -29,54 +29,65 @@ const Porject = ({ name, description, href, image, technologies }) => {
     return (
         <div>
             {isLaptop &&
-                <LiLaptop>
-                    <DivInfo>
-                        <Details>
-                            Project details
-                        </Details>
-                        <Name>{name}</Name>
-                        <Description>{description}</Description>
-                        <Details>
-                            Used Technologies:
-                        </Details>
-                        <ul style={{ padding: 0 }}>
-                            {renderTechnologies()}
-                        </ul>
-                        <a href={href}>
-                            <Button>View Live Project</Button>
-                        </a>
-                    </DivInfo>
-                    <div>
-                        <Image src={image} />
-                    </div>
-                </LiLaptop>
+                <div>
+                    <LiLaptop>
+                        <DivInfo>
+                            <Details>
+                                Project details
+                            </Details>
+                            <Name>{name}</Name>
+                            <Description>{description}</Description>
+                            <Details>
+                                Used Technologies:
+                            </Details>
+                            <ul style={{ padding: 0 }}>
+                                {renderTechnologies()}
+                            </ul>
+                            <a href={href}>
+                                <Button>View Live Project</Button>
+                            </a>
+                        </DivInfo>
+                        <div>
+                            <Image src={image} />
+                        </div>
+                    </LiLaptop>
+                    <DivLine></DivLine>
+                </div>
             }
             {isTablet &&
-                <LiTablet>
-                    <DivInfo>
-                        <DetailsTablet>
-                            Project details
-                        </DetailsTablet>
-                        <NameTablet>{name}</NameTablet>
-                        <DescriptionTablet>{description}</DescriptionTablet>
-                        <DetailsTablet>
-                            Used Technologies:
-                        </DetailsTablet>
-                        <ul style={{ padding: 0 }}>
-                            {renderTechnologies()}
-                        </ul>
-                    </DivInfo>
-                    <div>
-                        <Image src={image} style={{ marginBottom: '30px' }} />
-                        <a href={href}>
-                            <ButtonTablet>View Live Project</ButtonTablet>
-                        </a>
-                    </div>
-                </LiTablet>
+                <div>
+                    <LiTablet>
+                        <DivInfo>
+                            <DetailsTablet>
+                                Project details
+                            </DetailsTablet>
+                            <NameTablet>{name}</NameTablet>
+                            <DescriptionTablet>{description}</DescriptionTablet>
+                            <DetailsTablet>
+                                Used Technologies:
+                            </DetailsTablet>
+                            <ul style={{ padding: 0 }}>
+                                {renderTechnologies()}
+                            </ul>
+                        </DivInfo>
+                        <div>
+                            <Image src={image} style={{ marginBottom: '30px' }} />
+                            <a href={href}>
+                                <ButtonTablet>View Live Project</ButtonTablet>
+                            </a>
+                        </div>
+                    </LiTablet>
+                    <DivLine></DivLine>
+                </div>
             }
         </div>
     )
 }
+
+const DivLine = styled.div`
+    width: 100%;
+    border: 2px solid white;
+`
 
 const LiTechTablet = styled.li`
     display: inline-block;
@@ -104,6 +115,7 @@ const LiTechLaptop = styled.li`
 
 const Image = styled.img`
     width: 100%;
+    margin-top: 5%;
 `
 const ButtonTablet = styled.button`
     border: 2px solid white;

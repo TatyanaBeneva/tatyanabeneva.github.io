@@ -265,8 +265,8 @@ const DivCircle481 = styled.div`
     right: 0;
     text-align: center;
     background-color: #00b6ff;
-    width: 270px;
-    height: 270px;
+    width: 220px;
+    height: 220px;
     margin: auto;
     border-radius: 50%;
     transform: rotate(0deg);

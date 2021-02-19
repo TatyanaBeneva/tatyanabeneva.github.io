@@ -5,7 +5,7 @@ const SubmitButton = ({title, isLoading}) => {
     return (
         <Div>
             {isLoading ? 
-                <Button type="submit" disabled={true}>Loading...</Button> :
+                <Button type="submit" disabled={true}>Submiting...</Button> :
                 <Button type="submit" disabled={false}>{title}</Button>
             }
         </Div>

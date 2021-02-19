@@ -26,7 +26,7 @@ const AllInfo = () => {
                 <Div>
                     <ul style={{ padding: 0, fontSize: '1.4vw' }}>
                         <Li id="before">
-                            <h1 style={{ color: '#00cf4b', marginTop: 0 }}>Before</h1>
+                            <H1>Before</H1>
                             <P>
                                 I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
                                 all my life and soon after I graduated I started learning programming, because I
@@ -35,7 +35,7 @@ const AllInfo = () => {
                             </P>
                         </Li>
                         <Li id="after">
-                            <h1 style={{ color: '#0088ff', marginTop: 0 }}>After</h1>
+                            <H1>After</H1>
                             <P>
                                 Of course I started with Html and CSS. Then came the turn of JavaScript and with that I
                                 had to choose which framework to work with. So i did a little research of my own and
@@ -63,7 +63,7 @@ const AllInfo = () => {
                             </ul>
                         </Li>
                         <Li id="now">
-                            <h1 style={{ color: '#ff0040', marginTop: 0 }}>Now</h1>
+                            <H1>Now</H1>
                             <P>
                                 My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React,
                                 Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking
@@ -81,9 +81,9 @@ const AllInfo = () => {
             }
             {isTablet &&
                 <DivTablet>
-                    <ul style={{ padding: 0, fontSize: '2.5vw' }}>
+                    <ul style={{ padding: 0, fontSize: '3.5vw' }}>
                         <Li id="before">
-                            <h1 style={{ color: '#00cf4b', marginTop: 0 }}>Before</h1>
+                            <H1>Before</H1>
                             <PTablet>
                                 I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
                                 all my life and soon after I graduated I started learning programming, because I
@@ -92,7 +92,7 @@ const AllInfo = () => {
                             </PTablet>
                         </Li>
                         <Li id="after">
-                            <h1 style={{ color: '#0088ff', marginTop: 0 }}>After</h1>
+                            <H1>After</H1>
                             <PTablet>
                                 Of course I started with Html and CSS. Then came the turn of JavaScript and with that I
                                 had to choose which framework to work with. So i did a little research of my own and
@@ -120,7 +120,7 @@ const AllInfo = () => {
                             </ul>
                         </Li>
                         <Li id="now">
-                            <h1 style={{ color: '#ff0040', marginTop: 0 }}>Now</h1>
+                            <H1>Now</H1>
                             <PTablet>
                                 My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React,
                                 Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking
@@ -138,9 +138,9 @@ const AllInfo = () => {
             }
             {isPhone &&
                 <DivTablet>
-                    <ul style={{ padding: 0, fontSize: '2.5vw' }}>
+                    <ul style={{ padding: 0, fontSize: '3.5vw' }}>
                         <Li id="before">
-                            <h1 style={{ color: '#00cf4b', marginTop: 0 }}>Before</h1>
+                            <H1>Before</H1>
                             <PTablet>
                                 I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
                                 all my life and soon after I graduated I started learning programming, because I
@@ -149,7 +149,7 @@ const AllInfo = () => {
                             </PTablet>
                         </Li>
                         <Li id="after">
-                            <h1 style={{ color: '#0088ff', marginTop: 0 }}>After</h1>
+                            <H1>After</H1>
                             <PTablet>
                                 Of course I started with Html and CSS. Then came the turn of JavaScript and with that I
                                 had to choose which framework to work with. So i did a little research of my own and
@@ -177,7 +177,7 @@ const AllInfo = () => {
                             </ul>
                         </Li>
                         <Li id="now">
-                            <h1 style={{ color: '#ff0040', marginTop: 0 }}>Now</h1>
+                            <H1>Now</H1>
                             <PTablet>
                                 My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React,
                                 Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking
@@ -196,6 +196,10 @@ const AllInfo = () => {
         </div>
     )
 }
+
+const H1 = styled.h1`
+    color: #00b6ff;
+`
 
 const Button900 = styled.button`
     border: 2px solid white;

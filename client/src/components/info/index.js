@@ -22,19 +22,16 @@ const Info = () => {
                         <Ul900>
                             <AboutList
                                 title={'Before'}
-                                titleColor={'#00cf4b'}
                                 href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
-                                titleColor={'#0088ff'}
                                 href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
-                                titleColor={'#ff0040'}
                                 href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
@@ -50,19 +47,16 @@ const Info = () => {
                         <Ul900>
                             <AboutList
                                 title={'Before'}
-                                titleColor={'#00cf4b'}
                                 href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
-                                titleColor={'#0088ff'}
                                 href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
-                                titleColor={'#ff0040'}
                                 href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
@@ -78,19 +72,16 @@ const Info = () => {
                         <Ul900>
                             <AboutList
                                 title={'Before'}
-                                titleColor={'#00cf4b'}
                                 href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
-                                titleColor={'#0088ff'}
                                 href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
-                                titleColor={'#ff0040'}
                                 href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
@@ -106,19 +97,16 @@ const Info = () => {
                         <UlPhone>
                             <AboutList
                                 title={'Before'}
-                                titleColor={'#00cf4b'}
                                 href="before"
                                 beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
                             />
                             <AboutList
                                 title={'After'}
-                                titleColor={'#0088ff'}
                                 href="after"
                                 beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
                             />
                             <AboutList
                                 title={'Now'}
-                                titleColor={'#ff0040'}
                                 href="now"
                                 beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
                             />
@@ -180,7 +168,7 @@ const Img1400 = styled.img`
 `
 const HelloPhone = styled.p`
     font-size: 2.3vw;
-    color: #ffac28;
+    color: #00b6ff;
     white-space: nowrap;
     margin: 15px auto;
     overflow: hidden;
@@ -193,7 +181,7 @@ const HelloPhone = styled.p`
 `
 const Hello = styled.p`
     font-size: 1.8vw;
-    color: #ffac28;
+    color: #00b6ff;
     white-space: nowrap;
     margin: 15px auto;
     overflow: hidden;

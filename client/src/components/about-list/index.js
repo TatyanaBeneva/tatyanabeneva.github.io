@@ -13,9 +13,9 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
         <span>
             {isDesktop &&
                 <LiDesktop>
-                    <h1 style={{ color: titleColor, margin: '10px' }}>
+                    <H1>
                         {title}
-                    </h1>
+                    </H1>
                     <PDesktop>{beggining}</PDesktop>
                     <Link
                         activeClass="active"
@@ -23,7 +23,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         spy={true}
                         smooth={true}
                     >
-                        <Button style={{ backgroundColor: titleColor }}>
+                        <Button>
                             View more...
                         </Button>
                     </Link>
@@ -31,9 +31,9 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
             }
             {isLaptop &&
                 <LiLaptop>
-                    <h1 style={{ color: titleColor, margin: '10px' }}>
+                    <H1>
                         {title}
-                    </h1>
+                    </H1>
                     <PLaptop>{beggining}</PLaptop>
                     <Link
                         activeClass="active"
@@ -41,7 +41,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         spy={true}
                         smooth={true}
                     >
-                        <Button style={{ backgroundColor: titleColor }}>
+                        <Button>
                             View more...
                         </Button>
                     </Link>
@@ -49,9 +49,9 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
             }
             {isTablet &&
                 <LiTablet>
-                    <h1 style={{ color: titleColor, margin: '10px' }}>
+                    <H1>
                         {title}
-                    </h1>
+                    </H1>
                     <PTablet>{beggining}</PTablet>
                     <Link
                         activeClass="active"
@@ -59,7 +59,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         spy={true}
                         smooth={true}
                     >
-                        <Button style={{ backgroundColor: titleColor }}>
+                        <Button>
                             View more...
                         </Button>
                     </Link>
@@ -67,7 +67,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
             }
             {isPhone &&
                 <LiPhone>
-                    <h3 style={{ color: titleColor, margin: '10px' }}>
+                    <h3 style={{ color:'#00b6ff', margin: '10px' }}>
                         {title}
                     </h3>
                     <PPhone>{beggining}</PPhone>
@@ -77,7 +77,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         spy={true}
                         smooth={true}
                     >
-                        <Button style={{ backgroundColor: titleColor }}>
+                        <Button>
                             View more...
                         </Button>
                     </Link>
@@ -87,6 +87,11 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
     )
 }
 
+const H1 = styled.h1`
+    margin: 10px;
+    color: #00b6ff;
+`
+
 const Button = styled.button`
     position: relative;
     margin-top: 10px;
@@ -94,6 +99,7 @@ const Button = styled.button`
     padding: 10px;
     border-radius: 25px;
     color: white;
+    background-color: #00b6ff;
 
     &:focus {
         outline: none;
