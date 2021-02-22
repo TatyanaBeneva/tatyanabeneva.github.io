@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import Input from '../input'
 import SubmitButton from '../submit-button'
 import Notification from '../notifications'
+import LanguageContext from '../../Context'
 
 const ContactForm = () => {
     const [name, setName] = useState('')
@@ -14,6 +15,24 @@ const ContactForm = () => {
     const [isSubmited, setIsSubmited] = useState(false)
     const [isErrorSubmited, setIsErrorSubmited] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+    const {language, } = useContext(LanguageContext)
+
+    const label = {
+        'EN': ["What is your name?","Write your email", "What is your message to me?"],
+        'BG': ['Как се казваш?', 'Какъв е имейла ти?', 'Какво е твоето съобщение към мен?']
+    }
+
+    const placeholder = {
+        'EN': ["Type your first and second name...", "Type your email...","Type your message..."],
+        'BG': ['Име и фамилия...', 'Имейл...', 'Съобщение...']
+    }
+
+    const errors = {
+        'EN':["Name field cannot be empty!", "Тhe first and second names must begin with a capital letter and continue with lowercase letters!",
+        "Email field cannot be empty!","Email must be valid!","Message field cannot be empty!","Message should more the 10 characters!"],
+        'BG': ["Полето за името не може да бъде празно!", "Името и фамилията трябва да започват с главна буква",
+        ]
+    }
 
     useEffect(() => {
         if(isSubmited || isErrorSubmited){
@@ -30,34 +49,34 @@ const ContactForm = () => {
         setErrorMessage('')
         // Name
         if (!name) {
-            setErrorName("Name field cannot be empty!")
+            setErrorName(errors[language][0])
             return false
         }
 
         if (!name.match(/[A-Z][a-z]+ [A-Z][a-z]+/)) {
-            setErrorName("Тhe first and second names must begin with a capital letter and continue with lowercase letters!")
+            setErrorName(errors[language][1])
             return false
         }
 
         // Email
         if (email === '') {
-            setErrorEmail("Email field cannot be empty!")
+            setErrorEmail(errors[language][2])
             return false
         }
 
         if (!email.match(/[A-Za-z0-9.]+@[a-z]+.[a-z]+.?[a-z]+/)) {
-            setErrorEmail("Email must be valid!")
+            setErrorEmail(errors[language][3])
             return false
         }
 
         // Message
         if (message === '') {
-            setErrorMessage("Message field cannot be empty!")
+            setErrorMessage(errors[language][4])
             return false
         }
         
         if(message.length <= 10) {
-            setErrorMessage("Message should more the 10 characters!")
+            setErrorMessage(errors[language][5])
             return false
         }
 
@@ -106,38 +125,39 @@ const ContactForm = () => {
         <Form onSubmit={handleSubmit}>
             <Input
                 onChange={e => setName(e.target.value)}
-                label={"What is your name?"}
+                label={label[language][0]}
                 name={"name"}
                 icon={"far fa-user"}
-                placeholder={"Type your first and second name..."}
+                placeholder={placeholder[language][0]}
                 value={name}
                 isError={errorName}
             />
             {errorName ? <Notification error={errorName} /> : ""}
             <Input
                 onChange={e => setEmail(e.target.value)}
-                label={"Write your email"}
+                label={label[language][1]}
                 name={"email"}
                 icon={"far fa-envelope"}
-                placeholder={"Type your email..."}
+                placeholder={placeholder[language][1]}
                 value={email}
                 isError={errorEmail}
             />
             {errorEmail ? <Notification error={errorEmail} /> : ""}
             <Input
                 onChange={e => setMessage(e.target.value)}
-                label={"What is your message to me?"}
+                label={label[language][2]}
                 name={"message"}
                 icon={"far fa-comment-alt"}
-                placeholder={"Type your message..."}
+                placeholder={placeholder[language][2]}
                 value={message}
                 isError={errorMessage}
             />
             {errorMessage ? <Notification error={errorMessage} /> : ""}
-            <SubmitButton title={"Submit form"} isLoading={isLoading} />
-            {isSubmited ? <Div>Thank you for contacting me! You must have received an automatic reply 
-                to the email you entered above.</Div> : ""}
-            {isErrorSubmited ? <DivError>Тhere are currently server issues, please try again later.
+            <SubmitButton language={language} title={language==='EN' ? 'Submit form' : 'Изпрати формата'} isLoading={isLoading} />
+            {isSubmited ? <Div>{language==='EN' ? "Thank you for contacting me! You must have received an automatic reply to the email you entered above." : 
+            "Благодаря, че се свързахте с мен! Трябва да получите автоматичен отговор на имейла въведен по-горе от вас"}</Div> : ""}
+            {isErrorSubmited ? <DivError>{language==='EN' ? "Тhere are currently server issues, please try again later or use some of the social network I provide." :
+            "Вмомента имаме проблеми с изпращането на формата, моля опитайте отново по-късно или използвайте посочените от мен социални мрежи."}
             </DivError> : ''}
         </Form>
     )

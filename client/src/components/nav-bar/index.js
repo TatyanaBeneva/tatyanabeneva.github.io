@@ -11,7 +11,7 @@ import LanguageContext from '../../Context'
 
 const NavBar = () => {
     const [isClick, setIsClick] = useState(false)
-    const {language, setLanguage} = useContext(LanguageContext)
+    const {language, } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1199 })
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })

@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 import SharedIcons from '../share-list-icons'
+import LanguageContext from '../../Context'
 
 const ContactInfo = () => {
-
+    const { language, } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 768 })
     const isTablet = useMediaQuery({ maxWidth: 767 })
+
+    const text = {
+        'EN': "Let's work together and I'll do my best!",
+        'BG': "Нека работим заедно и ще направя всичко възможно!"
+    }
 
     return (
         <div>
             {isLaptop &&
                 <div>
                     <Heading>
-                        Let's work together and I'll do my best!
+                        {text[language]}
                     </Heading>
                     <SharedIcons />
                 </div>
@@ -21,7 +27,7 @@ const ContactInfo = () => {
             {isTablet &&
                 <div>
                     <HeadingTablet>
-                        Let's work together and I'll do my best!
+                        {text[language]}
                     </HeadingTablet>
                 </div>
             }

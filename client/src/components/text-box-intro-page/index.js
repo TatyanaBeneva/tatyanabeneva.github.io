@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 import LanguageContext from '../../Context'
 
 const TextBox = (props) => {
-    const { language, setLanguage } = useContext(LanguageContext)
+    const { language, } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 899 })

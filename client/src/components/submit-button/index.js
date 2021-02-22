@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const SubmitButton = ({title, isLoading}) => {
+const SubmitButton = ({title, isLoading, language}) => {
     return (
         <Div>
             {isLoading ? 
-                <Button type="submit" disabled={true}>Submiting...</Button> :
+                <Button type="submit" disabled={true}>{language==='EN' ? "Submiting..." : "Изпращане..."}</Button> :
                 <Button type="submit" disabled={false}>{title}</Button>
             }
         </Div>
