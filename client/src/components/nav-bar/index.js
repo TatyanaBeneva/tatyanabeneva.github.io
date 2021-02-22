@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
 import Link from '../link'
 import Logo from '../logo'
 import Icon from '../social-media-icons'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
+import LanguageButton from '../language-button'
 
 const NavBar = () => {
     const [isClick, setIsClick] = useState(false)
-
     const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1199 })
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
+
+    const currentRoute = useHistory().location.pathname.toLowerCase()
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -24,10 +27,11 @@ const NavBar = () => {
             {isLaptop &&
                 <Div>
                     <Logo />
+                    <LanguageButton />
                     <Navigation>
-                        <Link href={'/about'} title={'About me'} type={'nav'} />
-                        <Link href={'/work'} title={'My work'} type={'nav'} />
-                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                        <Link href={'/about'} title={'About me'} type={currentRoute.includes('about') ? 'nav-active' : 'nav'} />
+                        <Link href={'/work'} title={'My work'} type={currentRoute.includes('work') ? 'nav-active' : 'nav'} />
+                        <Link href={'/contact'} title={'Contact me'} type={currentRoute.includes('contact') ? 'nav-active' : 'nav'} />
                         <span style={{ border: '1px solid lightgray', marginRight: '20px' }}></span>
                         <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
                         <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />

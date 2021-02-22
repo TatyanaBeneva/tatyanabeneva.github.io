@@ -22,18 +22,25 @@ const Skill = ({ icon, text }) => {
                     <DivIconPhone>
                         <i className={icon}></i>
                     </DivIconPhone>
-                    <DivText>
+                    <DivTextPhone>
                         {text}
-                    </DivText>
+                    </DivTextPhone>
                 </DivPhone>
             }
         </div>
     )
 }
 
-const DivText = styled.div`
+const DivTextPhone = styled.div`
     color: black;
     font-size: 15px;
+    margin: 7.5px 10px;
+    font-family: Jack, serif;
+`
+
+const DivText = styled.div`
+    color: black;
+    font-size: 20px;
     margin: 7.5px 10px;
     font-family: Jack, serif;
 `
