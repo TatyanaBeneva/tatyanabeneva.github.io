@@ -19,6 +19,11 @@ const NavBar = () => {
 
     const currentRoute = useHistory().location.pathname.toLowerCase()
 
+    const titles = {
+        'EN': ['About me', 'My work', 'Contact me'],
+        'BG': ['Повече за мен', 'Проекти', 'Свържи се с мен']
+    }
+
     const handleClick = (e) => {
         e.preventDefault()
         setIsClick(!isClick)
@@ -31,9 +36,9 @@ const NavBar = () => {
                     <Logo />
                     <LanguageButton />
                     <Navigation>
-                        <Link href={'/about'} title={language==='EN' ? 'About me' : 'Повече за мен'} type={currentRoute.includes('about') ? 'nav-active' : 'nav'} />
-                        <Link href={'/work'} title={language==='EN' ? 'My work' : 'Проекти'} type={currentRoute.includes('work') ? 'nav-active' : 'nav'} />
-                        <Link href={'/contact'} title={language==='EN' ? 'Contact me' : 'Свържи се с мен'} type={currentRoute.includes('contact') ? 'nav-active' : 'nav'} />
+                        <Link href={'/about'} title={titles[language][0]} type={currentRoute.includes('about') ? 'nav-active' : 'nav'} />
+                        <Link href={'/work'} title={titles[language][1]} type={currentRoute.includes('work') ? 'nav-active' : 'nav'} />
+                        <Link href={'/contact'} title={titles[language][2]} type={currentRoute.includes('contact') ? 'nav-active' : 'nav'} />
                         <span style={{ border: '1px solid lightgray', marginRight: '20px' }}></span>
                         <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
                         <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
@@ -44,9 +49,9 @@ const NavBar = () => {
                 <Div>
                     <Logo />
                     <Navigation>
-                        <Link href={'/about'} title={'About me'} type={'nav'} />
-                        <Link href={'/work'} title={'My work'} type={'nav'} />
-                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                        <Link href={'/about'} title={titles[language][0]} type={'nav'} />
+                        <Link href={'/work'} title={titles[language][1]} type={'nav'} />
+                        <Link href={'/contact'} title={titles[language][2]} type={'nav'} />
                         <span style={{ border: '1px solid lightgray', marginRight: '20px' }}></span>
                         <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
                         <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />
@@ -66,13 +71,13 @@ const NavBar = () => {
                             <Div481>
                                 <Ul>
                                     <Li481>
-                                        <Link href={'/about'} title={'About me'} type={'nav'} />
+                                        <Link href={'/about'} title={titles[language][0]} type={'nav'} />
                                     </Li481>
                                     <Li481>
-                                        <Link href={'/work'} title={'My work'} type={'nav'} />
+                                        <Link href={'/work'} title={titles[language][1]} type={'nav'} />
                                     </Li481>
                                     <Li481>
-                                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                                        <Link href={'/contact'} title={titles[language][2]} type={'nav'} />
                                     </Li481>
                                 </Ul>
                                 <DivLine />
@@ -96,13 +101,13 @@ const NavBar = () => {
                             <Div481>
                                 <ul>
                                     <Li481>
-                                        <Link href={'/about'} title={'About me'} type={'nav'} />
+                                        <Link href={'/about'} title={titles[language][0]} type={'nav'} />
                                     </Li481>
                                     <Li481>
-                                        <Link href={'/work'} title={'My work'} type={'nav'} />
+                                        <Link href={'/work'} title={titles[language][1]} type={'nav'} />
                                     </Li481>
                                     <Li481>
-                                        <Link href={'/contact'} title={'Contact me'} type={'nav'} />
+                                        <Link href={'/contact'} title={titles[language][2]} type={'nav'} />
                                     </Li481>
                                 </ul>
                                 <DivLine />

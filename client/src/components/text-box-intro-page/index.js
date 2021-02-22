@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
+import LanguageContext from '../../Context'
 
 const TextBox = (props) => {
+    const { language, setLanguage } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 899 })
@@ -22,17 +24,26 @@ const TextBox = (props) => {
         history.push('/contact')
     }
 
+    const text = {
+        'EN': ["Hello!", "I'm Tatyana Beneva, creative web developer.",
+            "My recent experience is building React Single page Applications with Node JS as a back-end.",
+            "View my work", "Let's talk"],
+        'BG': ['Здравейте!', 'Казвам се Татяна Бенева и правя уеб приложения.',
+            'Най-скорошният ми опит е в създаването на уеб страници използвайки React JS и Node JS',
+            'Виж проктите ми', 'Свържи се с мен']
+    }
+
     return (
         <div>
             {isLaptop &&
                 <Div1200>
-                    <Hello1200> Hello! </Hello1200>
-                    <Name1200> I'm Tatyana Beneva, creative web developer.</Name1200>
+                    <Hello1200> {text[language][0]} </Hello1200>
+                    <Name1200>{text[language][1]} </Name1200>
                     <Description1200>
-                        My recent experience is building React Single page Applications with Node Js as a back-end.
+                        {text[language][2]}
                     </Description1200>
-                    <Button1200 onClick={toWorkPage}>View my work</Button1200>
-                    <Button1200 onClick={toContactPage}>Let's talk</Button1200>
+                    <Button1200 onClick={toWorkPage}>{text[language][3]}</Button1200>
+                    <Button1200 onClick={toContactPage}>{text[language][4]}</Button1200>
                 </Div1200>
             }
             {isTabletOrLaptop &&
@@ -58,7 +69,7 @@ const TextBox = (props) => {
                 </Div900>
             }
             {isBigPhone &&
-                <Div900 style={{textAlign: 'center'}}>
+                <Div900 style={{ textAlign: 'center' }}>
                     <Hello1200> Hello! </Hello1200>
                     <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
                     <Description1200>
@@ -69,7 +80,7 @@ const TextBox = (props) => {
                 </Div900>
             }
             {isPhone &&
-                <Div900 style={{textAlign: 'center'}}>
+                <Div900 style={{ textAlign: 'center' }}>
                     <Hello1200> Hello! </Hello1200>
                     <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
                     <Description1200>
