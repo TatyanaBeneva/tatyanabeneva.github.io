@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
@@ -7,9 +7,11 @@ import Logo from '../logo'
 import Icon from '../social-media-icons'
 import '../../fontawesome/fontawesome-free-5.15.2-web/css/all.min.css'
 import LanguageButton from '../language-button'
+import LanguageContext from '../../Context'
 
 const NavBar = () => {
     const [isClick, setIsClick] = useState(false)
+    const {language, setLanguage} = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 1200 })
     const isTabletOrLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1199 })
     const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
@@ -29,9 +31,9 @@ const NavBar = () => {
                     <Logo />
                     <LanguageButton />
                     <Navigation>
-                        <Link href={'/about'} title={'About me'} type={currentRoute.includes('about') ? 'nav-active' : 'nav'} />
-                        <Link href={'/work'} title={'My work'} type={currentRoute.includes('work') ? 'nav-active' : 'nav'} />
-                        <Link href={'/contact'} title={'Contact me'} type={currentRoute.includes('contact') ? 'nav-active' : 'nav'} />
+                        <Link href={'/about'} title={language==='EN' ? 'About me' : 'Повече за мен'} type={currentRoute.includes('about') ? 'nav-active' : 'nav'} />
+                        <Link href={'/work'} title={language==='EN' ? 'My work' : 'Проекти'} type={currentRoute.includes('work') ? 'nav-active' : 'nav'} />
+                        <Link href={'/contact'} title={language==='EN' ? 'Contact me' : 'Свържи се с мен'} type={currentRoute.includes('contact') ? 'nav-active' : 'nav'} />
                         <span style={{ border: '1px solid lightgray', marginRight: '20px' }}></span>
                         <Icon link="https://www.linkedin.com/in/tatyana-beneva-8567b01b1" icon="fab fa-linkedin-in" />
                         <Icon link="https://www.facebook.com/tatjana.beneva.1/" icon="fab fa-facebook-f" />

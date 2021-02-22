@@ -5,13 +5,16 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import Navigation from './navigation'
 import AnalyticsComponent from './Analytics'
+import WithLanguage from './components/with-language'
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
-      <AnalyticsComponent />
-      <Navigation />
-    </HashRouter>
+    <WithLanguage>
+      <HashRouter>
+        <AnalyticsComponent />
+        <Navigation />
+      </HashRouter>
+    </WithLanguage>
   </React.StrictMode>,
   document.getElementById('root')
 );
