@@ -14,7 +14,7 @@ const LanguageButton = () => {
         <span>
             <Span>
                 <Button style={{ padding: 0 }} onClick={changeLanguage}>
-                    Language - {language}
+                    {language==='EN' ? "Language" : "Език"} - {language}
                 </Button>
             </Span>
             {isClicked ?

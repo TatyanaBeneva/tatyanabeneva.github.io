@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 import { Link} from "react-scroll"
+import LanguageContext from '../../Context'
 
-const AboutList = ({ title, titleColor, beggining, href }) => {
+const AboutList = ({ title, beggining, href }) => {
+    const {language, } = useContext(LanguageContext)
     const isDesktop = useMediaQuery({minWidth: 1400})
     const isLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1399 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
@@ -24,7 +26,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         smooth={true}
                     >
                         <Button>
-                            View more...
+                            {language==='EN' ? "View more..." : "Виж повече..."}
                         </Button>
                     </Link>
                 </LiDesktop>
@@ -42,7 +44,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         smooth={true}
                     >
                         <Button>
-                            View more...
+                            {language==='EN' ? "View more..." : "Виж повече..."}
                         </Button>
                     </Link>
                 </LiLaptop>
@@ -60,7 +62,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         smooth={true}
                     >
                         <Button>
-                            View more...
+                            {language==='EN' ? "View more..." : "Виж повече..."}
                         </Button>
                     </Link>
                 </LiTablet>
@@ -78,7 +80,7 @@ const AboutList = ({ title, titleColor, beggining, href }) => {
                         smooth={true}
                     >
                         <Button>
-                            View more...
+                            {language==='EN' ? "View more..." : "Виж повече..."}
                         </Button>
                     </Link>
                 </LiPhone>

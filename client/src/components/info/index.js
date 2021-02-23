@@ -1,16 +1,35 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
 import monitor from './monitor.png'
 import AboutList from '../about-list'
-
+import LanguageContext from '../../Context'
 
 const Info = () => {
-
+    const {language, } = useContext(LanguageContext)
     const isDesktop = useMediaQuery({minWidth: 1400})
     const isLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1399 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
     const isPhone = useMediaQuery({ maxWidth: 480})
+
+    const headings = {
+        'EN': ['Before', 'After', 'Now'],
+        'BG': ['Преди', 'След', 'Сега']
+    }
+
+    const description = {
+        'EN': ["I have bachelore degree in Finance, but I felt that this wasn't something I wanted...",
+            "Of course I started with Html and CSS. Then came the turn of JavaScript and with that...",
+            "My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React..."],
+        'BG': ["Имам бакалавърска диплома по Финанси, но почувствах че това не е нещото, с което искам да се... ",
+            "Разбира се започнах с Html и CSS. След това дойде ред на JavaScript и с това...",
+            "Опитът ми включва следните технологии: HTML, CSS, SASS, JS, Node JS, React..."]
+    }
+
+    const hello = {
+        'EN': ["Hello! My name is Tatyana Beneva."],
+        'BG': ["Здравейте хора! Аз съм Татяна Бенева."]
+    }
 
     return (
         <div>
@@ -18,22 +37,22 @@ const Info = () => {
                 <Div900>
                     <Img1400 src={monitor} />
                     <DivText900 style={{ color: 'white' }}>
-                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Hello> {hello[language][0]} </Hello>
                         <Ul900>
                             <AboutList
-                                title={'Before'}
+                                title={headings[language][0]}
                                 href="before"
-                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                                beggining={description[language][0]}
                             />
                             <AboutList
-                                title={'After'}
+                                title={headings[language][1]}
                                 href="after"
-                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                                beggining={description[language][1]}
                             />
                             <AboutList
-                                title={'Now'}
+                                title={headings[language][2]}
                                 href="now"
-                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                                beggining={description[language][2]}
                             />
                         </Ul900>
                     </DivText900>
@@ -43,22 +62,22 @@ const Info = () => {
                 <Div900>
                     <Img900 src={monitor} />
                     <DivText900 style={{ color: 'white' }}>
-                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Hello> {hello[language][0]} </Hello>
                         <Ul900>
                             <AboutList
-                                title={'Before'}
+                                title={headings[language][0]}
                                 href="before"
-                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                                beggining={description[language][0]}
                             />
                             <AboutList
-                                title={'After'}
+                                title={headings[language][1]}
                                 href="after"
-                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                                beggining={description[language][1]}
                             />
                             <AboutList
-                                title={'Now'}
+                                title={headings[language][2]}
                                 href="now"
-                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                                beggining={description[language][2]}
                             />
                         </Ul900>
                     </DivText900>
@@ -68,22 +87,22 @@ const Info = () => {
                 <Div900>
                     <ImgTablet src={monitor} />
                     <DivTextTablet style={{ color: 'white' }}>
-                        <Hello> Hello! My name is Tatyana Beneva. </Hello>
+                        <Hello> {hello[language][0]} </Hello>
                         <Ul900>
                             <AboutList
-                                title={'Before'}
+                                title={headings[language][0]}
                                 href="before"
-                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                                beggining={description[language][0]}
                             />
                             <AboutList
-                                title={'After'}
+                                title={headings[language][1]}
                                 href="after"
-                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                                beggining={description[language][1]}
                             />
                             <AboutList
-                                title={'Now'}
+                                title={headings[language][2]}
                                 href="now"
-                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                                beggining={description[language][2]}
                             />
                         </Ul900>
                     </DivTextTablet>
@@ -93,22 +112,22 @@ const Info = () => {
                 <Div900>
                     <ImgPhone src={monitor} />
                     <DivTextTablet style={{ color: 'white' }}>
-                        <HelloPhone> Hello! My name is Tatyana Beneva. </HelloPhone>
+                        <HelloPhone> {hello[language][0]} </HelloPhone>
                         <UlPhone>
                             <AboutList
-                                title={'Before'}
+                                title={headings[language][0]}
                                 href="before"
-                                beggining={"I have bachelore degree in Finance, but I felt that this wasn't something I wanted to ..."}
+                                beggining={description[language][0]}
                             />
                             <AboutList
-                                title={'After'}
+                                title={headings[language][1]}
                                 href="after"
-                                beggining={"Of course I started with Html and CSS. Then came the turn of JavaScript and with that I ..."}
+                                beggining={description[language][1]}
                             />
                             <AboutList
-                                title={'Now'}
+                                title={headings[language][2]}
                                 href="now"
-                                beggining={"My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, ..."}
+                                beggining={description[language][2]}
                             />
                         </UlPhone>
                     </DivTextTablet>

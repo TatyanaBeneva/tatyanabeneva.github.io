@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
+import LanguageContext from '../../Context'
 
 const AllInfo = () => {
+    const { language, } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 768 })
     const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 767 })
-    const isPhone = useMediaQuery({maxWidth: 480})
+    const isPhone = useMediaQuery({ maxWidth: 480 })
 
     const history = useHistory();
 
@@ -20,27 +22,50 @@ const AllInfo = () => {
         history.push('/contact')
     }
 
+    const headings = {
+        'EN': ['Before', 'After', 'Now'],
+        'BG': ['Преди', 'След', 'Сега']
+    }
+
+    const description = {
+        'EN': ["I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do all my life and soon after I graduated I started learning programming, because I remembered how much I liked and was inspired by the school hours when we studied just basic html. So my journey into the world of programming started!",
+            "Of course I started with Html and CSS. Then came the turn of JavaScript and with that I had to choose which framework to work with. So i did a little research of my own and chose React as a start. Where did I study these technologies? I took the following courses at SoftUni University:",
+            "During this time I was able to read some good books:",
+            "My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React, Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking courses of graphic design and UI web design. My moto is 'never stop learning'. At the moment I do not have much experience, but I have a great passion and desire to learn and grow."],
+        'BG': ["Имам бакалавърска диплома по Финанси, но почувствах че това не е нещото, с което искам да се занимавам цял живот и скоро след като завърших, започнах да уча програмиране, защото си спомних колко много ми хареса и се бях вдъхновила от училищните часове, когато учихме един обикновен html. И така приключението ми в света на програмирането започна!",
+            "Разбира се започнах с Html и CSS. След това дойде ред на JavaScript и с това трябваше да избирам с кой framework ще работя. Затова си направих едно лично проучване и след всичко прочетено реших да започна с React като начало. Къде учих тези технологии? Харесах дигиталната система за обучение на Университета SoftUni и изкарах следните курсове там:",
+            "През това време успях да прочета и някои добри книги:",
+            "Опитът ми включва следните технологии: HTML, CSS, SASS, JS, Node JS, React, Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. Вмомента също вземам курсове, но те са по насочени към график и UI дизайна. Моето мото е 'никога не спирай да се учиш'. На този етап нямам много опит, но имам огромна страст и желание да се уча и раста."]
+    }
+
+    const books = {
+        'EN': ["HTML 5 & CSS 3. Practical programming",
+            "Basics of programming with JavaScript",
+            "Principles of programming with C#",
+            "You don’t know JS – series books",
+            "Many books on self-improvement"],
+        'BG': ["HTML 5 & CSS 3. Практическо програмиране",
+            "Основи на програмирането с JavaScript",
+            "Принципи на програмирането със C#",
+            "Ти не знаеш JS – серия книги",
+            "Много книги за самоусъвършенстване"]
+    }
+
     return (
         <div>
             {isLaptop &&
                 <Div>
                     <ul style={{ padding: 0, fontSize: '1.4vw' }}>
                         <Li id="before">
-                            <H1>Before</H1>
+                            <H1>{headings[language][0]}</H1>
                             <P>
-                                I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                                all my life and soon after I graduated I started learning programming, because I
-                                remembered how much I liked and was inspired by the school hours when we studied just
-                                basic html. So my journey into the world of programming started!
+                                {description[language][0]}
                             </P>
                         </Li>
                         <Li id="after">
-                            <H1>After</H1>
+                            <H1>{headings[language][1]}</H1>
                             <P>
-                                Of course I started with Html and CSS. Then came the turn of JavaScript and with that I
-                                had to choose which framework to work with. So i did a little research of my own and
-                                chose React as a start.
-                                Where did I study these technologies? I took the following courses at SoftUni University:
+                                {description[language][1]}
                             </P>
                             <ul style={{ padding: '2.5%' }}>
                                 <li>HTML/CSS</li>
@@ -52,24 +77,20 @@ const AllInfo = () => {
                                 <li>C# Fundamentals</li>
                             </ul>
                             <P>
-                                During this time I was able to read some good books:
+                                {description[language][2]}
                             </P>
                             <ul style={{ padding: '2.5%' }}>
-                                <li>HTML 5 & CSS 3. Practical programming</li>
-                                <li>Basics of programming with JavaScript</li>
-                                <li>Principles of programming with C#</li>
-                                <li>You don’t know JS – series books</li>
-                                <li>Many books on self-improvement</li>
+                                <li>{books[language][0]}</li>
+                                <li>{books[language][1]}</li>
+                                <li>{books[language][2]}</li>
+                                <li>{books[language][3]}</li>
+                                <li>{books[language][4]}</li>
                             </ul>
                         </Li>
                         <Li id="now">
-                            <H1>Now</H1>
+                            <H1>{headings[language][2]}</H1>
                             <P>
-                                My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React,
-                                Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking
-                                courses of graphic design and UI web design. My moto is "never stop learning". At the
-                                moment I do not have much experience, but I have a great passion and desire to learn
-                                and grow.
+                                {description[language][3]}
                             </P>
                         </Li>
                     </ul>
@@ -83,21 +104,15 @@ const AllInfo = () => {
                 <DivTablet>
                     <ul style={{ padding: 0, fontSize: '3.5vw' }}>
                         <Li id="before">
-                            <H1>Before</H1>
+                            <H1>{headings[language][0]}</H1>
                             <PTablet>
-                                I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                                all my life and soon after I graduated I started learning programming, because I
-                                remembered how much I liked and was inspired by the school hours when we studied just
-                                basic html. So my journey into the world of programming started!
+                                {description[language][0]}
                             </PTablet>
                         </Li>
                         <Li id="after">
-                            <H1>After</H1>
+                            <H1>{headings[language][1]}</H1>
                             <PTablet>
-                                Of course I started with Html and CSS. Then came the turn of JavaScript and with that I
-                                had to choose which framework to work with. So i did a little research of my own and
-                                chose React as a start.
-                                Where did I study these technologies? I took the following courses at SoftUni University:
+                                {description[language][1]}
                             </PTablet>
                             <ul style={{ padding: '2.5%' }}>
                                 <li>HTML/CSS</li>
@@ -109,24 +124,20 @@ const AllInfo = () => {
                                 <li>C# Fundamentals</li>
                             </ul>
                             <PTablet>
-                                During this time I was able to read some good books:
+                                {description[language][2]}
                             </PTablet>
                             <ul style={{ padding: '2.5%' }}>
-                                <li>HTML 5 & CSS 3. Practical programming</li>
-                                <li>Basics of programming with JavaScript</li>
-                                <li>Principles of programming with C#</li>
-                                <li>You don’t know JS – series books</li>
-                                <li>Many books on self-improvement</li>
+                                <li>{books[language][0]}</li>
+                                <li>{books[language][1]}</li>
+                                <li>{books[language][2]}</li>
+                                <li>{books[language][3]}</li>
+                                <li>{books[language][4]}</li>
                             </ul>
                         </Li>
                         <Li id="now">
-                            <H1>Now</H1>
+                            <H1>{headings[language][2]}</H1>
                             <PTablet>
-                                My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React,
-                                Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking
-                                courses of graphic design and UI web design. My moto is "never stop learning". At the
-                                moment I do not have much experience, but I have a great passion and desire to learn
-                                and grow.
+                                {description[language][3]}
                             </PTablet>
                         </Li>
                     </ul>
@@ -140,21 +151,15 @@ const AllInfo = () => {
                 <DivTablet>
                     <ul style={{ padding: 0, fontSize: '3.5vw' }}>
                         <Li id="before">
-                            <H1>Before</H1>
+                            <H1>{headings[language][0]}</H1>
                             <PTablet>
-                                I have bachelore degree in Finance, but I felt that this wasn't something I wanted to do
-                                all my life and soon after I graduated I started learning programming, because I
-                                remembered how much I liked and was inspired by the school hours when we studied just
-                                basic html. So my journey into the world of programming started!
+                                {description[language][0]}
                             </PTablet>
                         </Li>
                         <Li id="after">
-                            <H1>After</H1>
+                            <H1>{headings[language][1]}</H1>
                             <PTablet>
-                                Of course I started with Html and CSS. Then came the turn of JavaScript and with that I
-                                had to choose which framework to work with. So i did a little research of my own and
-                                chose React as a start.
-                                Where did I study these technologies? I took the following courses at SoftUni University:
+                                {description[language][1]}
                             </PTablet>
                             <ul style={{ padding: '2.5%' }}>
                                 <li>HTML/CSS</li>
@@ -166,24 +171,20 @@ const AllInfo = () => {
                                 <li>C# Fundamentals</li>
                             </ul>
                             <PTablet>
-                                During this time I was able to read some good books:
+                                {description[language][2]}
                             </PTablet>
                             <ul style={{ padding: '2.5%' }}>
-                                <li>HTML 5 & CSS 3. Practical programming</li>
-                                <li>Basics of programming with JavaScript</li>
-                                <li>Principles of programming with C#</li>
-                                <li>You don’t know JS – series books</li>
-                                <li>Many books on self-improvement</li>
+                                <li>{books[language][0]}</li>
+                                <li>{books[language][1]}</li>
+                                <li>{books[language][2]}</li>
+                                <li>{books[language][3]}</li>
+                                <li>{books[language][4]}</li>
                             </ul>
                         </Li>
                         <Li id="now">
-                            <H1>Now</H1>
+                            <H1>{headings[language][2]}</H1>
                             <PTablet>
-                                My experience includes following technologies: HTML, CSS, SASS, JS, Node JS, React,
-                                Express JS, Mongo DB, Firebase, GitHub, REST, C#, Unit testing. I'm currently taking
-                                courses of graphic design and UI web design. My moto is "never stop learning". At the
-                                moment I do not have much experience, but I have a great passion and desire to learn
-                                and grow.
+                                {description[language][3]}
                             </PTablet>
                         </Li>
                     </ul>
