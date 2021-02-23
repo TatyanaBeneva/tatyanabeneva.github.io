@@ -28,7 +28,7 @@ const TextBox = (props) => {
         'EN': ["Hello!", "I'm Tatyana Beneva, creative web developer.",
             "My recent experience is building React Single page Applications with Node JS as a back-end.",
             "View my work", "Let's talk"],
-        'BG': ['Здравейте!', 'Казвам се Татяна Бенева и правя уеб приложения.',
+        'BG': ['Здравейте!', 'Казвам се Татяна Бенева и разработвам уеб приложения.',
             'Най-скорошният ми опит е в създаването на уеб страници използвайки React JS и Node JS',
             'Виж проктите ми', 'Свържи се с мен']
     }
@@ -48,46 +48,46 @@ const TextBox = (props) => {
             }
             {isTabletOrLaptop &&
                 <Div900>
-                    <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
+                    <Hello1200> {text[language][0]} </Hello1200>
+                    <Name900> {text[language][1]}</Name900>
                     <Description1200>
-                        My recent experience is building React Single page Applications with Node Js as a back-end.
+                        {text[language][2]}
                     </Description1200>
-                    <Button1200 onClick={toWorkPage}>View my work</Button1200>
-                    <Button1200 onClick={toContactPage}>Let's talk</Button1200>
+                    <Button1200 onClick={toWorkPage}>{text[language][3]}</Button1200>
+                    <Button1200 onClick={toContactPage}>{text[language][4]}</Button1200>
                 </Div900>
             }
             {isTablet &&
                 <Div900>
-                    <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
+                    <Hello1200> {text[language][0]} </Hello1200>
+                    <Name900> {text[language][1]}</Name900>
                     <Description1200>
-                        My recent experience is building React Single page Applications with Node Js as a back-end.
+                        {text[language][2]}
                     </Description1200>
-                    <Button1200 onClick={toWorkPage}>View my work</Button1200>
-                    <Button1200 onClick={toContactPage}>Let's talk</Button1200>
+                    <Button1200 onClick={toWorkPage}>{text[language][3]}</Button1200>
+                    <Button1200 onClick={toContactPage}>{text[language][4]}</Button1200>
                 </Div900>
             }
             {isBigPhone &&
                 <Div900 style={{ textAlign: 'center' }}>
-                    <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
+                    <Hello1200> {text[language][0]} </Hello1200>
+                    <Name900> {text[language][1]}</Name900>
                     <Description1200>
-                        My recent experience is building React Single page Applications with Node Js as a back-end.
+                        {text[language][2]}
                     </Description1200>
-                    <Button1200 onClick={toWorkPage}>View my work</Button1200>
-                    <Button1200 onClick={toContactPage}>Let's talk</Button1200>
+                    <Button1200 onClick={toWorkPage}>{text[language][3]}</Button1200>
+                    <Button1200 onClick={toContactPage}>{text[language][4]}</Button1200>
                 </Div900>
             }
             {isPhone &&
                 <Div900 style={{ textAlign: 'center' }}>
-                    <Hello1200> Hello! </Hello1200>
-                    <Name900> I'm Tatyana Beneva, creative web developer.</Name900>
+                    <Hello1200> {text[language][0]} </Hello1200>
+                    <Name900> {text[language][1]}</Name900>
                     <Description1200>
-                        My recent experience is building React Single page Applications with Node Js as a back-end.
+                        {text[language][2]}
                     </Description1200>
-                    <Button1200 onClick={toWorkPage}>View my work</Button1200>
-                    <Button1200 onClick={toContactPage}>Let's talk</Button1200>
+                    <Button1200 onClick={toWorkPage}>{text[language][3]}</Button1200>
+                    <Button1200 onClick={toContactPage}>{text[language][4]}</Button1200>
                 </Div900>
             }
         </div>

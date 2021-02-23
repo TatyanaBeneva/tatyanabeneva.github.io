@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
+import LanguageContext from '../../Context'
 
 const Porject = ({ name, description, href, image, technologies }) => {
-
+    const { language, } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 768 })
     const isTablet = useMediaQuery({ maxWidth: 767 })
 
@@ -26,6 +27,11 @@ const Porject = ({ name, description, href, image, technologies }) => {
         })
     })
 
+    const text = {
+        'EN': ["Project details", "Used Technologies:", "View Live Project"],
+        'BG': ["Детайли за проекта", "Използвани технологии:", "Виж целия проект"]
+    }
+
     return (
         <div>
             {isLaptop &&
@@ -33,18 +39,18 @@ const Porject = ({ name, description, href, image, technologies }) => {
                     <LiLaptop>
                         <DivInfo>
                             <Details>
-                                Project details
+                                {text[language][0]}
                             </Details>
                             <Name>{name}</Name>
                             <Description>{description}</Description>
                             <Details>
-                                Used Technologies:
+                                {text[language][1]}
                             </Details>
                             <ul style={{ padding: 0 }}>
                                 {renderTechnologies()}
                             </ul>
                             <a href={href}>
-                                <Button>View Live Project</Button>
+                                <Button>{text[language][2]}</Button>
                             </a>
                         </DivInfo>
                         <div>
@@ -59,12 +65,12 @@ const Porject = ({ name, description, href, image, technologies }) => {
                     <LiTablet>
                         <DivInfo>
                             <DetailsTablet>
-                                Project details
+                                {text[language][0]}
                             </DetailsTablet>
                             <NameTablet>{name}</NameTablet>
                             <DescriptionTablet>{description}</DescriptionTablet>
                             <DetailsTablet>
-                                Used Technologies:
+                                {text[language][1]}
                             </DetailsTablet>
                             <ul style={{ padding: 0 }}>
                                 {renderTechnologies()}
@@ -73,7 +79,7 @@ const Porject = ({ name, description, href, image, technologies }) => {
                         <div>
                             <Image src={image} style={{ marginBottom: '30px' }} />
                             <a href={href}>
-                                <ButtonTablet>View Live Project</ButtonTablet>
+                                <ButtonTablet>{text[language][2]}</ButtonTablet>
                             </a>
                         </div>
                     </LiTablet>
