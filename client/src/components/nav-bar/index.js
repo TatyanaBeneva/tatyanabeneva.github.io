@@ -13,8 +13,8 @@ const NavBar = () => {
     const [isClick, setIsClick] = useState(false)
     const {language, } = useContext(LanguageContext)
     const isLaptop = useMediaQuery({ minWidth: 1200 })
-    const isTabletOrLaptop = useMediaQuery({ minWidth: 768, maxWidth: 1199 })
-    const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 767 })
+    const isTabletOrLaptop = useMediaQuery({ minWidth: 900, maxWidth: 1199 })
+    const isBigPhone = useMediaQuery({ minWidth: 481, maxWidth: 899 })
     const isPhone = useMediaQuery({ maxWidth: 480 })
 
     const currentRoute = useHistory().location.pathname.toLowerCase()
@@ -48,6 +48,7 @@ const NavBar = () => {
             {isTabletOrLaptop &&
                 <Div>
                     <Logo />
+                    <LanguageButton />
                     <Navigation>
                         <Link href={'/about'} title={titles[language][0]} type={'nav'} />
                         <Link href={'/work'} title={titles[language][1]} type={'nav'} />
@@ -61,6 +62,7 @@ const NavBar = () => {
             {isBigPhone &&
                 <Div480>
                     <Logo />
+                    <LanguageButton />
                     <span>
                         <Navigation>
                             <Button onClick={handleClick}>
@@ -91,6 +93,7 @@ const NavBar = () => {
             {isPhone &&
                 <Div480>
                     <Logo />
+                    <LanguageButton />
                     <span>
                         <Navigation>
                             <Button onClick={handleClick}>
