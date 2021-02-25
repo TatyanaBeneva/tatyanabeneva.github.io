@@ -1,13 +1,26 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
+import Cookies from 'universal-cookie'
 import LanguageContext from '../../Context'
 
 const LanguageButton = () => {
     const [isClicked, setIsClicked] = useState(false)
     const {language, setLanguage} = useContext(LanguageContext)
 
+    const cookies = new Cookies()
+
     const changeLanguage = () => {
         setIsClicked(!isClicked)
+    }
+
+    const changeToBg =() =>{
+        cookies.set('x-lang', 'BG')
+        setLanguage('BG')
+    }
+
+    const changeToEn = () =>{
+        cookies.set('x-lang', 'EN')
+        setLanguage('EN')
     }
 
     return (
@@ -19,8 +32,8 @@ const LanguageButton = () => {
             </Span>
             {isClicked ?
                 <Div style={{ position: 'absolute' }}>
-                    <div><Button onClick={() => setLanguage('BG')} >BG - Bulgarian</Button></div>
-                    <div><Button onClick={() => setLanguage('EN')}>EN - English</Button></div>
+                    <div><Button onClick={changeToBg} >BG - Bulgarian</Button></div>
+                    <div><Button onClick={changeToEn}>EN - English</Button></div>
                 </Div> : ''
             }
         </span>

@@ -53,7 +53,7 @@ const ContactForm = () => {
             return false
         }
 
-        if (!name.match(/[A-Z][a-z]+ [A-Z][a-z]+/)) {
+        if (!name.match(/[A-Z][a-z]+ [A-Z][a-z]+|[А-Я][а-я]+ [А-Я][а-я]+/)) {
             setErrorName(errors[language][1])
             return false
         }
