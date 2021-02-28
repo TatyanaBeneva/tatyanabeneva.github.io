@@ -10,19 +10,22 @@ const LanguageButton = () => {
     const { language, setLanguage } = useContext(LanguageContext)
 
     const cookies = new Cookies()
+    const current = new Date()
+    const threeMonths = new Date();
+    threeMonths.setMonth(current.getMonth() + 3)
 
     const changeLanguage = () => {
         setDisplay('block')
     }
 
     const changeToBg = () => {
-        cookies.set('x-lang', 'BG')
+        cookies.set('x-lang', 'BG', {path: '*', expires: threeMonths})
         setLanguage('BG')
         setDisplay('none')
     }
 
     const changeToEn = () => {
-        cookies.set('x-lang', 'EN')
+        cookies.set('x-lang', 'EN', {path: '*', expires: threeMonths})
         setLanguage('EN')
         setDisplay('none')
     }
